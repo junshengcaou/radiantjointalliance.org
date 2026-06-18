@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Radiant Joint Alliance — Arthritis Treatment Awareness</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --teal:       #1a6b7a;
+    --dark-teal:  #0e4a57;
+    --deep:       #082f3a;
+    --lt-teal:    #e8f5f8;
+    --mid-teal:   #c2dde4;
+    --amber:      #c8960c;
+    --amber-bg:   #fff8e6;
+    --white:      #ffffff;
+    --off-white:  #f8fcfd;
+    --gray-1:     #1a2e3b;
+    --gray-2:     #3d5a66;
+    --gray-3:     #6a8a96;
+    --gray-4:     #b0ccd4;
+    --radius:     10px;
+    --shadow:     0 2px 18px rgba(14,74,87,0.10);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--gray-1); background: var(--white); font-size: 16px; line-height: 1.6; }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--deep);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; height: 62px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo svg { width: 28px; height: 28px; }
+  .nav-logo span { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--white); letter-spacing: 0.3px; }
+  .nav-links { display: flex; gap: 6px; }
+  .nav-links a {
+    color: rgba(255,255,255,0.78); font-size: 14px; font-weight: 500;
+    padding: 6px 14px; border-radius: 6px; text-decoration: none;
+    transition: background 0.18s, color 0.18s;
+  }
+  .nav-links a:hover, .nav-links a.active { background: rgba(255,255,255,0.1); color: var(--white); }
+  .nav-links a.nav-cta {
+    background: var(--teal); color: var(--white); margin-left: 6px;
+  }
+  .nav-links a.nav-cta:hover { background: #1f7d8e; }
+
+  /* ── PAGES ── */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--deep) 0%, var(--dark-teal) 55%, #1a6b7a 100%);
+    padding: 90px 40px 80px;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -80px; right: -80px;
+    width: 340px; height: 340px; border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: -100px; left: -60px;
+    width: 280px; height: 280px; border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+  }
+  .hero-sun { margin: 0 auto 24px; width: 64px; height: 64px; }
+  .hero-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--mid-teal); margin-bottom: 16px; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 46px); color: var(--white); line-height: 1.2; margin-bottom: 20px; max-width: 720px; margin-left: auto; margin-right: auto; }
+  .hero p { font-size: 17px; color: rgba(255,255,255,0.78); max-width: 560px; margin: 0 auto 36px; line-height: 1.7; }
+  .btn { display: inline-block; padding: 13px 28px; border-radius: 8px; font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; }
+  .btn-primary { background: var(--amber); color: var(--white); }
+  .btn-primary:hover { background: #b5840a; transform: translateY(-1px); }
+  .btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.4); margin-left: 12px; }
+  .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+
+  /* ── STAT STRIP ── */
+  .stat-strip { background: var(--lt-teal); border-bottom: 1px solid var(--mid-teal); }
+  .stat-strip-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); padding: 28px 40px; gap: 20px; }
+  .stat { text-align: center; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--dark-teal); font-weight: 700; }
+  .stat-label { font-size: 13px; color: var(--gray-2); margin-top: 4px; }
+
+  /* ── SECTION ── */
+  .section { padding: 64px 40px; max-width: 960px; margin: 0 auto; }
+  .section-sm { padding: 48px 40px; max-width: 960px; margin: 0 auto; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--dark-teal); margin-bottom: 10px; }
+  .section-sub { font-size: 15px; color: var(--gray-2); margin-bottom: 36px; max-width: 580px; }
+  .divider-line { width: 48px; height: 3px; background: var(--teal); border-radius: 2px; margin-bottom: 24px; }
+
+  /* ── CARDS ── */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .card { background: var(--white); border: 1px solid var(--mid-teal); border-radius: var(--radius); padding: 28px 24px; box-shadow: var(--shadow); }
+  .card-icon { width: 44px; height: 44px; background: var(--lt-teal); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+  .card h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--dark-teal); margin-bottom: 10px; }
+  .card p { font-size: 14px; color: var(--gray-2); line-height: 1.65; }
+
+  /* ── CHECKLIST ── */
+  .checklist { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .checklist li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: var(--gray-1); }
+  .check-icon { width: 22px; height: 22px; background: var(--teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .check-icon svg { width: 12px; height: 12px; }
+
+  /* ── QUESTIONS BOX ── */
+  .q-box { background: var(--dark-teal); border-radius: var(--radius); padding: 32px 36px; }
+  .q-box h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); margin-bottom: 22px; }
+  .q-item { display: flex; gap: 16px; margin-bottom: 18px; align-items: flex-start; }
+  .q-num { background: var(--teal); color: var(--white); width: 28px; height: 28px; border-radius: 50%; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .q-text { font-size: 15px; color: rgba(255,255,255,0.88); font-style: italic; line-height: 1.55; padding-top: 3px; }
+
+  /* ── AMBER BOX ── */
+  .amber-box { background: var(--amber-bg); border: 1px solid #e8c84a; border-radius: var(--radius); padding: 22px 26px; display: flex; gap: 14px; align-items: flex-start; }
+  .amber-icon { font-size: 20px; color: var(--amber); flex-shrink: 0; margin-top: 2px; }
+  .amber-box p { font-size: 14px; color: #5a4400; line-height: 1.65; }
+
+  /* ── TWO COL ── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+  @media (max-width: 680px) { .two-col { grid-template-columns: 1fr; } }
+
+  /* ── HOSPITAL TABLE ── */
+  .hospital-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+  .hospital-table th { background: var(--dark-teal); color: var(--white); padding: 12px 16px; text-align: left; font-size: 13px; font-weight: 600; letter-spacing: 0.5px; }
+  .hospital-table th:first-child { border-radius: 8px 0 0 0; }
+  .hospital-table th:last-child { border-radius: 0 8px 0 0; }
+  .hospital-table td { padding: 13px 16px; font-size: 14px; border-bottom: 1px solid var(--lt-teal); color: var(--gray-1); vertical-align: top; }
+  .hospital-table tr:hover td { background: var(--off-white); }
+  .badge { display: inline-block; background: var(--lt-teal); color: var(--teal); font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 20px; }
+
+  /* ── ABOUT PAGE ── */
+  .mission-banner { background: linear-gradient(135deg, var(--deep), var(--dark-teal)); border-radius: var(--radius); padding: 44px 48px; color: var(--white); margin-bottom: 48px; }
+  .mission-banner h2 { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 14px; }
+  .mission-banner p { font-size: 16px; color: rgba(255,255,255,0.82); line-height: 1.7; }
+
+  /* ── CONTACT ── */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  @media (max-width: 680px) { .contact-grid { grid-template-columns: 1fr; } }
+  .contact-card { background: var(--lt-teal); border-radius: var(--radius); padding: 28px 26px; }
+  .contact-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--dark-teal); margin-bottom: 10px; }
+  .contact-card p { font-size: 14px; color: var(--gray-2); line-height: 1.65; }
+  .contact-card a { color: var(--teal); font-weight: 500; text-decoration: none; }
+  .contact-card a:hover { text-decoration: underline; }
+
+  /* ── FOOTER ── */
+  footer { background: var(--deep); color: rgba(255,255,255,0.6); text-align: center; padding: 32px 40px; font-size: 13px; margin-top: 60px; }
+  footer strong { color: rgba(255,255,255,0.9); font-family: 'Playfair Display', serif; }
+  footer p { margin-top: 8px; }
+
+  /* ── BG ALT ── */
+  .bg-alt { background: var(--off-white); }
+  .full-bg { background: var(--off-white); padding: 64px 0; }
+  .full-bg .section { padding-top: 0; padding-bottom: 0; }
+
+  /* ── PAGE HERO (inner pages) ── */
+  .page-hero { background: linear-gradient(135deg, var(--deep), var(--dark-teal)); padding: 52px 40px 48px; text-align: center; }
+  .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(24px, 3.5vw, 38px); color: var(--white); margin-bottom: 12px; }
+  .page-hero p { font-size: 16px; color: rgba(255,255,255,0.75); max-width: 520px; margin: 0 auto; }
+
+  @media (max-width: 600px) {
+    nav { padding: 0 16px; }
+    .nav-links a { padding: 6px 8px; font-size: 13px; }
+    .hero { padding: 60px 20px 50px; }
+    .section, .section-sm { padding: 44px 20px; }
+    .stat-strip-inner { grid-template-columns: 1fr; padding: 24px 20px; }
+    .mission-banner { padding: 28px 24px; }
+    .q-box { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#" onclick="showPage('home')">
+    <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="14" cy="14" r="6" fill="rgba(255,255,255,0.9)"/>
+      <line x1="14" y1="2" x2="14" y2="6" stroke="rgba(255,255,255,0.65)" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="14" y1="22" x2="14" y2="26" stroke="rgba(255,255,255,0.65)" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="2" y1="14" x2="6" y2="14" stroke="rgba(255,255,255,0.65)" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="22" y1="14" x2="26" y2="14" stroke="rgba(255,255,255,0.65)" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="5.5" y1="5.5" x2="8.3" y2="8.3" stroke="rgba(255,255,255,0.65)" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="19.7" y1="19.7" x2="22.5" y2="22.5" stroke="rgba(255,255,255,0.65)" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="22.5" y1="5.5" x2="19.7" y2="8.3" stroke="rgba(255,255,255,0.65)" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="8.3" y1="19.7" x2="5.5" y2="22.5" stroke="rgba(255,255,255,0.65)" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>
+    <span>Radiant Joint Alliance</span>
+  </a>
+  <div class="nav-links">
+    <a href="#" onclick="showPage('home')" id="nav-home" class="active">Home</a>
+    <a href="#" onclick="showPage('about')" id="nav-about">About</a>
+    <a href="#" onclick="showPage('treatment')" id="nav-treatment">The Treatment</a>
+    <a href="#" onclick="showPage('hospitals')" id="nav-hospitals">Find a Hospital</a>
+    <a href="#" onclick="showPage('contact')" id="nav-contact" class="nav-cta">Contact Us</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════ HOME PAGE -->
+<div id="page-home" class="page active">
+
+  <div class="hero">
+    <svg class="hero-sun" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="32" cy="32" r="13" fill="rgba(255,255,255,0.88)"/>
+      <line x1="32" y1="4" x2="32" y2="13" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="32" y1="51" x2="32" y2="60" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="4" y1="32" x2="13" y2="32" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="51" y1="32" x2="60" y2="32" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="11" y1="11" x2="17.4" y2="17.4" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="46.6" y1="46.6" x2="53" y2="53" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="53" y1="11" x2="46.6" y2="17.4" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="17.4" y1="46.6" x2="11" y2="53" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+    <div class="hero-eyebrow">Patient Education &amp; Awareness</div>
+    <h1>There Is a Radiation Treatment for Arthritis Pain Most Patients Don't Know About</h1>
+    <p>Low-dose radiation therapy is available at hospitals across the United States — yet most arthritis patients have never heard of it. We are here to change that.</p>
+    <a class="btn btn-primary" href="#" onclick="showPage('treatment')">Learn About the Treatment</a>
+    <a class="btn btn-outline" href="#" onclick="showPage('hospitals')">Find a Hospital Near You</a>
+  </div>
+
+  <div class="stat-strip">
+    <div class="stat-strip-inner">
+      <div class="stat">
+        <div class="stat-num">Decades</div>
+        <div class="stat-label">of safe use in Europe</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">Growing</div>
+        <div class="stat-label">number of US hospitals now offering LDRT</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">Most</div>
+        <div class="stat-label">patients still unaware this option exists</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Why Most Patients Have Never Heard of This</div>
+    <div class="divider-line"></div>
+    <div class="section-sub">Low-dose radiation therapy for arthritis falls between two specialties — rheumatology and radiation oncology rarely communicate about this option, leaving patients without the full picture.</div>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#1a6b7a"/></svg>
+        </div>
+        <h3>A Specialty Gap</h3>
+        <p>Rheumatologists manage arthritis. Radiation oncologists deliver radiation. These two specialties rarely connect around this treatment, so it rarely gets mentioned to patients.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z" fill="#1a6b7a"/></svg>
+        </div>
+        <h3>Decades of Evidence</h3>
+        <p>Low-dose radiation therapy for joint inflammation has been used in Europe for decades. The evidence exists — it simply hasn't reached most US patients or their primary care doctors.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#1a6b7a"/></svg>
+        </div>
+        <h3>Now Growing in the US</h3>
+        <p>Major US hospitals — including Penn Medicine, Cleveland Clinic, and Yale — have begun offering LDRT for arthritis. The treatment is available, but awareness lags far behind.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="full-bg">
+    <div class="section">
+      <div class="two-col">
+        <div>
+          <div class="section-title">Is This Treatment Right for You?</div>
+          <div class="divider-line"></div>
+          <p style="font-size:15px;color:var(--gray-2);margin-bottom:24px;line-height:1.7;">You may be a candidate for low-dose radiation therapy if any of the following apply to you:</p>
+          <ul class="checklist">
+            <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>You have been diagnosed with osteoarthritis or inflammatory arthritis</li>
+            <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Medications, injections, or physical therapy have not fully helped</li>
+            <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>You are not yet ready for — or cannot undergo — joint replacement surgery</li>
+            <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>You have pain in your knees, hips, hands, ankles, elbows, or shoulders</li>
+            <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>You are looking for a non-surgical outpatient option</li>
+          </ul>
+        </div>
+        <div>
+          <div class="q-box">
+            <h3>Questions to Ask Your Doctor</h3>
+            <div class="q-item"><div class="q-num">1</div><div class="q-text">"Is low-dose radiation therapy an option for my arthritis?"</div></div>
+            <div class="q-item"><div class="q-num">2</div><div class="q-text">"Can you refer me to a radiation oncologist to discuss this?"</div></div>
+            <div class="q-item"><div class="q-num">3</div><div class="q-text">"Is this treatment available at our local hospital?"</div></div>
+          </div>
+          <div style="margin-top:20px;">
+            <div class="amber-box">
+              <div class="amber-icon">ℹ</div>
+              <p>Many patients — and even some primary care doctors — have not yet heard of this treatment. That does not mean it is experimental. It has been used safely for decades and is now growing across the United States.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /home -->
+
+<!-- ══════════════════════════════════════════════ ABOUT PAGE -->
+<div id="page-about" class="page">
+  <div class="page-hero">
+    <h1>About Radiant Joint Alliance</h1>
+    <p>A student-led patient education initiative dedicated to closing the arthritis treatment awareness gap</p>
+  </div>
+  <div class="section">
+    <div class="mission-banner">
+      <h2>Our Mission</h2>
+      <p>Radiant Joint Alliance is dedicated to ensuring arthritis patients and their caregivers know about all available treatment options — including low-dose radiation therapy — so they can have informed conversations with their care team and make decisions that are right for them.</p>
+    </div>
+    <div class="two-col">
+      <div>
+        <div class="section-title">Why We Started This</div>
+        <div class="divider-line"></div>
+        <p style="font-size:15px;color:var(--gray-2);line-height:1.7;margin-bottom:16px;">Low-dose radiation therapy for arthritis is available at hospitals across the United States. Major academic medical centers — including Penn Medicine, Cleveland Clinic, and Yale — have begun offering it. The treatment has decades of use in Europe.</p>
+        <p style="font-size:15px;color:var(--gray-2);line-height:1.7;margin-bottom:16px;">Yet most arthritis patients — including elderly patients who may benefit most — have never heard of it. Their primary care doctors often have not either.</p>
+        <p style="font-size:15px;color:var(--gray-2);line-height:1.7;">Radiant Joint Alliance exists to bridge that gap — one patient, one community, one conversation at a time.</p>
+      </div>
+      <div>
+        <div class="section-title">What We Do</div>
+        <div class="divider-line"></div>
+        <ul class="checklist">
+          <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Educate patients at senior centers, assisted living facilities, and community health fairs</li>
+          <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Distribute physician-reviewed patient education materials</li>
+          <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Connect patients with hospitals currently offering LDRT</li>
+          <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Raise awareness among primary care physicians and caregivers</li>
+        </ul>
+        <div style="margin-top:24px;" class="amber-box">
+          <div class="amber-icon">ℹ</div>
+          <p>All educational materials are reviewed by a licensed physician. This campaign does not promote or endorse any specific hospital, physician, or treatment provider.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ TREATMENT PAGE -->
+<div id="page-treatment" class="page">
+  <div class="page-hero">
+    <h1>About the Treatment</h1>
+    <p>What low-dose radiation therapy for arthritis is, how it works, and who it may help</p>
+  </div>
+  <div class="section">
+    <div class="two-col">
+      <div>
+        <div class="section-title">What Is Low-Dose Radiation Therapy?</div>
+        <div class="divider-line"></div>
+        <p style="font-size:15px;color:var(--gray-2);line-height:1.7;margin-bottom:16px;">Low-dose radiation therapy (LDRT) is a non-surgical, outpatient treatment that uses a very small, carefully targeted amount of radiation directed at an arthritic joint. The goal is to reduce inflammation in the joint lining, which is a primary source of arthritis pain.</p>
+        <p style="font-size:15px;color:var(--gray-2);line-height:1.7;margin-bottom:16px;">The radiation dose used is far smaller than what is used to treat cancer. Treatments are typically delivered in a series of short sessions, each taking only minutes.</p>
+        <p style="font-size:15px;color:var(--gray-2);line-height:1.7;">No hospital stay is required. Patients go home the same day.</p>
+      </div>
+      <div>
+        <div class="card" style="background:var(--lt-teal);border-color:var(--mid-teal);">
+          <h3>Key Facts at a Glance</h3>
+          <ul class="checklist" style="margin-top:12px;">
+            <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Outpatient — no hospital stay needed</li>
+            <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Non-surgical and non-invasive</li>
+            <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Completed in a few short sessions</li>
+            <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Very low radiation dose — not cancer-level</li>
+            <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Used safely in Europe for decades</li>
+            <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Available at growing number of US hospitals</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:48px;">
+      <div class="section-title">Who May Benefit</div>
+      <div class="divider-line"></div>
+      <div class="card-grid" style="margin-top:8px;">
+        <div class="card"><h3>Osteoarthritis</h3><p>Patients with degenerative joint disease, particularly in the knees, hips, and hands, who have not found full relief from medications or injections.</p></div>
+        <div class="card"><h3>Inflammatory Arthritis</h3><p>Including rheumatoid arthritis and other inflammatory conditions where joint inflammation causes persistent pain.</p></div>
+        <div class="card"><h3>Surgical Candidates Who Are Not Ready</h3><p>Patients for whom joint replacement is not yet an option — whether due to age, health conditions, or personal preference.</p></div>
+      </div>
+    </div>
+    <div style="margin-top:48px;">
+      <div class="q-box">
+        <h3>Questions to Ask Your Doctor</h3>
+        <div class="q-item"><div class="q-num">1</div><div class="q-text">"Is low-dose radiation therapy an option for my arthritis?"</div></div>
+        <div class="q-item"><div class="q-num">2</div><div class="q-text">"Can you refer me to a radiation oncologist to discuss this?"</div></div>
+        <div class="q-item"><div class="q-num">3</div><div class="q-text">"Is this treatment available at our local hospital?"</div></div>
+      </div>
+    </div>
+    <div style="margin-top:24px;">
+      <div class="amber-box">
+        <div class="amber-icon">ℹ</div>
+        <p><strong>This page is for educational purposes only.</strong> Low-dose radiation therapy is not appropriate for every patient. Please speak with your doctor or care team about whether this treatment is right for your specific situation.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ HOSPITALS PAGE -->
+<div id="page-hospitals" class="page">
+  <div class="page-hero">
+    <h1>Find a Hospital</h1>
+    <p>US hospitals currently known to offer low-dose radiation therapy for arthritis</p>
+  </div>
+  <div class="section">
+    <div class="amber-box" style="margin-bottom:32px;">
+      <div class="amber-icon">ℹ</div>
+      <p>This list is provided for informational purposes only and may not be complete. Always call the hospital directly to confirm current availability. Ask to speak with the Radiation Oncology department.</p>
+    </div>
+    <table class="hospital-table">
+      <thead>
+        <tr>
+          <th>Hospital</th>
+          <th>City, State</th>
+          <th>Department to Contact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Allegheny Health Network (AHN) Cancer Institute</strong></td><td>Pittsburgh, PA</td><td><span class="badge">Radiation Oncology</span></td></tr>
+        <tr><td><strong>CentraState Medical Center</strong></td><td>Freehold, NJ</td><td><span class="badge">Radiation Oncology</span></td></tr>
+        <tr><td><strong>City of Hope — Santa Clarita</strong></td><td>Santa Clarita, CA</td><td><span class="badge">Radiation Oncology</span></td></tr>
+        <tr><td><strong>Cleveland Clinic</strong> (enterprise-wide)</td><td>Ohio / Florida</td><td><span class="badge">Radiation Oncology</span></td></tr>
+        <tr><td><strong>Compass Oncology</strong></td><td>Portland, OR / Vancouver, WA</td><td><span class="badge">Radiation Oncology</span></td></tr>
+        <tr><td><strong>EHS / St. John's Episcopal Hospital</strong></td><td>New York, NY</td><td><span class="badge">Radiation Oncology</span></td></tr>
+        <tr><td><strong>Hunterdon Regional Cancer Center</strong></td><td>Flemington, NJ</td><td><span class="badge">Radiation Oncology</span></td></tr>
+        <tr><td><strong>Loyola Medicine</strong></td><td>Maywood / Tinley Park, IL</td><td><span class="badge">Radiation Oncology</span></td></tr>
+        <tr><td><strong>Minnesota Oncology</strong></td><td>Maplewood, MN</td><td><span class="badge">Radiation Oncology</span></td></tr>
+        <tr><td><strong>Missouri Cancer Associates</strong></td><td>Columbia / Marshall / Kirksville, MO</td><td><span class="badge">Radiation Oncology</span></td></tr>
+        <tr><td><strong>Morristown Medical Center</strong></td><td>Morristown, NJ</td><td><span class="badge">Radiation Oncology</span></td></tr>
+        <tr><td><strong>North Cascade Cancer Center</strong></td><td>Washington State</td><td><span class="badge">Radiation Oncology</span></td></tr>
+        <tr><td><strong>OSF Danville</strong></td><td>Danville, IL</td><td><span class="badge">Radiation Oncology</span></td></tr>
+        <tr><td><strong>Overlook Medical Center</strong></td><td>Summit, NJ</td><td><span class="badge">Radiation Oncology</span></td></tr>
+        <tr><td><strong>Penn Medicine — Penn Presbyterian Medical Center</strong></td><td>Philadelphia, PA</td><td><span class="badge">Radiation Oncology</span></td></tr>
+        <tr><td><strong>Shaw Cancer Center / Vail Health</strong></td><td>Edwards, CO</td><td><span class="badge">Radiation Oncology</span></td></tr>
+        <tr><td><strong>Spectrum Healthcare Partners</strong></td><td>Maine (6 locations) / Portsmouth, NH</td><td><span class="badge">Radiation Oncology</span></td></tr>
+        <tr><td><strong>SUNY Upstate Medical University</strong></td><td>Syracuse, NY</td><td><span class="badge">Radiation Oncology</span></td></tr>
+        <tr><td><strong>UCLA Health</strong></td><td>Los Angeles, CA</td><td><span class="badge">Radiation Oncology</span></td></tr>
+        <tr><td><strong>University of Maryland Medical System</strong></td><td>Baltimore, MD</td><td><span class="badge">Radiation Oncology</span></td></tr>
+        <tr><td><strong>UPMC Hillman Cancer Center</strong></td><td>Pittsburgh, PA</td><td><span class="badge">Radiation Oncology</span></td></tr>
+        <tr><td><strong>Virginia Oncology Associates</strong></td><td>Virginia Beach / Hampton / Norfolk, VA</td><td><span class="badge">Radiation Oncology</span></td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:36px;" class="q-box">
+      <h3>How to Ask Your Hospital</h3>
+      <div class="q-item"><div class="q-num">1</div><div class="q-text">Call your hospital's main number and ask to be connected to the Radiation Oncology department.</div></div>
+      <div class="q-item"><div class="q-num">2</div><div class="q-text">Ask: "Do you offer low-dose radiation therapy for arthritis?"</div></div>
+      <div class="q-item"><div class="q-num">3</div><div class="q-text">Ask your primary care doctor or rheumatologist for a referral to a radiation oncologist to discuss this option.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ CONTACT PAGE -->
+<div id="page-contact" class="page">
+  <div class="page-hero">
+    <h1>Contact Us</h1>
+    <p>Questions, partnerships, or requests to bring our presentation to your community</p>
+  </div>
+  <div class="section">
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>📍 Bring Us to Your Community</h3>
+        <p>We offer free educational presentations at senior centers, assisted living facilities, churches, libraries, and community health fairs. To request a presentation, reach out to us directly.</p>
+        <p style="margin-top:12px;"><a href="mailto:info@radiantjointalliance.org">info@radiantjointalliance.org</a></p>
+      </div>
+      <div class="contact-card">
+        <h3>🤝 Partner With Us</h3>
+        <p>We welcome partnerships with healthcare providers, senior organizations, patient advocacy groups, and community organizations who share our commitment to patient education.</p>
+        <p style="margin-top:12px;"><a href="mailto:info@radiantjointalliance.org">info@radiantjointalliance.org</a></p>
+      </div>
+      <div class="contact-card">
+        <h3>📋 Request Patient Materials</h3>
+        <p>Healthcare providers and community organizations can request printed patient education flyers to display in waiting rooms, common areas, or distribute at events.</p>
+        <p style="margin-top:12px;"><a href="mailto:info@radiantjointalliance.org">Request materials →</a></p>
+      </div>
+      <div class="contact-card">
+        <h3>📰 Media Inquiries</h3>
+        <p>Journalists and health writers interested in covering the arthritis treatment awareness gap are welcome to reach out. We can connect you with our physician advisor.</p>
+        <p style="margin-top:12px;"><a href="mailto:media@radiantjointalliance.org">media@radiantjointalliance.org</a></p>
+      </div>
+    </div>
+    <div style="margin-top:36px;" class="amber-box">
+      <div class="amber-icon">ℹ</div>
+      <p>Radiant Joint Alliance does not provide medical advice and cannot recommend specific physicians or hospitals. For medical questions, please speak with your doctor or care team.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Radiant Joint Alliance</strong>
+  <p>radiantjointalliance.org &nbsp;|&nbsp; info@radiantjointalliance.org</p>
+  <p style="margin-top:10px;">For educational purposes only. This website does not provide medical advice. Please consult your doctor about treatment options.</p>
+</footer>
+
+<script>
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    document.getElementById('page-' + id).classList.add('active');
+    document.getElementById('nav-' + id).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return false;
+  }
+</script>
+</body>
+</html>
