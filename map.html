@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Find a Hospital — Radiant Joint Alliance</title>
+<title>Find Osteoarthritis LDRT Hospitals — Radiant Joint Alliance</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -91,7 +91,7 @@ nav{background:var(--deep);padding:0 32px;height:58px;display:flex;align-items:c
 
 <div class="page-header">
   <h1>Find a Hospital Near You</h1>
-  <p>US hospitals currently known to offer low-dose radiation therapy (LDRT) for arthritis. Click any pin or location for details.</p>
+  <p>US hospitals currently known to offer low-dose radiation therapy (LDRT) for osteoarthritis / degenerative joint pain. Click any pin or location for details.</p>
 </div>
 
 <div class="layout">
@@ -102,7 +102,7 @@ nav{background:var(--deep);padding:0 32px;height:58px;display:flex;align-items:c
       <div class="hospital-count" id="countLabel" style="display:none;"></div>
     </div>
     <div class="hospital-list" id="hospitalList"></div>
-    <div class="amber-note">Always call the Radiation Oncology department directly to confirm current LDRT availability. This list is a working directory and may not be complete.</div>
+    <div class="amber-note">This directory focuses on LDRT for osteoarthritis / degenerative joint pain, not every arthritis diagnosis. Always call Radiation Oncology directly to confirm current availability and whether your condition is appropriate.</div>
   </div>
   <div id="map"></div>
 </div>
@@ -171,7 +171,26 @@ const HOSPITALS = [
   {name:"Vanderbilt University Medical Center", city:"Nashville, TN", lat:36.1447, lng:-86.8027, note:"Authors of landmark 2022 LDRT review — active clinical program.", website:"https://www.vanderbilthealth.com/program/radiation-oncology", phone:"615-322-2555"},
   {name:"Virginia Oncology Associates", city:"Virginia Beach / Hampton / Norfolk, VA", lat:36.7758, lng:-76.0969, note:"Multiple Hampton Roads VA locations offering LDRT.", website:"https://www.virginiaoncology.com/services/radiation-oncology", phone:"757-213-5813"},
   {name:"Willamette Valley Cancer Institute", city:"Eugene, OR", lat:44.0521, lng:-123.0868, note:"Confirmed offering LDRT for osteoarthritis in Eugene OR.", website:"https://www.wvci.com/radiation-oncology", phone:"541-736-3333"},
-];
+
+  {name:"Allina Health Cancer Institute", city:"Minneapolis / St. Paul, MN", lat:44.9537, lng:-93.0900, note:"Official Allina page lists LDRT to manage osteoarthritis pain and notes it is not recommended for rheumatoid or psoriatic arthritis.", website:"https://account.allinahealth.org/services/963"},
+  {name:"Augusta Health — Center for Cancer and Blood Disorders", city:"Fishersville, VA", lat:38.0996, lng:-78.9692, note:"Radiation oncology page describes LDRT for osteoarthritis as a non-invasive pain relief option.", website:"https://www.augustahealth.com/service/center-for-cancer-and-blood-disorders/radiation-oncology/"},
+  {name:"Beacon Health System Radiation Oncology", city:"South Bend, IN", lat:41.6764, lng:-86.2520, note:"Radiation oncology page describes LDRT use for osteoarthritis treatment.", website:"https://www.beaconhealthsystem.org/radiation-oncology/"},
+  {name:"Boulder Community Health", city:"Boulder, CO", lat:40.0150, lng:-105.2705, note:"Educational lecture describes low-dose radiation therapy for benign conditions including osteoarthritis and related pain conditions.", website:"https://www.bch.org/media/video-center/primary-care/low-dose-radiation-therapy-for-benign-conditions/"},
+  {name:"Capital Radiosurgery Centers", city:"Halethorpe, MD", lat:39.2384, lng:-76.6811, note:"Site states LDRT is offered for osteoarthritis and joint pain. Call to confirm active scheduling.", website:"https://capitalradiosurgery.com/"},
+  {name:"ChristianaCare — Helen F. Graham Cancer Center / Concord Health Center", city:"Newark, DE / Chadds Ford, PA", lat:39.6852, lng:-75.6766, note:"ChristianaCare lists LDRT for osteoarthritis and provides Delaware and Pennsylvania scheduling numbers.", website:"https://christianacare.org/us/en/care/cancer-care/treatment/radiation-oncology/types-of-radiation-therapy.html", phone:"302-623-4800"},
+  {name:"Conemaugh / Johnstown Cancer Center", city:"Johnstown, PA", lat:40.3267, lng:-78.9210, note:"Radiation oncology page lists LDRT for osteoarthritis-related pain.", website:"https://www.conemaugh.org/cancer-care/radiation-oncology/low-dose-radiation-therapy"},
+  {name:"CyberKnife Center of Miami", city:"Miami, FL", lat:25.7617, lng:-80.1918, note:"Website states LDRT is offered for osteoarthritis pain relief. Call to confirm availability.", website:"https://www.cyberknifemiami.com/case-studies-for-cyberknife-miami/"},
+  {name:"Maryland Oncology Hematology", city:"Maryland (multiple locations)", lat:39.2037, lng:-76.8610, note:"Dedicated page describes low-dose radiation for osteoarthritis affecting hands, knees, feet, and shoulders.", website:"https://marylandoncology.com/radiation-oncology/low-dose-radiation-for-osteoarthritis/"},
+  {name:"Nebraska Hematology-Oncology", city:"Lincoln, NE", lat:40.8136, lng:-96.7026, note:"Radiation oncology page says low-dose radiation therapy is offered for certain types of arthritis. Call to confirm OA program details.", website:"https://www.yourcancercare.com/your-care/radiation-oncology"},
+  {name:"OHC / Oncology Hematology Care", city:"Cincinnati-area, OH", lat:39.1031, lng:-84.5120, note:"Dedicated page describes low-dose radiation therapy for osteoarthritis at select OHC locations.", website:"https://ohcare.com/service/low-dose-radiation-therapy-osteoarthritis/"},
+  {name:"Onvida Health Cancer and Blood Disorders Center", city:"Yuma, AZ", lat:32.6927, lng:-114.6277, note:"Cancer care page lists low-dose radiation therapy for osteoarthritis. Call to confirm scheduling.", website:"https://www.onvidahealth.org/services/cancer-care/"},
+  {name:"Princeton Radiation Oncology", city:"NJ / PA multiple locations", lat:40.3500, lng:-74.6100, note:"Dedicated LDRT page lists osteoarthritis and multiple NJ / PA locations.", website:"https://princetonradiationoncology.com/ldrt/"},
+  {name:"Rapides Cancer Center", city:"Alexandria, LA", lat:31.3113, lng:-92.4451, note:"Local news reports LDRT for osteoarthritis is being offered at Rapides Cancer Center.", website:"https://www.kalb.com/2025/10/20/new-radiation-therapy-osteoarthritis-being-offered-cenla/"},
+  {name:"Texarkana Radiation Oncology / New Hope Institute", city:"Texarkana, TX", lat:33.4251, lng:-94.0477, note:"Website states LDRT is offered for osteoarthritis-related joint pain.", website:"https://newhope.institute/"},
+  {name:"Texas Oncology", city:"Multiple Texas locations", lat:31.9686, lng:-99.9018, note:"Dedicated low-dose radiation therapy page for osteoarthritis pain management. Call local center to confirm.", website:"https://www.texasoncology.com/cancer-care/low-dose-radiation-therapy"},
+  {name:"The Center for Cancer & Blood Disorders", city:"Fort Worth / North Texas", lat:32.7555, lng:-97.3308, note:"LDRT page lists osteoarthritis among treated conditions and lists North Texas treatment locations.", website:"https://thecentertx.com/all-treatments-services/low-dose-radiation-therapy"},
+  {name:"UNC Health Southeastern — Gibson Cancer Center", city:"Lumberton, NC", lat:34.6182, lng:-79.0086, note:"Official news page says Gibson Cancer Center introduced LDRT for painful osteoarthritis.", website:"https://www.unchealthsoutheastern.org/about-us/news/2026/gibson-cancer-center-introduces-low-dose-radiation-therapy-for-o/"},
+  {name:"William Newton Radiation Oncology / Winfield Healthcare Center", city:"Winfield, KS", lat:37.2397, lng:-96.9956, note:"Article says William Newton Radiation Oncology is offering low-dose radiation therapy for osteoarthritis.", website:"https://www.wnhcares.org/article/new-treatment-osteoarthritis-winfield"}];
 
 // Custom teal dot marker
 function makeIcon(active=false){
