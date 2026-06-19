@@ -95,7 +95,7 @@ nav{background:var(--deep);padding:0 32px;height:58px;display:flex;align-items:c
     <div class="sidebar-header">
       <h3>Hospital Directory</h3>
       <input class="search-box" type="text" id="searchBox" placeholder="Search by name or state…" oninput="filterList()"/>
-      <div class="hospital-count" id="countLabel">Showing 29 locations</div>
+      <div class="hospital-count" id="countLabel" style="display:none;"></div>
     </div>
     <div class="hospital-list" id="hospitalList"></div>
     <div class="amber-note">Always call the Radiation Oncology department directly to confirm current LDRT availability. This list is a working directory and may not be complete.</div>
@@ -105,36 +105,60 @@ nav{background:var(--deep);padding:0 32px;height:58px;display:flex;align-items:c
 
 <script>
 const HOSPITALS = [
-  {name:"Allegheny Health Network (AHN) Cancer Institute", city:"Pittsburgh, PA", lat:40.4566, lng:-80.0041, note:"AHN identifies as a leader in LDRT for osteoarthritis."},
+  {name:"Advocate Radiation Oncology", city:"Multiple locations, IL", lat:41.8827, lng:-87.6233, note:"Multiple Illinois locations. Call to confirm LDRT availability."},
+  {name:"AHN Cancer Institute — Allegheny General", city:"Pittsburgh, PA", lat:40.4566, lng:-80.0041, note:"AHN identifies as a leader in LDRT for osteoarthritis."},
+  {name:"BASS Medical / Gregory Rhodes MD Cancer Center", city:"Walnut Creek, CA", lat:37.9101, lng:-122.0652, note:"Launched LDRT program 2025. Call Radiation Oncology to confirm."},
+  {name:"CAMC Radiation Oncology", city:"Charleston, WV", lat:38.3498, lng:-81.6326, note:"Confirmed offering LDRT for osteoarthritis without surgery or medication."},
   {name:"Cedars-Sinai Medical Center", city:"Los Angeles, CA", lat:34.0762, lng:-118.3799, note:"Major academic medical center. Call Radiation Oncology to confirm."},
   {name:"CentraState Medical Center", city:"Freehold, NJ", lat:40.2386, lng:-74.3109, note:"Atlantic Health System affiliate. Call Radiation Oncology to confirm."},
+  {name:"City of Hope — Phoenix", city:"Phoenix, AZ", lat:33.5722, lng:-112.0901, note:"Publicly lists LDRT for osteoarthritis at this location."},
   {name:"City of Hope — Santa Clarita", city:"Santa Clarita, CA", lat:34.4139, lng:-118.5526, note:"Publicly lists LDRT for musculoskeletal and arthritic conditions."},
-  {name:"Cleveland Clinic (enterprise-wide)", city:"Ohio / Florida", lat:41.5031, lng:-81.6218, note:"Running LDRT prospectively across their enterprise in OH and FL."},
+  {name:"Cleveland Clinic (enterprise-wide)", city:"Cleveland, OH", lat:41.5031, lng:-81.6218, note:"Running LDRT prospectively across their enterprise in OH and FL."},
+  {name:"Coastal Cancer Center", city:"Myrtle Beach, SC", lat:33.6891, lng:-78.8867, note:"Confirmed offering LDRT for osteoarthritis. Call to confirm."},
+  {name:"CommonSpirit Holy Cross — Jordan Valley", city:"West Jordan, UT", lat:40.6097, lng:-111.9391, note:"Launched formal LDRT program August 2025."},
+  {name:"CommonSpirit St. Mary-Corwin Hospital", city:"Pueblo, CO", lat:38.2544, lng:-104.6091, note:"Launched LDRT for osteoarthritis November 2025."},
   {name:"Compass Oncology", city:"Portland, OR / Vancouver, WA", lat:45.5352, lng:-122.6699, note:"Serving Portland OR and Vancouver WA metro area."},
-  {name:"EHS / St. John's Episcopal Hospital", city:"Far Rockaway, NY", lat:40.5987, lng:-73.7536, note:"Call Radiation Oncology to confirm current LDRT availability."},
+  {name:"Dartmouth Hitchcock Medical Center", city:"Lebanon, NH", lat:43.6418, lng:-72.3246, note:"Faculty co-authored 2026 LDRT clinical guidelines — active program."},
+  {name:"EHS / St. John's Episcopal Hospital", city:"Far Rockaway, NY", lat:40.5987, lng:-73.7536, note:"RAPID Program — first LDRT program on the Rockaway Peninsula."},
+  {name:"Erlanger Health System", city:"Chattanooga, TN", lat:35.0456, lng:-85.3097, note:"Dedicated LDRT for arthritis webpage with full protocol description."},
+  {name:"FHN / Leonard Ferguson Cancer Center", city:"Freeport, IL", lat:42.2967, lng:-89.6212, note:"Published 2025 outcomes paper treating 69 patients and 168 joints."},
+  {name:"Hackensack Meridian — Jersey Shore University Medical Center", city:"Neptune, NJ", lat:40.2115, lng:-74.0338, note:"Confirmed offering LDRT. Call Radiation Oncology to confirm."},
   {name:"Hunterdon Regional Cancer Center", city:"Flemington, NJ", lat:40.5310, lng:-74.8600, note:"Medicare and many commercial insurers cover LDRT here."},
+  {name:"IU Health (Indiana University Health)", city:"Indiana (multiple locations)", lat:39.7684, lng:-86.1581, note:"Actively treating patients and running formal LDRT outcomes study."},
   {name:"Jefferson Abington Hospital", city:"Abington, PA", lat:40.1191, lng:-75.1199, note:"Call Radiation Oncology to confirm LDRT availability."},
   {name:"Loyola University Medical Center", city:"Maywood / Tinley Park, IL", lat:41.8602, lng:-87.8347, note:"Offers LDRT at Maywood and Tinley Park IL locations."},
+  {name:"Mercy Health — Springfield Regional", city:"Springfield, OH", lat:39.9242, lng:-83.8088, note:"Announced LDRT for osteoarthritis October 2024."},
   {name:"Minnesota Oncology", city:"Maplewood, MN", lat:45.0274, lng:-93.0335, note:"Treats knees, hips, hands, ankles, shoulders, and spine."},
   {name:"Missouri Cancer Associates", city:"Columbia / Marshall / Kirksville, MO", lat:38.9504, lng:-92.3132, note:"Multiple MO locations. Call Radiation Oncology to confirm."},
   {name:"Morristown Medical Center", city:"Morristown, NJ", lat:40.7895, lng:-74.4657, note:"Atlantic Health System. Public article confirms LDRT for OA."},
+  {name:"Northeastern Radiation Oncology", city:"Saratoga Springs, NY", lat:43.0831, lng:-73.7846, note:"Active LDRT program — cited in landmark 2022 peer-reviewed review."},
   {name:"North Cascade Cancer Center", city:"Bellingham, WA", lat:48.8070, lng:-122.4936, note:"Patient reviews confirm active LDRT program for arthritis."},
+  {name:"Northside Hospital Cancer Institute", city:"Atlanta, GA", lat:33.9304, lng:-84.3733, note:"Introduced LDRT in 2023 — one of the earliest US adopters."},
   {name:"OSF Sacred Heart — Danville", city:"Danville, IL", lat:40.1371, lng:-87.6452, note:"OSF HealthCare system. Call Radiation Oncology to confirm."},
   {name:"Overlook Medical Center", city:"Summit, NJ", lat:40.7128, lng:-74.3536, note:"Atlantic Health System affiliate. Call Radiation Oncology."},
   {name:"Penn Medicine — Penn Presbyterian", city:"Philadelphia, PA", lat:39.9582, lng:-75.1996, note:"Dedicated LDRT clinic opened January 2026. 150+ patients treated."},
   {name:"ProCure Proton Therapy Center", city:"Somerset, NJ", lat:40.5254, lng:-74.5202, note:"Call to confirm LDRT for arthritis specifically."},
+  {name:"Providence St. Joseph Hospital", city:"Orange, CA", lat:33.7879, lng:-117.8531, note:"Started LDRT program 2025 with excellent early results."},
+  {name:"Radiation Center of Greater Nashua", city:"Nashua, NH", lat:42.7654, lng:-71.4676, note:"Announced February 2026. One of few freestanding centers in New England offering LDRT."},
   {name:"RWJBarnabas Health", city:"Multiple locations, NJ", lat:40.4951, lng:-74.4500, note:"Multiple NJ locations. Call Radiation Oncology to confirm."},
   {name:"Shaw Cancer Center / Vail Health", city:"Edwards, CO", lat:39.6520, lng:-106.5929, note:"Radiation oncology program confirmed in Edwards CO."},
   {name:"Spectrum Healthcare Partners", city:"Maine / Portsmouth, NH", lat:43.6419, lng:-70.3545, note:"Six Maine locations plus Portsmouth NH."},
+  {name:"St. Joseph's Health / Totowa Cancer Center", city:"Totowa, NJ", lat:40.9062, lng:-74.2207, note:"Chief of Radiation Oncology confirmed LDRT offering."},
   {name:"SUNY Upstate Medical University", city:"Syracuse, NY", lat:43.0421, lng:-76.1399, note:"Actively offering LDRT. Gaining popularity quickly across US."},
-  {name:"UCLA Radiation Oncology", city:"Los Angeles, CA", lat:34.0648, lng:-118.4472, note:"UCLA Health Radiation Oncology. Call to confirm LDRT for arthritis."},
+  {name:"Tennessee Oncology", city:"Nashville / Multiple TN locations", lat:36.1627, lng:-86.7816, note:"Dedicated LDRT webpage published October 2025."},
+  {name:"UAB Radiation Oncology", city:"Birmingham, AL", lat:33.5057, lng:-86.7990, note:"Launched LDRT osteoarthritis program February 2026."},
+  {name:"UC Health (University of Cincinnati)", city:"Cincinnati, OH", lat:39.1329, lng:-84.5150, note:"Active LDRT program led by Dr. Bailey Nelson. Featured in Cincinnati Magazine Jan 2026."},
+  {name:"UCHealth — Memorial Hospital Central", city:"Colorado Springs, CO", lat:38.8339, lng:-104.8214, note:"Radiation oncology website explicitly lists LDRT for osteoarthritis."},
+  {name:"UCLA Health", city:"Los Angeles, CA", lat:34.0648, lng:-118.4472, note:"UCLA Health Radiation Oncology. Confirmed LDRT for arthritis on website."},
   {name:"University of Chicago Medical Center", city:"Chicago, IL", lat:41.7893, lng:-87.6036, note:"Major academic center. Call Radiation Oncology to confirm."},
   {name:"University of Maryland Medical System", city:"Baltimore, MD", lat:39.2880, lng:-76.6251, note:"Published patient-facing article on LDRT for osteoarthritis."},
   {name:"University of Nebraska Medical Center", city:"Omaha, NE", lat:41.2548, lng:-95.9759, note:"Call Radiation Oncology to confirm LDRT availability."},
   {name:"University of Rochester Medical Center", city:"Rochester, NY", lat:43.1231, lng:-77.6250, note:"Call Radiation Oncology to confirm LDRT availability."},
+  {name:"University of Southern California — Keck Medical Center", city:"Los Angeles, CA", lat:34.0623, lng:-118.2009, note:"Keck Medical Center. Call Radiation Oncology to confirm LDRT."},
   {name:"UPMC Hillman Cancer Center", city:"Pittsburgh, PA", lat:40.4450, lng:-79.9426, note:"Lists LDRT as a standard treatment option for osteoarthritis."},
-  {name:"University of Southern California — Keck Medical Center", city:"Los Angeles, CA", lat:34.0623, lng:-118.2009, note:"Keck Medical Center of USC. Call Radiation Oncology to confirm LDRT."},
+  {name:"Vanderbilt University Medical Center", city:"Nashville, TN", lat:36.1447, lng:-86.8027, note:"Authors of landmark 2022 LDRT review — active clinical program."},
   {name:"Virginia Oncology Associates", city:"Virginia Beach / Hampton / Norfolk, VA", lat:36.7758, lng:-76.0969, note:"Multiple Hampton Roads VA locations offering LDRT."},
+  {name:"Willamette Valley Cancer Institute", city:"Eugene, OR", lat:44.0521, lng:-123.0868, note:"Confirmed offering LDRT for osteoarthritis in Eugene OR."},
 ];
 
 // Custom teal dot marker
@@ -201,7 +225,7 @@ function buildAll(list){
     markers.push({marker, item, data:h, origIdx:i});
   });
 
-  document.getElementById('countLabel').textContent=`Showing ${list.length} location${list.length!==1?'s':''}`;
+  // count removed
 }
 
 function setActive(idx){
