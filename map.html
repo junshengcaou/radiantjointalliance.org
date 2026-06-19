@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Find a Hospital — Radiant Joint Alliance</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --teal:#1a6b7a; --dark:#0e4a57; --deep:#082f3a;
+  --lt:#e8f5f8; --mid:#c2dde4;
+  --amber:#c8960c; --amber-bg:#fff8e6;
+  --white:#fff; --off:#f8fcfd;
+  --g1:#1a2e3b; --g2:#3d5a66; --g3:#6a8a96;
+}
+body{font-family:'Inter',sans-serif;background:var(--off);color:var(--g1);margin:0;}
+
+/* NAV */
+nav{background:var(--deep);padding:0 32px;height:58px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{display:flex;align-items:center;gap:9px;text-decoration:none;}
+.nav-logo svg{width:24px;height:24px;}
+.nav-logo span{font-family:'Playfair Display',serif;font-size:15px;color:var(--white);}
+.nav-back{color:rgba(255,255,255,.7);font-size:13px;text-decoration:none;display:flex;align-items:center;gap:6px;}
+.nav-back:hover{color:var(--white);}
+
+/* HEADER */
+.page-header{background:linear-gradient(135deg,var(--deep),var(--dark));padding:36px 32px 30px;text-align:center;}
+.page-header h1{font-family:'Playfair Display',serif;font-size:28px;color:var(--white);margin-bottom:10px;}
+.page-header p{font-size:15px;color:rgba(255,255,255,.75);max-width:520px;margin:0 auto;}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:320px 1fr;height:calc(100vh - 150px);min-height:500px;}
+
+/* SIDEBAR */
+.sidebar{background:var(--white);border-right:1px solid var(--mid);overflow-y:auto;}
+.sidebar-header{padding:16px 20px;border-bottom:1px solid var(--lt);position:sticky;top:0;background:var(--white);z-index:10;}
+.sidebar-header h3{font-size:14px;font-weight:600;color:var(--dark);margin-bottom:8px;}
+.search-box{width:100%;border:1.5px solid var(--mid);border-radius:8px;padding:8px 12px;font-size:13px;font-family:'Inter',sans-serif;color:var(--g1);}
+.search-box:focus{outline:none;border-color:var(--teal);}
+.hospital-count{font-size:12px;color:var(--g3);margin-top:6px;}
+
+/* HOSPITAL LIST */
+.hospital-list{padding:8px;}
+.hospital-item{padding:12px 14px;border-radius:8px;cursor:pointer;border:1.5px solid transparent;margin-bottom:4px;transition:all .18s;}
+.hospital-item:hover{background:var(--lt);border-color:var(--mid);}
+.hospital-item.active{background:var(--lt);border-color:var(--teal);}
+.hospital-name{font-size:13px;font-weight:600;color:var(--g1);margin-bottom:3px;line-height:1.35;}
+.hospital-loc{font-size:12px;color:var(--g3);display:flex;align-items:center;gap:4px;}
+.hospital-loc svg{width:11px;height:11px;flex-shrink:0;}
+
+/* MAP */
+#map{width:100%;height:100%;}
+
+/* POPUP */
+.custom-popup .leaflet-popup-content-wrapper{border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,.15);border:none;padding:0;overflow:hidden;}
+.custom-popup .leaflet-popup-content{margin:0;width:240px !important;}
+.custom-popup .leaflet-popup-tip-container{display:none;}
+.popup-inner{padding:16px 18px;}
+.popup-name{font-family:'Playfair Display',serif;font-size:15px;color:var(--dark);font-weight:700;margin-bottom:4px;line-height:1.3;}
+.popup-loc{font-size:12px;color:var(--g3);margin-bottom:10px;}
+.popup-note{font-size:12px;color:var(--g2);line-height:1.55;margin-bottom:12px;padding-top:10px;border-top:1px solid var(--lt);}
+.popup-cta{display:block;background:var(--teal);color:var(--white);text-align:center;padding:8px;border-radius:6px;font-size:12px;font-weight:600;text-decoration:none;}
+.popup-cta:hover{background:var(--dark);}
+
+/* AMBER NOTE */
+.amber-note{background:var(--amber-bg);border-top:1px solid #e8c84a;padding:10px 20px;font-size:12px;color:#5a4400;line-height:1.55;}
+
+@media(max-width:700px){
+  .layout{grid-template-columns:1fr;grid-template-rows:200px 1fr;}
+  .sidebar{display:none;}
+  nav{padding:0 16px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="6" fill="rgba(255,255,255,.9)"/><line x1="14" y1="2" x2="14" y2="6" stroke="rgba(255,255,255,.6)" stroke-width="1.8" stroke-linecap="round"/><line x1="14" y1="22" x2="14" y2="26" stroke="rgba(255,255,255,.6)" stroke-width="1.8" stroke-linecap="round"/><line x1="2" y1="14" x2="6" y2="14" stroke="rgba(255,255,255,.6)" stroke-width="1.8" stroke-linecap="round"/><line x1="22" y1="14" x2="26" y2="14" stroke="rgba(255,255,255,.6)" stroke-width="1.8" stroke-linecap="round"/><line x1="5.5" y1="5.5" x2="8.3" y2="8.3" stroke="rgba(255,255,255,.6)" stroke-width="1.8" stroke-linecap="round"/><line x1="19.7" y1="19.7" x2="22.5" y2="22.5" stroke="rgba(255,255,255,.6)" stroke-width="1.8" stroke-linecap="round"/><line x1="22.5" y1="5.5" x2="19.7" y2="8.3" stroke="rgba(255,255,255,.6)" stroke-width="1.8" stroke-linecap="round"/><line x1="8.3" y1="19.7" x2="5.5" y2="22.5" stroke="rgba(255,255,255,.6)" stroke-width="1.8" stroke-linecap="round"/></svg>
+    <span>Radiant Joint Alliance</span>
+  </a>
+  <a class="nav-back" href="index.html">← Back to Website</a>
+</nav>
+
+<div class="page-header">
+  <h1>Find a Hospital Near You</h1>
+  <p>US hospitals currently known to offer low-dose radiation therapy (LDRT) for arthritis. Click any pin or location for details.</p>
+</div>
+
+<div class="layout">
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h3>Hospital Directory</h3>
+      <input class="search-box" type="text" id="searchBox" placeholder="Search by name or state…" oninput="filterList()"/>
+      <div class="hospital-count" id="countLabel">Showing 29 locations</div>
+    </div>
+    <div class="hospital-list" id="hospitalList"></div>
+    <div class="amber-note">Always call the Radiation Oncology department directly to confirm current LDRT availability. This list is a working directory and may not be complete.</div>
+  </div>
+  <div id="map"></div>
+</div>
+
+<script>
+const HOSPITALS = [
+  {name:"Allegheny Health Network (AHN) Cancer Institute", city:"Pittsburgh, PA", lat:40.4566, lng:-80.0041, note:"AHN identifies as a leader in LDRT for osteoarthritis."},
+  {name:"Cedars-Sinai Medical Center", city:"Los Angeles, CA", lat:34.0762, lng:-118.3799, note:"Major academic medical center. Call Radiation Oncology to confirm."},
+  {name:"CentraState Medical Center", city:"Freehold, NJ", lat:40.2386, lng:-74.3109, note:"Atlantic Health System affiliate. Call Radiation Oncology to confirm."},
+  {name:"City of Hope — Santa Clarita", city:"Santa Clarita, CA", lat:34.4139, lng:-118.5526, note:"Publicly lists LDRT for musculoskeletal and arthritic conditions."},
+  {name:"Cleveland Clinic (enterprise-wide)", city:"Ohio / Florida", lat:41.5031, lng:-81.6218, note:"Running LDRT prospectively across their enterprise in OH and FL."},
+  {name:"Compass Oncology", city:"Portland, OR / Vancouver, WA", lat:45.5352, lng:-122.6699, note:"Serving Portland OR and Vancouver WA metro area."},
+  {name:"EHS / St. John's Episcopal Hospital", city:"Far Rockaway, NY", lat:40.5987, lng:-73.7536, note:"Call Radiation Oncology to confirm current LDRT availability."},
+  {name:"Hunterdon Regional Cancer Center", city:"Flemington, NJ", lat:40.5310, lng:-74.8600, note:"Medicare and many commercial insurers cover LDRT here."},
+  {name:"Jefferson Abington Hospital", city:"Abington, PA", lat:40.1191, lng:-75.1199, note:"Call Radiation Oncology to confirm LDRT availability."},
+  {name:"Loyola University Medical Center", city:"Maywood / Tinley Park, IL", lat:41.8602, lng:-87.8347, note:"Offers LDRT at Maywood and Tinley Park IL locations."},
+  {name:"Minnesota Oncology", city:"Maplewood, MN", lat:45.0274, lng:-93.0335, note:"Treats knees, hips, hands, ankles, shoulders, and spine."},
+  {name:"Missouri Cancer Associates", city:"Columbia / Marshall / Kirksville, MO", lat:38.9504, lng:-92.3132, note:"Multiple MO locations. Call Radiation Oncology to confirm."},
+  {name:"Morristown Medical Center", city:"Morristown, NJ", lat:40.7895, lng:-74.4657, note:"Atlantic Health System. Public article confirms LDRT for OA."},
+  {name:"North Cascade Cancer Center", city:"Bellingham, WA", lat:48.8070, lng:-122.4936, note:"Patient reviews confirm active LDRT program for arthritis."},
+  {name:"OSF Sacred Heart — Danville", city:"Danville, IL", lat:40.1371, lng:-87.6452, note:"OSF HealthCare system. Call Radiation Oncology to confirm."},
+  {name:"Overlook Medical Center", city:"Summit, NJ", lat:40.7128, lng:-74.3536, note:"Atlantic Health System affiliate. Call Radiation Oncology."},
+  {name:"Penn Medicine — Penn Presbyterian", city:"Philadelphia, PA", lat:39.9582, lng:-75.1996, note:"Dedicated LDRT clinic opened January 2026. 150+ patients treated."},
+  {name:"ProCure Proton Therapy Center", city:"Somerset, NJ", lat:40.5254, lng:-74.5202, note:"Call to confirm LDRT for arthritis specifically."},
+  {name:"RWJBarnabas Health", city:"Multiple locations, NJ", lat:40.4951, lng:-74.4500, note:"Multiple NJ locations. Call Radiation Oncology to confirm."},
+  {name:"Shaw Cancer Center / Vail Health", city:"Edwards, CO", lat:39.6520, lng:-106.5929, note:"Radiation oncology program confirmed in Edwards CO."},
+  {name:"Spectrum Healthcare Partners", city:"Maine / Portsmouth, NH", lat:43.6419, lng:-70.3545, note:"Six Maine locations plus Portsmouth NH."},
+  {name:"SUNY Upstate Medical University", city:"Syracuse, NY", lat:43.0421, lng:-76.1399, note:"Actively offering LDRT. Gaining popularity quickly across US."},
+  {name:"UCLA Radiation Oncology", city:"Los Angeles, CA", lat:34.0648, lng:-118.4472, note:"UCLA Health Radiation Oncology. Call to confirm LDRT for arthritis."},
+  {name:"University of Chicago Medical Center", city:"Chicago, IL", lat:41.7893, lng:-87.6036, note:"Major academic center. Call Radiation Oncology to confirm."},
+  {name:"University of Maryland Medical System", city:"Baltimore, MD", lat:39.2880, lng:-76.6251, note:"Published patient-facing article on LDRT for osteoarthritis."},
+  {name:"University of Nebraska Medical Center", city:"Omaha, NE", lat:41.2548, lng:-95.9759, note:"Call Radiation Oncology to confirm LDRT availability."},
+  {name:"University of Rochester Medical Center", city:"Rochester, NY", lat:43.1231, lng:-77.6250, note:"Call Radiation Oncology to confirm LDRT availability."},
+  {name:"UPMC Hillman Cancer Center", city:"Pittsburgh, PA", lat:40.4450, lng:-79.9426, note:"Lists LDRT as a standard treatment option for osteoarthritis."},
+  {name:"University of Southern California — Keck Medical Center", city:"Los Angeles, CA", lat:34.0623, lng:-118.2009, note:"Keck Medical Center of USC. Call Radiation Oncology to confirm LDRT."},
+  {name:"Virginia Oncology Associates", city:"Virginia Beach / Hampton / Norfolk, VA", lat:36.7758, lng:-76.0969, note:"Multiple Hampton Roads VA locations offering LDRT."},
+];
+
+// Custom teal dot marker
+function makeIcon(active=false){
+  return L.divIcon({
+    className:'',
+    html:`<div style="
+      width:${active?18:14}px;height:${active?18:14}px;
+      background:${active?'#0e4a57':'#1a6b7a'};
+      border:2.5px solid ${active?'#c8960c':'white'};
+      border-radius:50%;
+      box-shadow:0 1px 6px rgba(0,0,0,.25);
+      transition:all .18s;
+    "></div>`,
+    iconSize:[active?18:14, active?18:14],
+    iconAnchor:[active?9:7, active?9:7],
+    popupAnchor:[0,-10]
+  });
+}
+
+// Init map
+const map = L.map('map',{zoomControl:true}).setView([38.5,-96],4);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{
+  attribution:'&copy; <a href="https://carto.com/">CARTO</a>',
+  subdomains:'abcd', maxZoom:19
+}).addTo(map);
+
+let markers = [];
+let activeIdx = null;
+
+// Build markers and sidebar
+function buildAll(list){
+  const listEl = document.getElementById('hospitalList');
+  listEl.innerHTML = '';
+  markers.forEach(m=>map.removeLayer(m.marker));
+  markers = [];
+
+  list.forEach((h,i)=>{
+    // Map marker
+    const marker = L.marker([h.lat,h.lng],{icon:makeIcon(false)}).addTo(map);
+    const popupHTML = `
+      <div class="popup-inner">
+        <div class="popup-name">${h.name}</div>
+        <div class="popup-loc">📍 ${h.city}</div>
+        <div class="popup-note">${h.note}</div>
+        <a class="popup-cta" href="tel:">Call Radiation Oncology to confirm LDRT</a>
+      </div>`;
+    marker.bindPopup(popupHTML,{className:'custom-popup',maxWidth:260,closeButton:true});
+    marker.on('click',()=>setActive(i));
+
+    // Sidebar item
+    const item = document.createElement('div');
+    item.className='hospital-item';
+    item.id=`item-${i}`;
+    item.innerHTML=`
+      <div class="hospital-name">${h.name}</div>
+      <div class="hospital-loc">
+        <svg viewBox="0 0 12 12" fill="none"><path d="M6 1a3.5 3.5 0 0 1 3.5 3.5C9.5 7.5 6 11 6 11S2.5 7.5 2.5 4.5A3.5 3.5 0 0 1 6 1z" fill="#6a8a96"/><circle cx="6" cy="4.5" r="1.2" fill="white"/></svg>
+        ${h.city}
+      </div>`;
+    item.onclick=()=>setActive(i);
+    listEl.appendChild(item);
+
+    markers.push({marker, item, data:h, origIdx:i});
+  });
+
+  document.getElementById('countLabel').textContent=`Showing ${list.length} location${list.length!==1?'s':''}`;
+}
+
+function setActive(idx){
+  // Reset previous
+  if(activeIdx!==null && markers[activeIdx]){
+    markers[activeIdx].marker.setIcon(makeIcon(false));
+    markers[activeIdx].item.classList.remove('active');
+  }
+  activeIdx=idx;
+  if(markers[idx]){
+    markers[idx].marker.setIcon(makeIcon(true));
+    markers[idx].item.classList.add('active');
+    markers[idx].item.scrollIntoView({behavior:'smooth',block:'nearest'});
+    map.setView([markers[idx].data.lat, markers[idx].data.lng], 10, {animate:true});
+    markers[idx].marker.openPopup();
+  }
+}
+
+function filterList(){
+  const q = document.getElementById('searchBox').value.toLowerCase();
+  const filtered = q
+    ? HOSPITALS.filter(h=>h.name.toLowerCase().includes(q)||h.city.toLowerCase().includes(q))
+    : HOSPITALS;
+  activeIdx=null;
+  buildAll(filtered);
+}
+
+buildAll(HOSPITALS);
+</script>
+</body>
+</html>
