@@ -44,11 +44,12 @@
  padding: 6px 10px; border-radius: 6px; text-decoration: none;
  transition: background 0.18s, color 0.18s;
  }
- .nav-links a:hover, .nav-links a.active { background: rgba(255,255,255,0.1); color: var(--white); }
+ .nav-links a:hover { background: rgba(255,255,255,0.1); color: var(--white); }
+ .nav-links a.active { color: var(--white); font-weight: 600; }
  .nav-links a.nav-cta {
- background: var(--teal); color: var(--white); margin-left: 6px;
+ margin-left: 4px;
  }
- .nav-links a.nav-cta:hover { background: #1f7d8e; }
+ .nav-links a.nav-cta:hover { background: rgba(255,255,255,0.1); }
 
  /* ── PAGES ── */
  .page { display: none; }
@@ -353,25 +354,23 @@
 
     .nav-links {
       width: 100%;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 6px;
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      justify-content: flex-start;
+      padding-bottom: 2px;
     }
 
     .nav-links a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 34px;
-      padding: 7px 6px;
-      font-size: 12px;
-      line-height: 1.2;
-      text-align: center;
-      white-space: normal;
+      flex-shrink: 0;
+      white-space: nowrap;
+      padding: 7px 12px;
+      font-size: 13px;
     }
 
     .nav-links a.nav-cta {
-      margin-left: 0;
+      margin-left: 2px;
     }
 
     .hero {
@@ -380,13 +379,9 @@
   }
 
   @media (max-width: 420px) {
-    .nav-links {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
     .nav-links a {
-      font-size: 12px;
-      min-height: 32px;
+      font-size: 12.5px;
+      padding: 6px 10px;
     }
   }
 
