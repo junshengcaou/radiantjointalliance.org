@@ -547,6 +547,25 @@
     }
   }
 
+
+  .verify-mark {
+    color: var(--amber);
+    font-weight: 800;
+    margin-left: 3px;
+  }
+  .hospital-source-legend {
+    background: var(--off-white);
+    border: 1px solid var(--mid-teal);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    margin: 18px 0 22px;
+    font-size: 13px;
+    color: var(--gray-2);
+    line-height: 1.65;
+  }
+  .hospital-source-legend strong {
+    color: var(--dark-teal);
+  }
 </style>
 </head>
 <body>
@@ -686,7 +705,7 @@
  <div class="divider-line"></div>
  <ul class="checklist">
  <li><div class="check-icon"><svg Box="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Educate patients at senior centers, assisted living facilities, and community health fairs</li>
- <li><div class="check-icon"><svg Box="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Distribute physician-reed patient education materials</li>
+ <li><div class="check-icon"><svg Box="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Distribute patient education materials</li>
  <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Connect patients with hospitals currently offering LDRT</li>
  <li><div class="check-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Raise awareness among primary care physicians and caregivers</li>
  </ul>
@@ -994,13 +1013,18 @@
  <div class="section">
  <div class="amber-box" style="margin-bottom:24px;">
  <div class="amber-icon">ℹ</div>
- <p>This list is provided for informational purposes only and may not be complete. Always call the hospital directly to confirm current availability. Ask to speak with the Radiation Oncology department.</p>
+ <p>This list includes hospitals and radiation oncology practices identified through public hospital or practice information, direct confirmation with the provider, or the American Benign Radiotherapy provider directory. Because services may change over time, patients should contact the <strong>Radiation Oncology department</strong> directly to confirm whether low-dose radiation therapy is currently offered for osteoarthritis or degenerative joint pain.</p>
  </div>
  <div class="amber-box" style="margin-bottom:24px;">
  <div class="amber-icon">!</div>
  <p><strong>Indication note:</strong> This directory focuses on LDRT for <strong>osteoarthritis / degenerative joint pain</strong>. It should not be read as a general radiation treatment directory for every type of arthritis. LDRT is not recommended for rheumatoid or psoriatic arthritis. Patients with autoimmune inflammatory arthritis should discuss options with their rheumatologist and radiation oncologist.</p>
  </div>
 
+ 
+ <div class="hospital-source-legend">
+  <strong>No symbol</strong> = identified through a public provider source or direct confirmation with the provider.<br/>
+  <strong><span class="verify-mark">&#8224;</span></strong> = listed in the American Benign Radiotherapy provider directory. Radiant Joint Alliance has not yet independently confirmed this provider's current osteoarthritis LDRT availability. Please call Radiation Oncology directly before making plans.
+ </div>
  <!-- MAP BUTTON -->
  <div style="text-align:center;margin-bottom:32px;">
  <a href="map.html" style="
@@ -1030,95 +1054,213 @@
  </tr>
  </thead>
  <tbody>
- <tr><td><strong>Advocate Radiation Oncology</strong></td><td>Fort Myers / Southwest FL</td></tr>
- <tr><td><strong>Advocate Radiation Oncology</strong></td><td>Multiple locations, IL</td></tr>
- <tr><td><strong>AHN Cancer Institute — Allegheny General</strong></td><td>Pittsburgh, PA</td></tr>
- <tr><td><strong>Allina Health Cancer Institute</strong></td><td>Minneapolis / St. Paul, MN</td></tr>
- <tr><td><strong>Atrium Health Levine Cancer</strong></td><td>Charlotte / Albemarle, NC</td></tr>
- <tr><td><strong>Augusta Health — Center for Cancer and Blood Disorders</strong></td><td>Fishersville, VA</td></tr>
- <tr><td><strong>BASS Medical / Gregory Rhodes MD Cancer Center</strong></td><td>Walnut Creek, CA</td></tr>
- <tr><td><strong>Beacon Health System Radiation Oncology</strong></td><td>South Bend, IN</td></tr>
- <tr><td><strong>Boulder Community Health</strong></td><td>Boulder, CO</td></tr>
- <tr><td><strong>CAMC Radiation Oncology</strong></td><td>Charleston, WV</td></tr>
- <tr><td><strong>Capital Radiosurgery Centers</strong></td><td>Halethorpe, MD</td></tr>
- <tr><td><strong>Cedars-Sinai Medical Center</strong></td><td>Los Angeles, CA</td></tr>
- <tr><td><strong>The Center for Cancer &amp; Blood Disorders</strong></td><td>Fort Worth / North Texas</td></tr>
- <tr><td><strong>CentraState Medical Center</strong></td><td>Freehold, NJ</td></tr>
- <tr><td><strong>ChristianaCare — Helen F. Graham Cancer Center / Concord Health Center</strong></td><td>Newark, DE / Chadds Ford, PA</td></tr>
- <tr><td><strong>City of Hope — Phoenix</strong></td><td>Phoenix, AZ</td></tr>
- <tr><td><strong>City of Hope — Santa Clarita</strong></td><td>Santa Clarita, CA</td></tr>
- <tr><td><strong>Cleveland Clinic (enterprise-wide)</strong></td><td>Ohio / Florida</td></tr>
- <tr><td><strong>Cleveland Clinic Indian River Hospital / Scully-Welsh Cancer Center</strong></td><td>Vero Beach, FL</td></tr>
- <tr><td><strong>Coastal Cancer Center</strong></td><td>Myrtle Beach, SC</td></tr>
- <tr><td><strong>CommonSpirit Holy Cross — Jordan Valley</strong></td><td>West Jordan, UT</td></tr>
- <tr><td><strong>CommonSpirit St. Mary-Corwin Hospital</strong></td><td>Pueblo, CO</td></tr>
- <tr><td><strong>Compass Oncology</strong></td><td>Portland, OR / Vancouver, WA</td></tr>
- <tr><td><strong>Conemaugh / Johnstown Cancer Center</strong></td><td>Johnstown, PA</td></tr>
- <tr><td><strong>CyberKnife Center of Miami</strong></td><td>Miami, FL</td></tr>
- <tr><td><strong>Dartmouth Hitchcock Medical Center</strong></td><td>Lebanon, NH</td></tr>
- <tr><td><strong>EHS / St. John&#x27;s Episcopal Hospital</strong></td><td>Far Rockaway, NY</td></tr>
- <tr><td><strong>Emory University / Winship Cancer Institute</strong></td><td>Atlanta, GA</td></tr>
- <tr><td><strong>Erlanger Health System</strong></td><td>Chattanooga, TN</td></tr>
- <tr><td><strong>FHN / Leonard Ferguson Cancer Center</strong></td><td>Freeport, IL</td></tr>
- <tr><td><strong>Hackensack Meridian — Jersey Shore University Medical Center</strong></td><td>Neptune, NJ</td></tr>
- <tr><td><strong>Hunterdon Regional Cancer Center</strong></td><td>Flemington, NJ</td></tr>
- <tr><td><strong>IU Health (Indiana University Health)</strong></td><td>Indiana (multiple locations)</td></tr>
- <tr><td><strong>Jefferson Abington Hospital</strong></td><td>Abington, PA</td></tr>
- <tr><td><strong>Lehigh Valley Health Network</strong></td><td>Allentown, PA</td></tr>
- <tr><td><strong>Loyola University Medical Center</strong></td><td>Maywood / Tinley Park, IL</td></tr>
- <tr><td><strong>Maryland Oncology Hematology</strong></td><td>Maryland (multiple locations)</td></tr>
- <tr><td><strong>Mercy Health — Springfield Regional</strong></td><td>Springfield, OH</td></tr>
- <tr><td><strong>Minnesota Oncology</strong></td><td>Maplewood, MN</td></tr>
- <tr><td><strong>Missouri Cancer Associates</strong></td><td>Columbia / Marshall / Kirksville, MO</td></tr>
- <tr><td><strong>Morristown Medical Center</strong></td><td>Morristown, NJ</td></tr>
- <tr><td><strong>Nebraska Hematology-Oncology</strong></td><td>Lincoln, NE</td></tr>
- <tr><td><strong>North Cascade Cancer Center</strong></td><td>Bellingham, WA</td></tr>
- <tr><td><strong>Northeastern Radiation Oncology</strong></td><td>Saratoga Springs, NY</td></tr>
- <tr><td><strong>Northside Hospital Cancer Institute</strong></td><td>Atlanta, GA</td></tr>
- <tr><td><strong>OHC / Oncology Hematology Care</strong></td><td>Cincinnati-area, OH</td></tr>
- <tr><td><strong>Onvida Health Cancer and Blood Disorders Center</strong></td><td>Yuma, AZ</td></tr>
- <tr><td><strong>OSF Sacred Heart — Danville</strong></td><td>Danville, IL</td></tr>
- <tr><td><strong>Overlook Medical Center</strong></td><td>Summit, NJ</td></tr>
- <tr><td><strong>Penn Medicine — Penn Presbyterian Medical Center</strong></td><td>Philadelphia, PA</td></tr>
- <tr><td><strong>Princeton Radiation Oncology</strong></td><td>NJ / PA multiple locations</td></tr>
- <tr><td><strong>ProCure Proton Therapy Center</strong></td><td>Somerset, NJ</td></tr>
- <tr><td><strong>Providence St. Joseph Hospital</strong></td><td>Orange, CA</td></tr>
- <tr><td><strong>Radiation Center of Greater Nashua</strong></td><td>Nashua, NH</td></tr>
- <tr><td><strong>Rapides Cancer Center</strong></td><td>Alexandria, LA</td></tr>
- <tr><td><strong>RWJBarnabas Health</strong></td><td>Multiple locations, NJ</td></tr>
- <tr><td><strong>Shaw Cancer Center / Vail Health</strong></td><td>Edwards, CO</td></tr>
- <tr><td><strong>South Bay Radiation Oncology</strong></td><td>Chula Vista, CA</td></tr>
- <tr><td><strong>Spectrum Healthcare Partners</strong></td><td>Maine (6 locations) / Portsmouth, NH</td></tr>
- <tr><td><strong>St. Joseph&#x27;s Health / Totowa Cancer Center</strong></td><td>Totowa, NJ</td></tr>
- <tr><td><strong>SunState Medical Specialists (formerly GenesisCare Florida)</strong></td><td>Multiple Florida locations</td></tr>
- <tr><td><strong>SUNY Upstate Medical University</strong></td><td>Syracuse, NY</td></tr>
- <tr><td><strong>Tennessee Oncology</strong></td><td>Nashville / Multiple TN locations</td></tr>
- <tr><td><strong>Texarkana Radiation Oncology / New Hope Institute</strong></td><td>Texarkana, TX</td></tr>
- <tr><td><strong>Texas Oncology</strong></td><td>Multiple Texas locations</td></tr>
- <tr><td><strong>UAB Radiation Oncology</strong></td><td>Birmingham, AL</td></tr>
- <tr><td><strong>UC Health (University of Cincinnati)</strong></td><td>Cincinnati, OH</td></tr>
- <tr><td><strong>UC San Diego Health</strong></td><td>San Diego, CA</td></tr>
- <tr><td><strong>UCHealth — Memorial Hospital Central</strong></td><td>Colorado Springs, CO</td></tr>
- <tr><td><strong>UCLA Health</strong></td><td>Los Angeles, CA</td></tr>
- <tr><td><strong>UNC Health Southeastern — Gibson Cancer Center</strong></td><td>Lumberton, NC</td></tr>
- <tr><td><strong>University of Chicago Medical Center</strong></td><td>Chicago, IL</td></tr>
- <tr><td><strong>University of Maryland Medical System</strong></td><td>Baltimore, MD</td></tr>
- <tr><td><strong>University of Nebraska Medical Center</strong></td><td>Omaha, NE</td></tr>
- <tr><td><strong>University of Rochester Medical Center</strong></td><td>Rochester, NY</td></tr>
- <tr><td><strong>University of Southern California — Keck Medical Center</strong></td><td>Los Angeles, CA</td></tr>
- <tr><td><strong>UPMC Hillman Cancer Center</strong></td><td>Pittsburgh, PA</td></tr>
- <tr><td><strong>Vanderbilt University Medical Center</strong></td><td>Nashville, TN</td></tr>
- <tr><td><strong>Virginia Oncology Associates</strong></td><td>Virginia Beach / Hampton / Norfolk, VA</td></tr>
- <tr><td><strong>Willamette Valley Cancer Institute</strong></td><td>Eugene, OR</td></tr>
- <tr><td><strong>William Newton Radiation Oncology / Winfield Healthcare Center</strong></td><td>Winfield, KS</td></tr>
+        <tr><td><strong>Ackerman Cancer Center</strong><span class="verify-mark">&#8224;</span></td><td>Jacksonville / Northeast FL</td></tr>
+        <tr><td><strong>Advanced Radiation Centers of New York / SoftRay Therapy</strong></td><td>New York metro / Long Island, NY</td></tr>
+        <tr><td><strong>AdventHealth Radiation Oncology Parker / Littleton</strong><span class="verify-mark">&#8224;</span></td><td>Parker / Littleton, CO</td></tr>
+        <tr><td><strong>Advocate Radiation Oncology</strong></td><td>Fort Myers / Southwest FL</td></tr>
+        <tr><td><strong>Advocate Radiation Oncology</strong></td><td>Multiple locations, IL</td></tr>
+        <tr><td><strong>AHN Cancer Institute — Allegheny General</strong></td><td>Pittsburgh, PA</td></tr>
+        <tr><td><strong>Alabama Cancer Care of Montgomery</strong><span class="verify-mark">&#8224;</span></td><td>Montgomery, AL</td></tr>
+        <tr><td><strong>Alliance Cancer Care</strong><span class="verify-mark">&#8224;</span></td><td>Huntsville / North Alabama</td></tr>
+        <tr><td><strong>Allina Health Cancer Institute</strong></td><td>Minneapolis / St. Paul, MN</td></tr>
         <tr><td><strong>AnMed Cancer Center</strong></td><td>Anderson, SC</td></tr>
         <tr><td><strong>APEX Cancer Care / Urology Austin</strong></td><td>Austin / Central Texas</td></tr>
+        <tr><td><strong>Astera Health</strong></td><td>Wadena, MN</td></tr>
+        <tr><td><strong>Atrium Health Levine Cancer</strong></td><td>Charlotte / Albemarle, NC</td></tr>
+        <tr><td><strong>Augusta Health — Center for Cancer and Blood Disorders</strong></td><td>Fishersville, VA</td></tr>
+        <tr><td><strong>Banner Health Tucson</strong><span class="verify-mark">&#8224;</span></td><td>Tucson, AZ</td></tr>
+        <tr><td><strong>Baptist Health CyberKnife Radiosurgery Center</strong><span class="verify-mark">&#8224;</span></td><td>Louisville, KY</td></tr>
+        <tr><td><strong>BASS Medical / Gregory Rhodes MD Cancer Center</strong></td><td>Walnut Creek, CA</td></tr>
+        <tr><td><strong>Bassett Medical Center</strong><span class="verify-mark">&#8224;</span></td><td>Cooperstown, NY</td></tr>
+        <tr><td><strong>Beacon Health System Radiation Oncology</strong></td><td>South Bend, IN</td></tr>
+        <tr><td><strong>Beth Israel Deaconess Medical Center</strong><span class="verify-mark">&#8224;</span></td><td>Boston, MA</td></tr>
+        <tr><td><strong>Beth Israel Lahey Health / Anna Jaques Hospital</strong><span class="verify-mark">&#8224;</span></td><td>Newburyport, MA</td></tr>
+        <tr><td><strong>Billings Clinic</strong><span class="verify-mark">&#8224;</span></td><td>Billings, MT</td></tr>
+        <tr><td><strong>Boulder Community Health</strong></td><td>Boulder, CO</td></tr>
+        <tr><td><strong>BR General Pennington Cancer Center</strong><span class="verify-mark">&#8224;</span></td><td>Baton Rouge, LA</td></tr>
+        <tr><td><strong>CAMC Radiation Oncology</strong></td><td>Charleston, WV</td></tr>
+        <tr><td><strong>Cancer Center of Hawaii &#8212; Liliha</strong><span class="verify-mark">&#8224;</span></td><td>Honolulu, HI</td></tr>
+        <tr><td><strong>Cancer Centers of Northern Arizona</strong><span class="verify-mark">&#8224;</span></td><td>Northern Arizona</td></tr>
+        <tr><td><strong>Cancer Specialists of North Florida</strong><span class="verify-mark">&#8224;</span></td><td>North Florida</td></tr>
+        <tr><td><strong>Capital Radiosurgery Centers</strong></td><td>Halethorpe, MD</td></tr>
+        <tr><td><strong>Carson Tahoe Radiation Oncology Associates</strong><span class="verify-mark">&#8224;</span></td><td>Carson City, NV</td></tr>
+        <tr><td><strong>Cedars-Sinai Medical Center</strong></td><td>Los Angeles, CA</td></tr>
+        <tr><td><strong>The Center for Cancer &amp; Blood Disorders</strong></td><td>Fort Worth / North Texas</td></tr>
+        <tr><td><strong>Centerpoint Radiation Oncology</strong><span class="verify-mark">&#8224;</span></td><td>Beverly Hills / Southern CA</td></tr>
+        <tr><td><strong>CentraHealth Alan B. Pearson Regional Cancer Center</strong><span class="verify-mark">&#8224;</span></td><td>Lynchburg, VA</td></tr>
+        <tr><td><strong>CentraState Medical Center</strong></td><td>Freehold, NJ</td></tr>
+        <tr><td><strong>CHI Health Radiation Oncology</strong></td><td>Nebraska / Midwest region</td></tr>
+        <tr><td><strong>Chilton Medical Center</strong></td><td>Pompton Plains, NJ</td></tr>
+        <tr><td><strong>ChristianaCare — Helen F. Graham Cancer Center / Concord Health Center</strong></td><td>Newark, DE / Chadds Ford, PA</td></tr>
+        <tr><td><strong>City of Hope — Phoenix</strong></td><td>Phoenix, AZ</td></tr>
+        <tr><td><strong>City of Hope — Santa Clarita</strong></td><td>Santa Clarita, CA</td></tr>
+        <tr><td><strong>Clearwater Radiation Oncology</strong><span class="verify-mark">&#8224;</span></td><td>Clearwater, FL</td></tr>
+        <tr><td><strong>Cleveland Clinic (enterprise-wide)</strong></td><td>Ohio / Florida</td></tr>
+        <tr><td><strong>Cleveland Clinic Indian River Hospital / Scully-Welsh Cancer Center</strong></td><td>Vero Beach, FL</td></tr>
+        <tr><td><strong>Coastal Cancer Center</strong></td><td>Myrtle Beach, SC</td></tr>
+        <tr><td><strong>CommonSpirit Holy Cross — Jordan Valley</strong></td><td>West Jordan, UT</td></tr>
+        <tr><td><strong>CommonSpirit St. Mary-Corwin Hospital</strong></td><td>Pueblo, CO</td></tr>
+        <tr><td><strong>Compass Oncology</strong></td><td>Portland, OR / Vancouver, WA</td></tr>
+        <tr><td><strong>Conemaugh / Johnstown Cancer Center</strong></td><td>Johnstown, PA</td></tr>
+        <tr><td><strong>Corewell Health / Beaumont Health</strong><span class="verify-mark">&#8224;</span></td><td>Michigan</td></tr>
+        <tr><td><strong>CrozerHealth / Grand View Radiation Oncology</strong><span class="verify-mark">&#8224;</span></td><td>Pennsylvania</td></tr>
+        <tr><td><strong>CyberKnife Center of Miami</strong></td><td>Miami, FL</td></tr>
+        <tr><td><strong>Dartmouth Hitchcock Medical Center</strong></td><td>Lebanon, NH</td></tr>
+        <tr><td><strong>DCH Health System</strong></td><td>Tuscaloosa / West Alabama</td></tr>
+        <tr><td><strong>Dignity Health Cancer Institute at St. Joseph&#39;s</strong><span class="verify-mark">&#8224;</span></td><td>Phoenix, AZ</td></tr>
+        <tr><td><strong>Duke Radiation Oncology</strong><span class="verify-mark">&#8224;</span></td><td>Durham, NC</td></tr>
+        <tr><td><strong>EHS / St. John&#x27;s Episcopal Hospital</strong></td><td>Far Rockaway, NY</td></tr>
+        <tr><td><strong>Emory University / Winship Cancer Institute</strong></td><td>Atlanta, GA</td></tr>
+        <tr><td><strong>Erlanger Health System</strong></td><td>Chattanooga, TN</td></tr>
+        <tr><td><strong>Essentia Health</strong><span class="verify-mark">&#8224;</span></td><td>Minnesota / North Dakota region</td></tr>
+        <tr><td><strong>FHN / Leonard Ferguson Cancer Center</strong></td><td>Freeport, IL</td></tr>
+        <tr><td><strong>Florida Oncology Tavares</strong><span class="verify-mark">&#8224;</span></td><td>Tavares, FL</td></tr>
         <tr><td><strong>Florida Radiation Oncology</strong></td><td>Winter Park, FL</td></tr>
+        <tr><td><strong>Freeman Cornell-Beshore Cancer Institute</strong><span class="verify-mark">&#8224;</span></td><td>Joplin, MO</td></tr>
+        <tr><td><strong>Genesis Healthcare / Unio Specialty Care</strong><span class="verify-mark">&#8224;</span></td><td>Southern California</td></tr>
+        <tr><td><strong>Gibbs Cancer Center</strong><span class="verify-mark">&#8224;</span></td><td>Spartanburg, SC</td></tr>
+        <tr><td><strong>Hackensack Meridian — Jersey Shore University Medical Center</strong></td><td>Neptune, NJ</td></tr>
+        <tr><td><strong>Hackettstown Medical Center</strong></td><td>Hackettstown, NJ</td></tr>
+        <tr><td><strong>Harrington Cancer Center</strong><span class="verify-mark">&#8224;</span></td><td>Amarillo, TX</td></tr>
+        <tr><td><strong>Heelex</strong><span class="verify-mark">&#8224;</span></td><td>Tennessee</td></tr>
+        <tr><td><strong>Hill Country Cancer Care / Friendship Lane Center for Cancer Care</strong><span class="verify-mark">&#8224;</span></td><td>Texas Hill Country</td></tr>
+        <tr><td><strong>Holy Cross Radiation Therapy Center</strong><span class="verify-mark">&#8224;</span></td><td>Mission Hills, CA</td></tr>
+        <tr><td><strong>Houston Methodist Neal Cancer Center</strong><span class="verify-mark">&#8224;</span></td><td>Houston, TX</td></tr>
+        <tr><td><strong>Hunterdon Regional Cancer Center</strong></td><td>Flemington, NJ</td></tr>
+        <tr><td><strong>Hux Cancer Center / Union Health</strong><span class="verify-mark">&#8224;</span></td><td>Terre Haute, IN</td></tr>
+        <tr><td><strong>Idaho Cancer Center</strong><span class="verify-mark">&#8224;</span></td><td>Idaho Falls, ID</td></tr>
         <tr><td><strong>Imperial Valley Radiation Oncology</strong></td><td>El Centro, CA</td></tr>
+        <tr><td><strong>Inova Fairfax Hospital</strong><span class="verify-mark">&#8224;</span></td><td>Falls Church, VA</td></tr>
         <tr><td><strong>INTEGRIS Health Cancer Institute</strong></td><td>Oklahoma City, OK</td></tr>
+        <tr><td><strong>Ironwood Cancer &amp; Research Center</strong><span class="verify-mark">&#8224;</span></td><td>Phoenix / greater Arizona</td></tr>
+        <tr><td><strong>IU Health (Indiana University Health)</strong></td><td>Indiana (multiple locations)</td></tr>
+        <tr><td><strong>Jefferson Abington Hospital</strong></td><td>Abington, PA</td></tr>
+        <tr><td><strong>Kaiser Permanente Anaheim</strong><span class="verify-mark">&#8224;</span></td><td>Anaheim, CA</td></tr>
+        <tr><td><strong>Kaiser Permanente Interstate Radiation Oncology</strong><span class="verify-mark">&#8224;</span></td><td>Portland, OR</td></tr>
+        <tr><td><strong>Kelsey-Seybold Clinic</strong><span class="verify-mark">&#8224;</span></td><td>Houston, TX</td></tr>
+        <tr><td><strong>Lahey Clinic / Beth Israel Lahey Health</strong></td><td>Burlington / greater Boston, MA</td></tr>
+        <tr><td><strong>Lake Charles Memorial Health System</strong><span class="verify-mark">&#8224;</span></td><td>Lake Charles, LA</td></tr>
+        <tr><td><strong>Lehigh Valley Health Network</strong></td><td>Allentown, PA</td></tr>
+        <tr><td><strong>LMH Health</strong><span class="verify-mark">&#8224;</span></td><td>Lawrence, KS</td></tr>
+        <tr><td><strong>Logan Health</strong><span class="verify-mark">&#8224;</span></td><td>Kalispell, MT</td></tr>
+        <tr><td><strong>Loyola University Medical Center</strong></td><td>Maywood / Tinley Park, IL</td></tr>
+        <tr><td><strong>Luminis Health</strong></td><td>Annapolis / Maryland region</td></tr>
+        <tr><td><strong>Marin Cancer Center</strong><span class="verify-mark">&#8224;</span></td><td>Marin County, CA</td></tr>
+        <tr><td><strong>Mary Bird Perkins Cancer Center</strong><span class="verify-mark">&#8224;</span></td><td>Louisiana</td></tr>
+        <tr><td><strong>Maryland Oncology Hematology</strong></td><td>Maryland (multiple locations)</td></tr>
+        <tr><td><strong>Mayo Clinic Phoenix</strong><span class="verify-mark">&#8224;</span></td><td>Phoenix, AZ</td></tr>
+        <tr><td><strong>Mayo Clinic Rochester</strong><span class="verify-mark">&#8224;</span></td><td>Rochester, MN</td></tr>
+        <tr><td><strong>McLeod Health</strong><span class="verify-mark">&#8224;</span></td><td>Florence, SC</td></tr>
+        <tr><td><strong>MD Anderson Cancer Center</strong><span class="verify-mark">&#8224;</span></td><td>Houston, TX</td></tr>
+        <tr><td><strong>Memorial Sloan Kettering</strong><span class="verify-mark">&#8224;</span></td><td>New York, NY</td></tr>
+        <tr><td><strong>MemorialCare</strong></td><td>Southern California</td></tr>
+        <tr><td><strong>Mercy Health — Springfield Regional</strong></td><td>Springfield, OH</td></tr>
+        <tr><td><strong>Minnesota Oncology</strong></td><td>Maplewood, MN</td></tr>
+        <tr><td><strong>Missouri Cancer Associates</strong></td><td>Columbia / Marshall / Kirksville, MO</td></tr>
+        <tr><td><strong>Moffitt Cancer Center</strong><span class="verify-mark">&#8224;</span></td><td>Tampa, FL</td></tr>
+        <tr><td><strong>Morristown Medical Center</strong></td><td>Morristown, NJ</td></tr>
+        <tr><td><strong>Mount Nittany Health</strong><span class="verify-mark">&#8224;</span></td><td>State College, PA</td></tr>
+        <tr><td><strong>MUSC Charleston</strong><span class="verify-mark">&#8224;</span></td><td>Charleston, SC</td></tr>
+        <tr><td><strong>Naval Medical Center San Diego</strong><span class="verify-mark">&#8224;</span></td><td>San Diego, CA</td></tr>
+        <tr><td><strong>Nebraska Hematology-Oncology</strong></td><td>Lincoln, NE</td></tr>
+        <tr><td><strong>North Cascade Cancer Center</strong></td><td>Bellingham, WA</td></tr>
+        <tr><td><strong>Northeast Georgia Physicians Group</strong><span class="verify-mark">&#8224;</span></td><td>Gainesville / Northeast GA</td></tr>
+        <tr><td><strong>Northeastern Radiation Oncology</strong></td><td>Saratoga Springs, NY</td></tr>
+        <tr><td><strong>Northside Hospital Cancer Institute</strong></td><td>Atlanta, GA</td></tr>
+        <tr><td><strong>Northwestern Memorial Hospital</strong><span class="verify-mark">&#8224;</span></td><td>Chicago, IL</td></tr>
+        <tr><td><strong>Novant Health Derrick L. Davis Cancer Center</strong><span class="verify-mark">&#8224;</span></td><td>Winston-Salem, NC</td></tr>
+        <tr><td><strong>Nuvance Health / Northwell &#8212; Norwalk Hospital and Putnam Hospital</strong></td><td>Norwalk, CT / Putnam County, NY</td></tr>
+        <tr><td><strong>OHC / Oncology Hematology Care</strong></td><td>Cincinnati-area, OH</td></tr>
+        <tr><td><strong>OHSU</strong><span class="verify-mark">&#8224;</span></td><td>Portland, OR</td></tr>
         <tr><td><strong>Oklahoma Proton Center / Oklahoma Cancer Center</strong></td><td>Oklahoma City, OK</td></tr>
         <tr><td><strong>Oncology Las Vegas</strong></td><td>Las Vegas / Henderson, NV</td></tr>
+        <tr><td><strong>Oncology Nevada</strong><span class="verify-mark">&#8224;</span></td><td>Reno / northern Nevada</td></tr>
+        <tr><td><strong>Onvida Health Cancer and Blood Disorders Center</strong></td><td>Yuma, AZ</td></tr>
+        <tr><td><strong>OSF Sacred Heart — Danville</strong></td><td>Danville, IL</td></tr>
+        <tr><td><strong>Overlook Medical Center</strong></td><td>Summit, NJ</td></tr>
+        <tr><td><strong>Penn Medicine — Penn Presbyterian Medical Center</strong></td><td>Philadelphia, PA</td></tr>
+        <tr><td><strong>Phoenix CyberKnife at Palo Verde / Banner Good Samaritan</strong><span class="verify-mark">&#8224;</span></td><td>Phoenix, AZ</td></tr>
+        <tr><td><strong>Precision Radiation Oncology</strong><span class="verify-mark">&#8224;</span></td><td>Pennsylvania</td></tr>
+        <tr><td><strong>Princeton Radiation Oncology</strong></td><td>NJ / PA multiple locations</td></tr>
+        <tr><td><strong>ProCure Proton Therapy Center</strong></td><td>Somerset, NJ</td></tr>
+        <tr><td><strong>Providence Medical Group Petaluma / Santa Rosa</strong><span class="verify-mark">&#8224;</span></td><td>Petaluma / Santa Rosa, CA</td></tr>
+        <tr><td><strong>Providence St. Joseph Hospital</strong></td><td>Orange, CA</td></tr>
+        <tr><td><strong>Providence St. Mary Regional Cancer Center</strong><span class="verify-mark">&#8224;</span></td><td>Walla Walla, WA</td></tr>
+        <tr><td><strong>Radiation Center of Greater Nashua</strong></td><td>Nashua, NH</td></tr>
+        <tr><td><strong>Radiation Oncology Associates of the National Capital Region</strong><span class="verify-mark">&#8224;</span></td><td>Washington, DC / Northern Virginia region</td></tr>
+        <tr><td><strong>Radiation Oncology Associates Winter Haven</strong><span class="verify-mark">&#8224;</span></td><td>Winter Haven, FL</td></tr>
+        <tr><td><strong>Radiotherapy Centers of Kentuckiana</strong><span class="verify-mark">&#8224;</span></td><td>Louisville / Southern Indiana region</td></tr>
+        <tr><td><strong>Rapides Cancer Center</strong></td><td>Alexandria, LA</td></tr>
+        <tr><td><strong>Revere Health</strong><span class="verify-mark">&#8224;</span></td><td>Utah</td></tr>
+        <tr><td><strong>Rex Cancer Center of Wakefield</strong><span class="verify-mark">&#8224;</span></td><td>Raleigh / Wakefield, NC</td></tr>
+        <tr><td><strong>Robert Boissoneault Oncology Institute</strong><span class="verify-mark">&#8224;</span></td><td>Florida</td></tr>
+        <tr><td><strong>Roy &amp; Patricia Disney Family Cancer Center</strong><span class="verify-mark">&#8224;</span></td><td>Burbank, CA</td></tr>
+        <tr><td><strong>Rutland Regional Medical Center</strong><span class="verify-mark">&#8224;</span></td><td>Rutland, VT</td></tr>
+        <tr><td><strong>RWJBarnabas Health</strong></td><td>Multiple locations, NJ</td></tr>
+        <tr><td><strong>Salem Health</strong><span class="verify-mark">&#8224;</span></td><td>Salem, OR</td></tr>
+        <tr><td><strong>SC Oncology Associates</strong><span class="verify-mark">&#8224;</span></td><td>Columbia, SC</td></tr>
+        <tr><td><strong>Scripps Clinic Torrey Pines</strong><span class="verify-mark">&#8224;</span></td><td>La Jolla / San Diego, CA</td></tr>
+        <tr><td><strong>SERO / Southeast Radiation Oncology</strong><span class="verify-mark">&#8224;</span></td><td>Charlotte / Southeast region</td></tr>
+        <tr><td><strong>Shaw Cancer Center / Vail Health</strong></td><td>Edwards, CO</td></tr>
+        <tr><td><strong>Siteman Cancer Center</strong><span class="verify-mark">&#8224;</span></td><td>St. Louis, MO</td></tr>
+        <tr><td><strong>South Bay Radiation Oncology</strong></td><td>Chula Vista, CA</td></tr>
+        <tr><td><strong>Spectrum Healthcare Partners</strong></td><td>Maine (6 locations) / Portsmouth, NH</td></tr>
+        <tr><td><strong>Spencer Cancer Center</strong><span class="verify-mark">&#8224;</span></td><td>East Alabama</td></tr>
+        <tr><td><strong>St. Charles Bend</strong><span class="verify-mark">&#8224;</span></td><td>Bend, OR</td></tr>
+        <tr><td><strong>St. Joseph&#x27;s Health / Totowa Cancer Center</strong></td><td>Totowa, NJ</td></tr>
+        <tr><td><strong>St. Mark&#39;s Hospital / Utah Cancer Center</strong><span class="verify-mark">&#8224;</span></td><td>Salt Lake City, UT</td></tr>
+        <tr><td><strong>St. Peter&#39;s Radiation Oncology</strong><span class="verify-mark">&#8224;</span></td><td>Albany, NY</td></tr>
+        <tr><td><strong>Stanford Health Care</strong><span class="verify-mark">&#8224;</span></td><td>Stanford / Palo Alto, CA</td></tr>
+        <tr><td><strong>Stephenson Cancer Center / OU Health</strong><span class="verify-mark">&#8224;</span></td><td>Oklahoma City, OK</td></tr>
+        <tr><td><strong>Stony Brook Medicine</strong><span class="verify-mark">&#8224;</span></td><td>Stony Brook, NY</td></tr>
+        <tr><td><strong>Summit Health / Dr. Niti Dube</strong><span class="verify-mark">&#8224;</span></td><td>New York region</td></tr>
+        <tr><td><strong>SunState Medical Specialists (formerly GenesisCare Florida)</strong></td><td>Multiple Florida locations</td></tr>
+        <tr><td><strong>SUNY Upstate Medical University</strong></td><td>Syracuse, NY</td></tr>
+        <tr><td><strong>Sutter / Palo Alto Center</strong><span class="verify-mark">&#8224;</span></td><td>Palo Alto, CA</td></tr>
+        <tr><td><strong>Tampa Oncology and Proton</strong><span class="verify-mark">&#8224;</span></td><td>Tampa, FL</td></tr>
+        <tr><td><strong>Tanner Health System</strong><span class="verify-mark">&#8224;</span></td><td>Carrollton, GA</td></tr>
+        <tr><td><strong>Tennessee Oncology</strong></td><td>Nashville / Multiple TN locations</td></tr>
+        <tr><td><strong>Tennova Radiation Oncology</strong><span class="verify-mark">&#8224;</span></td><td>Tennessee</td></tr>
+        <tr><td><strong>Texarkana Radiation Oncology / New Hope Institute</strong></td><td>Texarkana, TX</td></tr>
+        <tr><td><strong>Texas Oncology</strong></td><td>Multiple Texas locations</td></tr>
+        <tr><td><strong>Therapeutic Radiologists Inc.</strong><span class="verify-mark">&#8224;</span></td><td>Kansas City / Missouri region</td></tr>
+        <tr><td><strong>Timpanogos Regional Hospital</strong><span class="verify-mark">&#8224;</span></td><td>Orem, UT</td></tr>
+        <tr><td><strong>The Toledo Clinic</strong><span class="verify-mark">&#8224;</span></td><td>Toledo, OH</td></tr>
+        <tr><td><strong>Tower Health</strong><span class="verify-mark">&#8224;</span></td><td>Reading, PA</td></tr>
+        <tr><td><strong>UAB Radiation Oncology</strong></td><td>Birmingham, AL</td></tr>
+        <tr><td><strong>UC Health (University of Cincinnati)</strong></td><td>Cincinnati, OH</td></tr>
+        <tr><td><strong>UC San Diego Health</strong></td><td>San Diego, CA</td></tr>
+        <tr><td><strong>UCHealth Fort Collins</strong><span class="verify-mark">&#8224;</span></td><td>Fort Collins, CO</td></tr>
+        <tr><td><strong>UCHealth — Memorial Hospital Central</strong></td><td>Colorado Springs, CO</td></tr>
+        <tr><td><strong>UCLA Health</strong></td><td>Los Angeles, CA</td></tr>
+        <tr><td><strong>UCSF</strong><span class="verify-mark">&#8224;</span></td><td>San Francisco, CA</td></tr>
+        <tr><td><strong>UNC Health Southeastern — Gibson Cancer Center</strong></td><td>Lumberton, NC</td></tr>
+        <tr><td><strong>University Hospitals Cleveland</strong><span class="verify-mark">&#8224;</span></td><td>Cleveland, OH</td></tr>
+        <tr><td><strong>University of Chicago Medical Center</strong></td><td>Chicago, IL</td></tr>
+        <tr><td><strong>University of Colorado School of Medicine</strong><span class="verify-mark">&#8224;</span></td><td>Aurora / Denver, CO</td></tr>
+        <tr><td><strong>University of Kansas Cancer Center</strong><span class="verify-mark">&#8224;</span></td><td>Kansas City, KS</td></tr>
+        <tr><td><strong>University of Maryland Medical System</strong></td><td>Baltimore, MD</td></tr>
+        <tr><td><strong>University of Miami Miller School of Medicine</strong><span class="verify-mark">&#8224;</span></td><td>Miami, FL</td></tr>
+        <tr><td><strong>University of Michigan Hospital</strong><span class="verify-mark">&#8224;</span></td><td>Ann Arbor, MI</td></tr>
+        <tr><td><strong>University of Minnesota Medical Center / M Health Fairview</strong><span class="verify-mark">&#8224;</span></td><td>Minneapolis, MN</td></tr>
+        <tr><td><strong>University of Nebraska Medical Center</strong></td><td>Omaha, NE</td></tr>
+        <tr><td><strong>University of Rochester Medical Center</strong></td><td>Rochester, NY</td></tr>
+        <tr><td><strong>University of Southern California — Keck Medical Center</strong></td><td>Los Angeles, CA</td></tr>
+        <tr><td><strong>UPMC Hillman Cancer Center</strong></td><td>Pittsburgh, PA</td></tr>
+        <tr><td><strong>USA Health Mitchell Cancer Institute</strong></td><td>Mobile / Fairhope, AL</td></tr>
+        <tr><td><strong>UW Medical Center</strong><span class="verify-mark">&#8224;</span></td><td>Seattle, WA</td></tr>
+        <tr><td><strong>Vandalia Health Cancer Center at Davis Medical Center</strong></td><td>Elkins / Buckhannon region, WV</td></tr>
+        <tr><td><strong>Vanderbilt University Medical Center</strong></td><td>Nashville, TN</td></tr>
+        <tr><td><strong>VCU</strong><span class="verify-mark">&#8224;</span></td><td>Richmond, VA</td></tr>
+        <tr><td><strong>Virginia Oncology Associates</strong></td><td>Virginia Beach / Hampton / Norfolk, VA</td></tr>
+        <tr><td><strong>Virginia Radiation Oncology Associates</strong><span class="verify-mark">&#8224;</span></td><td>Virginia</td></tr>
         <tr><td><strong>WellSpring Oncology</strong></td><td>Pinellas Park, FL</td></tr>
+        <tr><td><strong>West Cancer Center</strong><span class="verify-mark">&#8224;</span></td><td>Memphis, TN</td></tr>
+        <tr><td><strong>Westchester Radiation Medicine</strong><span class="verify-mark">&#8224;</span></td><td>Westchester County, NY</td></tr>
+        <tr><td><strong>White Plains Hospital</strong><span class="verify-mark">&#8224;</span></td><td>White Plains, NY</td></tr>
+        <tr><td><strong>Willamette Valley Cancer Institute</strong></td><td>Eugene, OR</td></tr>
+        <tr><td><strong>William Newton Radiation Oncology / Winfield Healthcare Center</strong></td><td>Winfield, KS</td></tr>
+        <tr><td><strong>WVU Medicine Princeton Community Hospital / Bluefield Radiation Oncology</strong></td><td>Princeton / Bluefield, WV</td></tr>
       </tbody>
  </table>
  <div style="margin-top:36px;" class="q-box">
