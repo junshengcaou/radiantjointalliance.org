@@ -1821,12 +1821,18 @@ crossorigin="anonymous"></script>
  }
  if (navigator.share) {
  navigator.share({ title: title, url: url }).catch(() => {});
- } else {
+ return;
+ }
+ if (window.isSecureContext && navigator.clipboard && navigator.clipboard.writeText) {
  navigator.clipboard.writeText(url).then(() => {
  const original = btn.textContent;
  btn.textContent = 'Link copied!';
  setTimeout(() => { btn.textContent = original; }, 2000);
+ }).catch(() => {
+ window.prompt('Copy this link:', url);
  });
+ } else {
+ window.prompt('Copy this link:', url);
  }
  }
  function handleSignup(e) {
