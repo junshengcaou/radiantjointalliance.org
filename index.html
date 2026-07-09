@@ -134,6 +134,54 @@ crossorigin="anonymous"></script>
  .amber-icon { font-size: 20px; color: var(--amber); flex-shrink: 0; margin-top: 2px; }
  .amber-box p { font-size: 14px; color: #5a4400; line-height: 1.65; }
 
+ /* ── FAQ ACCORDION ── */
+ .faq-item { background: var(--white); border: 1px solid var(--mid-teal); border-radius: var(--radius); margin-bottom: 12px; overflow: hidden; }
+ .faq-item summary { list-style: none; cursor: pointer; padding: 18px 24px; font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; color: var(--dark-teal); display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+ .faq-item summary::-webkit-details-marker { display: none; }
+ .faq-item summary::after { content: '+'; font-family: 'Inter', sans-serif; font-size: 22px; font-weight: 400; color: var(--teal); flex-shrink: 0; transition: transform 0.2s; }
+ .faq-item[open] summary::after { transform: rotate(45deg); }
+ .faq-item[open] summary { border-bottom: 1px solid var(--mid-teal); }
+ .faq-body { padding: 4px 24px 22px; font-size: 14.5px; color: var(--gray-2); line-height: 1.75; }
+ .faq-body p { margin-bottom: 12px; }
+ .faq-body p:last-child { margin-bottom: 0; }
+ .faq-category { font-family: 'Playfair Display', serif; color: var(--teal); letter-spacing: 0.4px; text-transform: uppercase; font-size: 16px; font-weight: 700; margin: 32px 0 14px; }
+ .faq-category:first-child { margin-top: 0; }
+
+ /* ── SIGNUP / NEW-THIS-MONTH ── */
+ .signup-box { background: linear-gradient(135deg, var(--dark-teal) 0%, var(--deep) 100%); border-radius: var(--radius); padding: 36px 40px; text-align: center; }
+ .signup-box h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--white); margin-bottom: 10px; }
+ .signup-box p { font-size: 14.5px; color: rgba(255,255,255,0.8); max-width: 480px; margin: 0 auto 22px; line-height: 1.6; }
+ .signup-form { display: flex; gap: 10px; max-width: 440px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+ .signup-form input[type=email] { flex: 1; min-width: 200px; padding: 12px 16px; border-radius: 8px; border: none; font-size: 14px; font-family: 'Inter', sans-serif; }
+ .signup-form button { flex-shrink: 0; }
+ .signup-note { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 14px; }
+ .signup-success { display: none; color: var(--white); font-size: 14px; margin-top: 16px; }
+
+ .new-strip { background: var(--amber-bg); border: 1px solid #e8c84a; border-radius: var(--radius); padding: 20px 26px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+ .new-badge { background: var(--amber); color: var(--white); font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; flex-shrink: 0; }
+ .new-strip p { font-size: 14px; color: #5a4400; margin: 0; }
+ .new-strip a { color: var(--dark-teal); font-weight: 600; text-decoration: none; }
+
+ /* ── WHAT TO EXPECT TIMELINE ── */
+ .expect-stage { display: flex; gap: 24px; margin-bottom: 8px; }
+ .expect-marker { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 40px; }
+ .expect-dot { width: 40px; height: 40px; border-radius: 50%; background: var(--dark-teal); color: var(--white); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 16px; flex-shrink: 0; }
+ .expect-line { flex: 1; width: 2px; background: var(--mid-teal); margin: 6px 0; min-height: 30px; }
+ .expect-stage:last-child .expect-line { display: none; }
+ .expect-content { padding-bottom: 44px; flex: 1; }
+ .expect-content h2 { font-family: 'Playfair Display', serif; font-size: 21px; color: var(--dark-teal); margin-bottom: 6px; }
+ .expect-content .expect-sub { font-size: 13px; color: var(--gray-3); margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
+ .expect-content p { font-size: 14.5px; color: var(--gray-2); line-height: 1.75; margin-bottom: 12px; }
+ .expect-content ul { margin: 0 0 12px 0; padding-left: 20px; }
+ .expect-content li { font-size: 14.5px; color: var(--gray-2); line-height: 1.7; margin-bottom: 6px; }
+
+ /* ── SHARE WIDGET ── */
+ .share-box { border: 1px dashed var(--mid-teal); border-radius: var(--radius); padding: 18px 22px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; background: var(--off-white); }
+ .share-box p { font-size: 14px; color: var(--gray-2); margin: 0; }
+ .share-actions { display: flex; gap: 8px; flex-shrink: 0; }
+ .share-btn { background: var(--white); border: 1px solid var(--mid-teal); color: var(--dark-teal); font-size: 13px; font-weight: 600; padding: 9px 16px; border-radius: 7px; cursor: pointer; font-family: 'Inter', sans-serif; transition: background 0.15s; }
+ .share-btn:hover { background: var(--lt-teal); }
+
  /* ── TWO COL ── */
  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
  @media (max-width: 680px) { .two-col { grid-template-columns: 1fr; } }
@@ -592,8 +640,10 @@ crossorigin="anonymous"></script>
  <a href="#" onclick="showPage('about')" id="nav-about">About</a>
  <a href="#" onclick="showPage('arthritis')" id="nav-arthritis">Arthritis Basics</a>
  <a href="#" onclick="showPage('treatment')" id="nav-treatment">LDRT Treatment</a>
+ <a href="#" onclick="showPage('expect')" id="nav-expect">What to Expect</a>
  <a href="#" onclick="showPage('hospitals')" id="nav-hospitals">Find a Hospital</a>
  <a href="#" onclick="showPage('research')" id="nav-research">Research & Evidence</a>
+ <a href="#" onclick="showPage('faq')" id="nav-faq">FAQ</a>
  <a href="#" onclick="showPage('contact')" id="nav-contact" class="nav-cta">Contact Us</a>
  </div>
 </nav>
@@ -625,6 +675,13 @@ crossorigin="anonymous"></script>
  <div class="stat-num">Most</div>
  <div class="stat-label">patients have never heard of it</div>
  </div>
+ </div>
+ </div>
+
+ <div class="section" style="padding-bottom:0;">
+ <div class="new-strip">
+ <div class="new-badge">Updated</div>
+ <p><strong>Recently added:</strong> new hospital listings and a patient FAQ page. <a href="#" onclick="showPage('hospitals')">See what's new in the directory →</a></p>
  </div>
  </div>
 
@@ -681,6 +738,15 @@ crossorigin="anonymous"></script>
  </div>
  <p style="font-size:14px;color:var(--gray-2);line-height:1.7;margin-top:18px;">Many patients and their doctors have never come across this treatment. If you are hearing about it for the first time, you are not alone.</p>
  </div>
+ </div>
+ </div>
+ </div>
+
+ <div class="section" style="padding-top:0;">
+ <div class="share-box">
+ <p>Researching this for yourself, or for a parent or family member?</p>
+ <div class="share-actions">
+ <button class="share-btn" onclick="handleShare(this, 'https://radiantjointalliance.org', 'Radiant Joint Alliance: LDRT for Osteoarthritis')">Share this site</button>
  </div>
  </div>
  </div>
@@ -980,14 +1046,117 @@ crossorigin="anonymous"></script>
  <div class="q-item"><div class="q-num">2</div><div class="q-text">"Can you refer me to a radiation oncologist to discuss this?"</div></div>
  <div class="q-item"><div class="q-num">3</div><div class="q-text">"Is this treatment available at our local hospital?"</div></div>
  </div>
+ <a href="checklist.pdf" target="_blank" class="btn btn-outline" style="margin-top:18px;border-color:var(--teal);color:var(--white);">Download printable checklist (PDF)</a>
  </div>
+ <p style="font-size:14px;color:var(--gray-2);line-height:1.7;margin-top:18px;">Wondering what the actual appointments look like? See our <a href="#" onclick="showPage('expect')">step-by-step guide to what to expect</a>.</p>
  <div style="margin-top:24px;">
  <div class="amber-box">
  <div class="amber-icon">ℹ</div>
  <p><strong>For education only.</strong> LDRT is not right for every patient. Talk with your doctor about whether it makes sense for your situation.</p>
  </div>
  </div>
+ <div style="margin-top:24px;">
+ <div class="share-box">
+ <p>Researching this for yourself or a family member?</p>
+ <div class="share-actions">
+ <button class="share-btn" onclick="handleShare(this, 'https://radiantjointalliance.org', 'LDRT for Osteoarthritis: Radiant Joint Alliance')">Share this page</button>
  </div>
+ </div>
+ </div>
+ </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ WHAT TO EXPECT PAGE -->
+
+<div id="page-expect" class="page">
+  <div class="page-hero">
+    <h1>What to Expect</h1>
+    <p>A walk-through of the actual experience, from your first appointment to what comes after</p>
+  </div>
+
+  <div class="section">
+
+    <div class="expect-stage">
+      <div class="expect-marker">
+        <div class="expect-dot">1</div>
+        <div class="expect-line"></div>
+      </div>
+      <div class="expect-content">
+        <div class="expect-sub">Step 1</div>
+        <h2>Consultation</h2>
+        <p>This first visit is a conversation, not a treatment session. Nothing happens to your joint yet. You'll meet with a radiation oncologist, who will ask about your pain history, what you've already tried, and look at any recent imaging of the joint. If you haven't had an X-ray recently, they may order one.</p>
+        <p>This is also the appointment to ask questions. It helps to write them down beforehand. We have a <a href="checklist.pdf" target="_blank">printable checklist</a> with the ones patients ask most.</p>
+        <ul>
+          <li>Bring your insurance card and a list of current medications</li>
+          <li>Bring copies of recent imaging or records if you have them, though the office can often request these directly</li>
+          <li>Wear something comfortable that gives easy access to the joint you're being seen for</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="expect-stage">
+      <div class="expect-marker">
+        <div class="expect-dot">2</div>
+        <div class="expect-line"></div>
+      </div>
+      <div class="expect-content">
+        <div class="expect-sub">Step 2</div>
+        <h2>CT Simulation and Treatment Planning</h2>
+        <p>Before your first actual treatment, you'll come in for a CT scan of the joint, often called a "simulation." This maps out exactly where the radiation needs to go. You'll lie on the CT couch in the same position you'll be in for treatment, so the team can plan around it precisely.</p>
+        <p>No radiation is delivered at this visit. Behind the scenes, your radiation oncologist works with a medical physicist and dosimetrist to build your treatment plan, the exact angles, dose, and setup that will be used for all six sessions. This planning step typically takes one to two weeks, so don't expect your first treatment to start right away. It's worth keeping that gap in mind so it doesn't feel like an unexplained delay.</p>
+      </div>
+    </div>
+
+    <div class="expect-stage">
+      <div class="expect-marker">
+        <div class="expect-dot">3</div>
+        <div class="expect-line"></div>
+      </div>
+      <div class="expect-content">
+        <div class="expect-sub">Step 3</div>
+        <h2>The Six Treatment Sessions</h2>
+        <p>A typical course is six short visits, spaced two to three times a week over about two to three weeks. You'll lie on a treatment couch while a technician lines your joint up carefully, so the radiation lands in the same spot each time. Most of each visit is this positioning. The radiation itself takes well under a minute, and you won't feel it happening.</p>
+        <p>There's no needle and no sedation, and nothing to prepare beforehand. Eat and take your normal medications as usual. Most people drive themselves to and from each visit.</p>
+        <p>Once a week during your treatment course, you'll typically see your radiation oncologist or a member of their care team for a brief check-in, sometimes called an "on-treatment visit." This is a chance to flag any soreness, skin changes, or questions as they come up, rather than waiting until the course is finished.</p>
+        <ul>
+          <li>Each session runs about 10–15 minutes, mostly setup on the treatment couch</li>
+          <li>You'll lie still briefly while the machine is positioned over the joint</li>
+          <li>Roughly once a week, expect a short visit with your care team to check how you're doing</li>
+          <li>You can go straight back to your day afterward. No recovery time needed</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="expect-stage">
+      <div class="expect-marker">
+        <div class="expect-dot">4</div>
+      </div>
+      <div class="expect-content">
+        <div class="expect-sub">Step 4</div>
+        <h2>After Treatment: The Follow-Up Visit</h2>
+        <p>Relief doesn't always show up right away. Some patients notice a difference within days; for others it takes several weeks to build. It's worth giving it time before deciding whether it worked for you.</p>
+        <p>Once your six sessions are complete, your care team will typically schedule a follow-up appointment some weeks or months later to see how your pain and function have responded. Most people notice nothing unusual in the meantime. A small number see mild skin or nail irritation near the treated area, which is uncommon and typically resolves on its own.</p>
+        <p>If the relief fades over time, treatment can often be considered again. If you notice anything that concerns you before your scheduled follow-up, call the office that treated you rather than waiting.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:8px;">
+      <div class="amber-box">
+        <div class="amber-icon">ℹ</div>
+        <p><strong>Every hospital's process looks a little different.</strong> This page describes the typical workflow reported across programs, not a guarantee of how your specific treatment will go. Your care team will walk you through what to expect at their facility.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:28px;">
+      <div class="share-box">
+        <p>Know someone who might find this useful?</p>
+        <div class="share-actions">
+          <button class="share-btn" onclick="handleShare(this, 'https://radiantjointalliance.org', 'What to Expect: Radiant Joint Alliance')">Share this page</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
 
 <!-- ══════════════════════════════════════════════ HOSPITALS PAGE -->
@@ -1414,6 +1583,124 @@ crossorigin="anonymous"></script>
 
  </div>
 </div>
+<!-- ══════════════════════════════════════════════ FAQ PAGE -->
+
+<div id="page-faq" class="page">
+  <div class="page-hero">
+    <h1>Frequently Asked Questions</h1>
+    <p>Straight answers about cost, safety, effectiveness, and what treatment actually involves</p>
+  </div>
+
+  <div class="section">
+
+    <div class="faq-category">Cost &amp; Access</div>
+
+    <details class="faq-item">
+      <summary>Does insurance cover LDRT for osteoarthritis?</summary>
+      <div class="faq-body">
+        <p>Usually, yes. Medicare and most major commercial insurance plans cover LDRT for osteoarthritis, though you should still expect the typical co-pay or deductible that applies to any outpatient procedure on your plan.</p>
+        <p>Some insurers require prior authorization before treatment, so it's worth asking the radiation oncology office to verify your specific benefits before you start. Most centers that offer LDRT have financial counselors who can do this for you.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Do I need a referral to see a radiation oncologist about this?</summary>
+      <div class="faq-body">
+        <p>It depends on your insurance plan. Many plans allow you to schedule directly with a radiation oncology department, especially once a diagnosis of osteoarthritis is documented. Others require a referral from your primary care doctor, orthopedist, or rheumatologist first.</p>
+        <p>Either way, the simplest first step is usually a conversation with the doctor who already manages your joint pain. Ask if they can refer you, or ask the radiation oncology office directly whether a referral is required.</p>
+      </div>
+    </details>
+
+    <div class="faq-category">Effectiveness</div>
+
+    <details class="faq-item">
+      <summary>Is LDRT actually proven to work?</summary>
+      <div class="faq-body">
+        <p>The strongest recent evidence is a randomized, sham-controlled trial out of Seoul National University, presented at ASTRO's (American Society for Radiation Oncology) 2025 annual meeting. This one matters more than most, because it included a fake-treatment control group. That matters because osteoarthritis pain responds strongly to placebo on its own. 114 patients with knee osteoarthritis were randomly assigned to a real 3 Gy course, a much lower 0.3 Gy course, or a sham treatment. At four months, 70.3% of patients on the real 3 Gy dose reported meaningful improvement, versus 41.7% in the sham group, a statistically significant difference in favor of actual treatment.</p>
+        <p>A few other recent studies point the same direction. Vanderbilt University Medical Center's ongoing MOBILE study has followed 103 patients across 148 treated joints, and found average pain scores drop from 7.6 to 3.4 within six months, with 84% reporting improvement. A German multicenter trial (the Arthro-Rad study) found that higher radiation doses produced better results than lower doses, which is itself a meaningful clue, since a pure placebo effect wouldn't be expected to scale with dose.</p>
+        <p>Not everything lines up, and that's worth knowing too. A 2025 pooled analysis of 12 older studies (about 1,750 patients) didn't find a statistically significant edge for LDRT over sham treatment, and saw slightly more mild skin or nail irritation in the treated group. A smaller 2019 Dutch trial found something similar. Much of that older data used different protocols and patient selection than the newer sham-controlled trials above, which may explain some of the gap.</p>
+        <p>So where does that leave things? The newest and most rigorously controlled trial to date came out clearly in favor of real treatment over placebo, and several other recent studies support that direction. Still, this is an active area of research, not settled science. Ask your radiation oncologist what they've seen in their own patients and how they read the evidence.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>How long does the pain relief typically last?</summary>
+      <div class="faq-body">
+        <p>Centers that offer LDRT commonly report relief lasting up to around two years in patients who respond, and treatment can be repeated if symptoms come back. Keep in mind, as with the effectiveness question above, this is based on clinical experience rather than a placebo-controlled measurement of exactly how long the effect lasts.</p>
+      </div>
+    </details>
+
+    <div class="faq-category">Safety</div>
+
+    <details class="faq-item">
+      <summary>Is the radiation dose safe? What about cancer risk?</summary>
+      <div class="faq-body">
+        <p>The dose used for LDRT (typically about 3 Gy total, in six small fractions) is far lower than cancer treatment doses (often 40–80 Gy), and is roughly comparable to the amount of natural background radiation a person absorbs over a few months. Countries that have used LDRT for osteoarthritis for decades, such as Germany, have not reported an increase in radiation-induced cancers in treated patients.</p>
+        <p>That said, no dose of ionizing radiation is entirely zero-risk. The radiation safety field generally assumes risk scales down with dose rather than disappearing completely below some threshold. For most candidates (who tend to be older adults), radiation oncologists consider this a very small and acceptable risk relative to the potential benefit. This is a reasonable thing to ask your radiation oncologist about directly, especially if you're being considered for treatment near the hip, chest, or abdomen.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>What side effects should I expect?</summary>
+      <div class="faq-body">
+        <p>Most patients notice little to nothing: no burning, no visible skin change, no downtime. Some studies note a mildly higher rate of minor nail or skin reactions in patients who receive LDRT compared with placebo. Serious side effects are rare. You can typically resume normal activity immediately after each session.</p>
+      </div>
+    </details>
+
+    <div class="faq-category">Am I a Candidate?</div>
+
+    <details class="faq-item">
+      <summary>Who is typically eligible for LDRT?</summary>
+      <div class="faq-body">
+        <p>Most programs consider patients who are around 40 to 50 years of age or older with osteoarthritis or degenerative joint pain, most often in the knees, hips, hands, shoulders, elbows, ankles, or feet, who haven't gotten enough relief from medications, injections, or physical therapy, and who want to explore a non-surgical option.</p>
+        <p>LDRT is generally not used for rheumatoid, psoriatic, or other autoimmune forms of arthritis. Those are managed differently, and a rheumatologist is the right first call for those conditions.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>How is this different from a steroid injection or surgery?</summary>
+      <div class="faq-body">
+        <p>Steroid injections are quick and can help short-term, but relief is often measured in weeks to a few months and repeated injections carry their own risks. Joint replacement surgery can be very effective but is a major procedure with recovery time, and isn't right for everyone or every stage of disease.</p>
+        <p>LDRT sits between these: it's non-invasive and outpatient like an injection, but centers report relief that, when it works, tends to last longer than a typical injection, without the recovery time of surgery. As with the effectiveness question above, how it compares head-to-head in rigorous trials is still being studied.</p>
+      </div>
+    </details>
+
+    <div class="faq-category">What to Expect</div>
+
+    <details class="faq-item">
+      <summary>What does an actual course of treatment look like, day to day?</summary>
+      <div class="faq-body">
+        <p>The full process has a few stages: a consultation first, then a CT scan (called a simulation) to map out your treatment plan. After the CT, expect to wait one to two weeks while your radiation oncologist and physics team build your treatment plan before your first actual treatment session. Then come the six treatment sessions themselves, given two to three times a week over about two to three weeks. Each treatment visit takes roughly 10 to 15 minutes, most of which is lying on the treatment couch while you're positioned. The actual radiation exposure itself lasts well under a minute. Once a week during your treatment course, you'll typically have a short check-in with your care team. There's no needle, no sedation, and no recovery period. You can drive yourself home or go about your day afterward.</p>
+        <p>For a fuller walk-through of each stage, see our <a href="#" onclick="showPage('expect')">What to Expect page</a>, and consider bringing our <a href="checklist.pdf" target="_blank">printable question checklist</a> to your first appointment.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Where can I find a hospital that offers this near me?</summary>
+      <div class="faq-body">
+        <p>Our <a href="#" onclick="showPage('hospitals')">hospital directory</a> lists confirmed programs across the country with an interactive map. If you don't see one near you, it's still worth asking your local radiation oncology department directly. Some offer it without listing it prominently online.</p>
+      </div>
+    </details>
+
+    <div style="margin-top:40px;">
+      <div class="amber-box">
+        <div class="amber-icon">ℹ</div>
+        <p><strong>None of this is medical advice.</strong> This page reflects publicly available clinical information and published research as of 2026, summarized for general education. Your own eligibility, risks, and likely benefit depend on your specific joint, health history, and imaging. That's a conversation for you and a radiation oncologist, not a website.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;">
+      <div class="share-box">
+        <p>Found this helpful? Pass it along to someone else who's dealing with joint pain.</p>
+        <div class="share-actions">
+          <button class="share-btn" onclick="handleShare(this, 'https://radiantjointalliance.org', 'FAQ: Radiant Joint Alliance')">Share this page</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <!-- ══════════════════════════════════════════════ CONTACT PAGE -->
 
 <div id="page-contact" class="page">
@@ -1498,6 +1785,21 @@ crossorigin="anonymous"></script>
         </div>
       </div>
     </div>
+
+    <div style="margin-top:40px;">
+      <div class="signup-box">
+        <h3>Want to hear when we add new hospitals?</h3>
+        <p>We add new locations to the directory as we confirm them. Leave your email if you'd like a note when that happens. We send these out ourselves, only a handful of times a year.</p>
+        <form class="signup-form" id="newsletter-form" action="https://formspree.io/f/mdavqlge" method="POST" onsubmit="return handleSignup(event)">
+          <input type="email" name="email" placeholder="you@example.com" required>
+          <input type="hidden" name="source" value="newsletter-signup">
+          <input type="hidden" name="_subject" value="New newsletter signup (not a contact message)">
+          <button class="btn btn-primary" type="submit">Notify Me</button>
+        </form>
+        <p class="signup-success" id="signup-success">Thanks, you're on the list. We'll be in touch when there's something worth sharing.</p>
+        <p class="signup-note">We won't sell or share your email. Unsubscribe anytime.</p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1508,12 +1810,58 @@ crossorigin="anonymous"></script>
 </footer>
 
 <script>
+ const PAGE_TITLES = {
+ home: 'Home', about: 'About', arthritis: 'Arthritis Basics', treatment: 'LDRT Treatment',
+ expect: 'What to Expect', hospitals: 'Find a Hospital', research: 'Research & Evidence',
+ faq: 'FAQ', contact: 'Contact Us'
+ };
+ function handleShare(btn, url, title) {
+ if (typeof gtag === 'function') {
+ gtag('event', 'share', { method: navigator.share ? 'native_share' : 'copy_link', content_type: 'page', item_id: title });
+ }
+ if (navigator.share) {
+ navigator.share({ title: title, url: url }).catch(() => {});
+ } else {
+ navigator.clipboard.writeText(url).then(() => {
+ const original = btn.textContent;
+ btn.textContent = 'Link copied!';
+ setTimeout(() => { btn.textContent = original; }, 2000);
+ });
+ }
+ }
+ function handleSignup(e) {
+ e.preventDefault();
+ const form = e.target;
+ const data = new FormData(form);
+ fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+ .then(r => {
+ if (r.ok) {
+ form.style.display = 'none';
+ document.getElementById('signup-success').style.display = 'block';
+ if (typeof gtag === 'function') {
+ gtag('event', 'sign_up', { method: 'newsletter' });
+ }
+ } else {
+ alert('Something went wrong. Please try again or email us directly.');
+ }
+ })
+ .catch(() => alert('Something went wrong. Please try again or email us directly.'));
+ return false;
+ }
  function showPage(id) {
  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
  document.getElementById('page-' + id).classList.add('active');
  document.getElementById('nav-' + id).classList.add('active');
  window.scrollTo({ top: 0, behavior: 'smooth' });
+ if (typeof gtag === 'function') {
+ const label = PAGE_TITLES[id] || id;
+ gtag('event', 'page_view', {
+ page_title: 'Radiant Joint Alliance | ' + label,
+ page_location: window.location.origin + window.location.pathname + '#' + id,
+ page_path: '/' + id
+ });
+ }
  return false;
  }
 </script>
