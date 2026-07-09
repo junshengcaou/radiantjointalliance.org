@@ -1828,11 +1828,15 @@ crossorigin="anonymous"></script>
  window.prompt('Copy this link:', url);
  }
  }
+ function isMobileDevice() {
+ const touchMac = navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1;
+ return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) || touchMac;
+ }
  function handleShare(btn, url, title) {
  if (typeof gtag === 'function') {
- gtag('event', 'share', { method: navigator.share ? 'native_share' : 'copy_link', content_type: 'page', item_id: title });
+ gtag('event', 'share', { method: (isMobileDevice() && navigator.share) ? 'native_share' : 'copy_link', content_type: 'page', item_id: title });
  }
- if (navigator.share) {
+ if (isMobileDevice() && navigator.share) {
  navigator.share({ title: title, url: url }).catch(() => {
  copyOrPrompt(btn, url);
  });
