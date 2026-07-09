@@ -1815,14 +1815,7 @@ crossorigin="anonymous"></script>
  expect: 'What to Expect', hospitals: 'Find a Hospital', research: 'Research & Evidence',
  faq: 'FAQ', contact: 'Contact Us'
  };
- function handleShare(btn, url, title) {
- if (typeof gtag === 'function') {
- gtag('event', 'share', { method: navigator.share ? 'native_share' : 'copy_link', content_type: 'page', item_id: title });
- }
- if (navigator.share) {
- navigator.share({ title: title, url: url }).catch(() => {});
- return;
- }
+ function copyOrPrompt(btn, url) {
  if (window.isSecureContext && navigator.clipboard && navigator.clipboard.writeText) {
  navigator.clipboard.writeText(url).then(() => {
  const original = btn.textContent;
@@ -1834,6 +1827,18 @@ crossorigin="anonymous"></script>
  } else {
  window.prompt('Copy this link:', url);
  }
+ }
+ function handleShare(btn, url, title) {
+ if (typeof gtag === 'function') {
+ gtag('event', 'share', { method: navigator.share ? 'native_share' : 'copy_link', content_type: 'page', item_id: title });
+ }
+ if (navigator.share) {
+ navigator.share({ title: title, url: url }).catch(() => {
+ copyOrPrompt(btn, url);
+ });
+ return;
+ }
+ copyOrPrompt(btn, url);
  }
  function handleSignup(e) {
  e.preventDefault();
