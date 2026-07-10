@@ -54,6 +54,7 @@ crossorigin="anonymous"></script>
  color: rgba(255,255,255,0.78); font-size: 13px; font-weight: 500;
  padding: 6px 10px; border-radius: 6px; text-decoration: none;
  transition: background 0.18s, color 0.18s;
+ display: inline-flex; align-items: center; gap: 4px;
  }
  .nav-links a:hover { background: rgba(255,255,255,0.1); color: var(--white); }
  .nav-links a.active { color: var(--white); font-weight: 600; }
@@ -61,6 +62,24 @@ crossorigin="anonymous"></script>
  margin-left: 4px;
  }
  .nav-links a.nav-cta:hover { background: rgba(255,255,255,0.1); }
+
+ /* ── NAV DROPDOWN ── */
+ .nav-dropdown { position: relative; display: inline-flex; }
+ .nav-dropdown-toggle .caret { font-size: 10px; transition: transform 0.18s; }
+ .nav-dropdown.open .nav-dropdown-toggle .caret { transform: rotate(180deg); }
+ .nav-dropdown-menu {
+ display: none; position: absolute; top: calc(100% + 8px); left: 0;
+ background: var(--white); border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+ min-width: 190px; padding: 6px; z-index: 200;
+ }
+ .nav-dropdown.open .nav-dropdown-menu { display: block; }
+ .nav-dropdown-menu a {
+ display: block; color: var(--gray-1); font-size: 13.5px; font-weight: 500;
+ padding: 9px 12px; border-radius: 7px; text-decoration: none;
+ transition: background 0.15s;
+ }
+ .nav-dropdown-menu a:hover { background: var(--lt-teal); }
+ .nav-dropdown-menu a.active { color: var(--dark-teal); font-weight: 700; background: var(--lt-teal); }
 
  /* ── PAGES ── */
  .page { display: none; }
@@ -178,6 +197,16 @@ crossorigin="anonymous"></script>
  /* ── SHARE WIDGET ── */
  .share-box { border: 1px dashed var(--mid-teal); border-radius: var(--radius); padding: 18px 22px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; background: var(--off-white); }
  .share-box p { font-size: 14px; color: var(--gray-2); margin: 0; }
+
+ /* ── PAGE FEEDBACK WIDGET ── */
+ .feedback-box { border: 1px solid var(--mid-teal); border-radius: var(--radius); padding: 18px 22px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; background: var(--white); }
+ .feedback-box p { font-size: 14px; color: var(--gray-2); margin: 0; }
+ .feedback-actions { display: flex; gap: 8px; }
+ .feedback-btn { background: var(--off-white); border: 1px solid var(--mid-teal); font-size: 18px; padding: 8px 16px; border-radius: 8px; cursor: pointer; transition: background 0.15s, border-color 0.15s; line-height: 1; }
+ .feedback-btn:hover { background: var(--lt-teal); border-color: var(--teal); }
+ .feedback-btn:disabled { opacity: 0.4; cursor: default; }
+ .feedback-btn:disabled:hover { background: var(--off-white); border-color: var(--mid-teal); }
+ .feedback-thanks { font-size: 14px; color: var(--dark-teal); font-weight: 600; display: none; }
  .share-actions { display: flex; gap: 8px; flex-shrink: 0; }
  .share-btn { background: var(--white); border: 1px solid var(--mid-teal); color: var(--dark-teal); font-size: 13px; font-weight: 600; padding: 9px 16px; border-radius: 7px; cursor: pointer; font-family: 'Inter', sans-serif; transition: background 0.15s; }
  .share-btn:hover { background: var(--lt-teal); }
@@ -414,10 +443,9 @@ crossorigin="anonymous"></script>
     .nav-links {
       width: 100%;
       display: flex;
+      flex-wrap: wrap;
       gap: 4px;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      justify-content: flex-start;
+      justify-content: center;
       padding-bottom: 2px;
     }
 
@@ -430,6 +458,11 @@ crossorigin="anonymous"></script>
 
     .nav-links a.nav-cta {
       margin-left: 2px;
+    }
+
+    .nav-dropdown-menu {
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .hero {
@@ -637,15 +670,29 @@ crossorigin="anonymous"></script>
  </a>
  <div class="nav-links">
  <a href="#" onclick="showPage('home')" id="nav-home" class="active">Home</a>
- <a href="#" onclick="showPage('about')" id="nav-about">About</a>
- <a href="#" onclick="showPage('arthritis')" id="nav-arthritis">Arthritis Basics</a>
  <a href="#" onclick="showPage('treatment')" id="nav-treatment">LDRT Treatment</a>
- <a href="#" onclick="showPage('expect')" id="nav-expect">What to Expect</a>
  <a href="#" onclick="showPage('hospitals')" id="nav-hospitals">Find a Hospital</a>
- <a href="#" onclick="showPage('research')" id="nav-research">Research & Evidence</a>
+
+ <div class="nav-dropdown" id="dropdown-learn">
+ <a href="#" class="nav-dropdown-toggle" id="toggle-learn" onclick="toggleDropdown('learn'); return false;">Learn <span class="caret">▾</span></a>
+ <div class="nav-dropdown-menu">
+ <a href="#" onclick="return navFromDropdown('about')" id="nav-about">About</a>
+ <a href="#" onclick="return navFromDropdown('arthritis')" id="nav-arthritis">Arthritis Basics</a>
+ <a href="#" onclick="return navFromDropdown('expect')" id="nav-expect">What to Expect</a>
+ <a href="#" onclick="return navFromDropdown('research')" id="nav-research">Research &amp; Evidence</a>
+ </div>
+ </div>
+
  <a href="#" onclick="showPage('faq')" id="nav-faq">FAQ</a>
- <a href="#" onclick="showPage('volunteer')" id="nav-volunteer">Volunteer</a>
- <a href="#" onclick="showPage('donate')" id="nav-donate">Donate</a>
+
+ <div class="nav-dropdown" id="dropdown-involved">
+ <a href="#" class="nav-dropdown-toggle" id="toggle-involved" onclick="toggleDropdown('involved'); return false;">Get Involved <span class="caret">▾</span></a>
+ <div class="nav-dropdown-menu">
+ <a href="#" onclick="return navFromDropdown('volunteer')" id="nav-volunteer">Volunteer</a>
+ <a href="#" onclick="return navFromDropdown('donate')" id="nav-donate">Donate</a>
+ </div>
+ </div>
+
  <a href="#" onclick="showPage('contact')" id="nav-contact" class="nav-cta">Contact Us</a>
  </div>
 </nav>
@@ -1074,6 +1121,16 @@ crossorigin="anonymous"></script>
  <div class="amber-box">
  <div class="amber-icon">ℹ</div>
  <p><strong>For education only.</strong> LDRT is not right for every patient. Talk with your doctor about whether it makes sense for your situation.</p>
+ </div>
+ </div>
+ <div style="margin-top:24px;">
+ <div class="feedback-box" id="feedback-treatment">
+ <p>Was this page helpful?</p>
+ <div class="feedback-actions">
+ <button class="feedback-btn" onclick="handleFeedback('feedback-treatment', 'up', 'treatment')">👍</button>
+ <button class="feedback-btn" onclick="handleFeedback('feedback-treatment', 'down', 'treatment')">👎</button>
+ </div>
+ <span class="feedback-thanks">Thanks for letting us know!</span>
  </div>
  </div>
  <div style="margin-top:24px;">
@@ -1711,6 +1768,17 @@ crossorigin="anonymous"></script>
     </div>
 
     <div style="margin-top:24px;">
+      <div class="feedback-box" id="feedback-faq">
+        <p>Was this page helpful?</p>
+        <div class="feedback-actions">
+          <button class="feedback-btn" onclick="handleFeedback('feedback-faq', 'up', 'faq')">👍</button>
+          <button class="feedback-btn" onclick="handleFeedback('feedback-faq', 'down', 'faq')">👎</button>
+        </div>
+        <span class="feedback-thanks">Thanks for letting us know!</span>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;">
       <div class="share-box">
         <p>Found this helpful? Pass it along to someone else who's dealing with joint pain.</p>
         <div class="share-actions">
@@ -2029,6 +2097,26 @@ crossorigin="anonymous"></script>
  function isMobileDevice() {
  return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
  }
+ function handleFeedback(groupId, vote, pageName) {
+ const group = document.getElementById(groupId);
+ if (!group || group.dataset.voted) return;
+ group.dataset.voted = 'true';
+ group.querySelectorAll('.feedback-btn').forEach(b => b.disabled = true);
+ const thanks = group.querySelector('.feedback-thanks');
+ if (thanks) thanks.style.display = 'inline';
+
+ if (typeof gtag === 'function') {
+ gtag('event', 'page_feedback', { vote: vote, page: pageName });
+ }
+
+ if (vote === 'down') {
+ const data = new FormData();
+ data.append('_subject', 'Thumbs down: ' + pageName + ' (not a contact message)');
+ data.append('message', 'A visitor marked the "' + pageName + '" page as not helpful.');
+ fetch('https://formspree.io/f/mdavqlge', { method: 'POST', body: data, headers: { 'Accept': 'application/json' } }).catch(() => {});
+ }
+ }
+
  function handleShare(btn, url, title) {
  if (typeof gtag === 'function') {
  gtag('event', 'share', { method: (isMobileDevice() && navigator.share) ? 'native_share' : 'copy_link', content_type: 'page', item_id: title });
@@ -2060,11 +2148,44 @@ crossorigin="anonymous"></script>
  .catch(() => alert('Something went wrong. Please try again or email us directly.'));
  return false;
  }
+ const DROPDOWN_GROUPS = {
+ learn: ['about', 'arthritis', 'expect', 'research'],
+ involved: ['volunteer', 'donate']
+ };
+
+ function closeAllDropdowns() {
+ document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
+ }
+
+ function toggleDropdown(name) {
+ const el = document.getElementById('dropdown-' + name);
+ const isOpen = el.classList.contains('open');
+ closeAllDropdowns();
+ if (!isOpen) el.classList.add('open');
+ }
+
+ function navFromDropdown(id) {
+ showPage(id);
+ closeAllDropdowns();
+ return false;
+ }
+
+ document.addEventListener('click', (e) => {
+ if (!e.target.closest('.nav-dropdown')) closeAllDropdowns();
+ });
+
  function showPage(id) {
  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+ document.querySelectorAll('.nav-dropdown-toggle').forEach(t => t.classList.remove('active'));
  document.getElementById('page-' + id).classList.add('active');
- document.getElementById('nav-' + id).classList.add('active');
+ const navEl = document.getElementById('nav-' + id);
+ if (navEl) navEl.classList.add('active');
+ for (const [group, ids] of Object.entries(DROPDOWN_GROUPS)) {
+ if (ids.includes(id)) {
+ document.getElementById('toggle-' + group).classList.add('active');
+ }
+ }
  window.scrollTo({ top: 0, behavior: 'smooth' });
  if (typeof gtag === 'function') {
  const label = PAGE_TITLES[id] || id;
@@ -2113,19 +2234,5 @@ crossorigin="anonymous"></script>
  }
  }
 </script>
-<!-- LIVE CHAT WIDGET - Tawk.to -->
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6a36fe6aa259a01d4cf76568/1jrjd3kbe';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
 </body>
 </html>
