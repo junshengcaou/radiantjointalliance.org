@@ -395,6 +395,59 @@ crossorigin="anonymous"></script>
  .full-bg { background: var(--off-white); padding: 64px 0; }
  .full-bg .section { padding-top: 0; padding-bottom: 0; }
 
+  /* Community messages */
+  .rja-comments{
+    --rc-teal:#0e4a57; --rc-deep:#082f3a; --rc-ink:#1a2e3b; --rc-muted:#6a8a96;
+    --rc-line:#c2dde4; --rc-card:#f8fcfd; --rc-danger:#b3261e;
+    max-width:720px; margin:0 auto;
+  }
+  .rja-c-disclaimer{
+    font-size:13px; color:var(--rc-muted); background:var(--rc-card);
+    border-left:3px solid var(--rc-teal); border-radius:6px; padding:11px 15px; margin:0 0 26px; line-height:1.6;
+  }
+  .rja-c-form{ background:var(--rc-card); border:1px solid var(--rc-line); border-radius:12px; padding:22px; margin-bottom:34px; }
+  .rja-c-row{ display:flex; gap:14px; flex-wrap:wrap; margin-bottom:14px; }
+  .rja-c-field{ flex:1; min-width:200px; display:flex; flex-direction:column; }
+  .rja-c-field.full{ flex-basis:100%; }
+  .rja-c-field label{ font-size:13px; font-weight:600; color:var(--rc-ink); margin-bottom:6px; }
+  .rja-c-field input, .rja-c-field textarea{
+    font-family:inherit; font-size:15px; color:var(--rc-ink); background:var(--white);
+    border:1px solid var(--rc-line); border-radius:10px; padding:11px 13px; width:100%; transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  .rja-c-field textarea{ min-height:110px; resize:vertical; }
+  .rja-c-field input:focus, .rja-c-field textarea:focus{
+    outline:none; border-color:var(--rc-teal); box-shadow:0 0 0 3px rgba(14,74,87,.12);
+  }
+  .rja-c-hp{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+  .rja-c-actions{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .rja-c-btn{
+    font-family:inherit; font-size:15px; font-weight:600; color:var(--white); background:var(--rc-teal);
+    border:none; border-radius:10px; padding:12px 24px; cursor:pointer; transition:background .15s ease;
+  }
+  .rja-c-btn:hover{ background:var(--rc-deep); }
+  .rja-c-btn:disabled{ opacity:.6; cursor:default; }
+  .rja-c-msg{ font-size:14px; }
+  .rja-c-msg.ok{ color:#166534; }
+  .rja-c-msg.err{ color:var(--rc-danger); }
+  .rja-c-count{ font-size:14px; color:var(--rc-muted); font-weight:600; margin:0 0 14px; }
+  .rja-c-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:16px; }
+  .rja-c-item{ border:1px solid var(--rc-line); border-radius:12px; padding:16px 18px; background:var(--white); }
+  .rja-c-top{ display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:6px; }
+  .rja-c-name{ font-weight:700; color:var(--rc-teal); }
+  .rja-c-loc{ font-size:13px; color:var(--rc-muted); }
+  .rja-c-time{ font-size:12px; color:var(--rc-muted); margin-left:auto; }
+  .rja-c-body{ margin:0; white-space:pre-wrap; word-break:break-word; color:var(--rc-ink); }
+  .rja-c-del{
+    margin-top:10px; font-size:13px; font-weight:600; color:var(--rc-danger); background:none;
+    border:1px solid #e6c9c6; border-radius:8px; padding:5px 12px; cursor:pointer;
+  }
+  .rja-c-del:hover{ background:#fceceb; }
+  .rja-c-empty{ color:var(--rc-muted); font-size:15px; padding:8px 0; }
+  .rja-c-mod-banner{
+    font-size:13px; font-weight:600; color:#7a4f00; background:#fff3d6; border:1px solid #f0dca0;
+    border-radius:8px; padding:8px 14px; margin-bottom:16px;
+  }
+
  /* ── PAGE HERO (inner pages) ── */
  .page-hero { background: linear-gradient(135deg, var(--deep), var(--dark-teal)); padding: 52px 40px 48px; text-align: center; }
  .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(24px, 3.5vw, 38px); color: var(--white); margin-bottom: 12px; }
@@ -684,6 +737,7 @@ crossorigin="anonymous"></script>
  </div>
 
  <a href="#" onclick="return showPage('faq')" id="nav-faq">FAQ</a>
+ <a href="#" onclick="return showPage('community')" id="nav-community">Community</a>
 
  <div class="nav-dropdown" id="dropdown-involved">
  <a href="#" class="nav-dropdown-toggle" id="toggle-involved" onclick="toggleDropdown('involved'); return false;">Get Involved <span class="caret">▾</span></a>
@@ -2109,6 +2163,53 @@ crossorigin="anonymous"></script>
   </div>
 </div>
 
+<div id="page-community" class="page">
+  <div class="page-hero">
+    <h1>Community messages</h1>
+    <p>Share your experience with LDRT or ask a general question. Real stories from people navigating arthritis care.</p>
+  </div>
+
+  <div class="section">
+    <section class="rja-comments" aria-label="Community messages">
+      <p class="rja-c-disclaimer">
+        This board is for general information and community support. It is not medical advice.
+        For anything about your own health or whether a treatment is right for you, please talk with your doctor or a radiation oncologist.
+      </p>
+
+      <div id="rjaModBanner" class="rja-c-mod-banner" style="display:none">
+        Moderator view is on. Only you see the Delete buttons.
+      </div>
+
+      <form class="rja-c-form" id="rjaCommentForm" autocomplete="off">
+        <div class="rja-c-row">
+          <div class="rja-c-field">
+            <label for="rjaName">Name</label>
+            <input type="text" id="rjaName" maxlength="80" placeholder="Your name" required>
+          </div>
+          <div class="rja-c-field">
+            <label for="rjaLoc">Town (optional)</label>
+            <input type="text" id="rjaLoc" maxlength="80" placeholder="e.g. Princeton, NJ">
+          </div>
+        </div>
+        <div class="rja-c-field full">
+          <label for="rjaComment">Message</label>
+          <textarea id="rjaComment" maxlength="2000" placeholder="Write your message" required></textarea>
+        </div>
+        <div class="rja-c-hp" aria-hidden="true">
+          <label>Do not fill this in<input type="text" id="rjaWebsite" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <div class="rja-c-actions">
+          <button type="submit" class="rja-c-btn" id="rjaSubmit">Post message</button>
+          <span class="rja-c-msg" id="rjaMsg" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+
+      <p class="rja-c-count" id="rjaCount"></p>
+      <ul class="rja-c-list" id="rjaList"></ul>
+    </section>
+  </div>
+</div>
+
 <footer>
  <strong>Radiant Joint Alliance</strong>
  <p>radiantjointalliance.org &nbsp;|&nbsp; contact@radiantjointalliance.org</p>
@@ -2119,7 +2220,8 @@ crossorigin="anonymous"></script>
  const PAGE_TITLES = {
  home: 'Home', about: 'About', arthritis: 'Arthritis Basics', treatment: 'LDRT Treatment',
  expect: 'What to Expect', hospitals: 'Find a Hospital', research: 'Research & Evidence',
- faq: 'FAQ', volunteer: 'Volunteer', donate: 'Donate', contact: 'Contact Us'
+ faq: 'FAQ', volunteer: 'Volunteer', donate: 'Donate', contact: 'Contact Us',
+ community: 'Community'
  };
  function copyOrPrompt(btn, url) {
  try {
@@ -2315,6 +2417,121 @@ crossorigin="anonymous"></script>
  const validId = document.getElementById('page-' + hashId) ? hashId : 'home';
  showPage(validId, true);
  })();
+</script>
+<script>
+/* Community messages */
+(function(){
+  var API_URL = "https://script.google.com/macros/s/AKfycbzURi6jdY8EQi3d3RX7cEyOWkOaV_zhzoHmIBI94SA-Em-sqwmRGr1tu4m05RWKVrHZ/exec";
+  var MOD_KEY = "purple-otter-2026-rja";
+
+  var form   = document.getElementById('rjaCommentForm');
+  if (!form) return;
+  var list   = document.getElementById('rjaList');
+  var count  = document.getElementById('rjaCount');
+  var msg    = document.getElementById('rjaMsg');
+  var submit = document.getElementById('rjaSubmit');
+
+  var params = new URLSearchParams(window.location.search);
+  var modParam = params.get('mod');
+  var isMod = modParam && modParam === MOD_KEY;
+  if (isMod) { var mb = document.getElementById('rjaModBanner'); if (mb) mb.style.display = 'block'; }
+
+  function fmtTime(iso){
+    var d = new Date(iso);
+    if (isNaN(d)) return '';
+    var diff = (new Date() - d)/1000;
+    if (diff < 60) return 'just now';
+    if (diff < 3600) return Math.floor(diff/60)+'m ago';
+    if (diff < 86400) return Math.floor(diff/3600)+'h ago';
+    if (diff < 86400*7) return Math.floor(diff/86400)+'d ago';
+    return d.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'});
+  }
+  function esc(s){
+    return String(s||'').replace(/[&<>"']/g,function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+  function render(items){
+    list.innerHTML = '';
+    if (!items.length){
+      count.textContent = '';
+      var li = document.createElement('li');
+      li.className = 'rja-c-empty';
+      li.textContent = 'No messages yet. Be the first to share.';
+      list.appendChild(li);
+      return;
+    }
+    count.textContent = items.length + (items.length === 1 ? ' message' : ' messages');
+    items.forEach(function(c){
+      var li = document.createElement('li');
+      li.className = 'rja-c-item';
+      var loc = c.location ? '<span class="rja-c-loc">'+esc(c.location)+'</span>' : '';
+      var del = isMod ? '<button class="rja-c-del" data-id="'+esc(c.id)+'">Delete</button>' : '';
+      li.innerHTML =
+        '<div class="rja-c-top">'+
+          '<span class="rja-c-name">'+esc(c.name)+'</span>'+loc+
+          '<span class="rja-c-time">'+fmtTime(c.ts)+'</span>'+
+        '</div>'+
+        '<p class="rja-c-body">'+esc(c.comment)+'</p>'+ del;
+      list.appendChild(li);
+    });
+  }
+  function showMsg(text, kind){ msg.textContent = text; msg.className = 'rja-c-msg ' + (kind || ''); }
+
+  var loadedOnce = false;
+  function load(){
+    fetch(API_URL)
+      .then(function(r){ return r.json(); })
+      .then(function(d){ render(d.comments || []); loadedOnce = true; })
+      .catch(function(){ showMsg('Could not load messages right now. Please try again later.', 'err'); });
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('rjaName').value.trim();
+    var location = document.getElementById('rjaLoc').value.trim();
+    var comment = document.getElementById('rjaComment').value.trim();
+    var website = document.getElementById('rjaWebsite').value;
+    if (website) { form.reset(); return; }
+    if (!name || !comment){ showMsg('Please add your name and a message.', 'err'); return; }
+    submit.disabled = true;
+    showMsg('Posting...', '');
+    fetch(API_URL, {
+      method:'POST', mode:'no-cors',
+      body: JSON.stringify({action:'add', name:name, location:location, comment:comment})
+    }).then(function(){
+      form.reset();
+      showMsg('Thank you. Your message has been posted.', 'ok');
+      setTimeout(function(){ load(); submit.disabled = false; }, 900);
+    }).catch(function(){
+      showMsg('Something went wrong. Please try again.', 'err');
+      submit.disabled = false;
+    });
+  });
+
+  list.addEventListener('click', function(e){
+    var btn = e.target.closest('.rja-c-del');
+    if (!btn) return;
+    if (!confirm('Delete this message? This cannot be undone.')) return;
+    var id = btn.getAttribute('data-id');
+    fetch(API_URL, {
+      method:'POST', mode:'no-cors',
+      body: JSON.stringify({action:'delete', id:id, adminKey:modParam})
+    }).then(function(){ setTimeout(load, 700); });
+  });
+
+  // Load messages the first time someone opens the Community page (and on
+  // direct load of #community). Keeps the homepage from fetching needlessly.
+  function maybeLoad(){
+    var pg = document.getElementById('page-community');
+    if (pg && pg.classList.contains('active') && !loadedOnce) load();
+  }
+  document.querySelectorAll('.nav-links a, .btn').forEach(function(a){
+    a.addEventListener('click', function(){ setTimeout(maybeLoad, 50); });
+  });
+  window.addEventListener('popstate', function(){ setTimeout(maybeLoad, 50); });
+  maybeLoad();
+})();
 </script>
 </body>
 </html>
