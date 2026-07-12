@@ -796,7 +796,7 @@ crossorigin="anonymous"></script>
  <div class="stat-label">organizations contacted, across 25 states</div>
  </div>
  <div class="stat">
- <div class="stat-num">270+</div>
+ <div class="stat-num">280+</div>
  <div class="stat-label">hospitals in our directory</div>
  </div>
  <div class="stat">
@@ -1046,7 +1046,7 @@ crossorigin="anonymous"></script>
         <h3>Animated Treatment Overview</h3>
         <p>This diagram shows the basic idea. The patient lies on a treatment couch, the joint is positioned in line with the beam, and the linear accelerator delivers a brief, low-dose treatment.</p>
 
-        <div class="treatment-animation-stage" aria-label="Animated diagram showing a linear accelerator delivering low-dose radiation to a painful joint">
+        <div class="treatment-animation-stage" aria-label="Animated diagram showing a patient lying flat while a linear accelerator delivers low-dose radiation to the knee">
           <svg viewBox="0 0 760 430" role="img">
             <defs>
               <linearGradient id="beamGold" x1="0" x2="1" y1="0" y2="1">
@@ -1066,34 +1066,45 @@ crossorigin="anonymous"></script>
             <rect x="126" y="168" width="54" height="142" rx="18" fill="#1a6b7a"/>
             <circle cx="153" cy="160" r="70" fill="none" stroke="#1a6b7a" stroke-width="24" opacity="0.22"/>
 
-            <g class="pro-gantry">
+            <g>
               <path d="M153 160 C188 105, 258 95, 310 136" fill="none" stroke="#1a6b7a" stroke-width="30" stroke-linecap="round"/>
               <rect x="290" y="110" width="82" height="68" rx="16" fill="#0e4a57" filter="url(#softMachineShadow)"/>
               <rect x="352" y="131" width="54" height="27" rx="10" fill="#1a6b7a"/>
-              <polygon class="pro-beam" points="402,145 540,246 512,284 356,157" fill="url(#beamGold)"/>
               <circle class="pro-status-light" cx="347" cy="124" r="5" fill="#c8960c"/>
             </g>
 
-            <rect x="390" y="258" width="265" height="28" rx="14" fill="#0e4a57" filter="url(#softMachineShadow)"/>
-            <rect x="500" y="286" width="28" height="70" rx="7" fill="#3d5a66"/>
+            <polygon class="pro-beam" points="398,143 484,244 497,259 398,158" fill="url(#beamGold)"/>
+
+            <!-- Treatment couch extends beneath the patient's entire body and legs -->
+            <rect x="360" y="266" width="325" height="29" rx="14" fill="#0e4a57" filter="url(#softMachineShadow)"/>
+            <rect x="372" y="260" width="301" height="12" rx="6" fill="#c2dde4"/>
+            <rect x="500" y="295" width="28" height="61" rx="7" fill="#3d5a66"/>
             <rect x="468" y="352" width="92" height="14" rx="7" fill="#3d5a66"/>
 
-            <circle cx="610" cy="229" r="20" fill="#d9b18f"/>
-            <path d="M588 246 C540 248, 492 249, 445 246" stroke="#1a2e3b" stroke-width="20" stroke-linecap="round"/>
-            <path d="M459 250 C442 270, 425 282, 406 291" stroke="#1a2e3b" stroke-width="14" stroke-linecap="round"/>
-            <path d="M480 250 C466 276, 452 291, 435 302" stroke="#1a2e3b" stroke-width="14" stroke-linecap="round"/>
+            <!-- Patient lying flat and fully supported on the couch -->
+            <rect x="604" y="253" width="52" height="12" rx="6" fill="#c2dde4"/>
+            <circle cx="634" cy="237" r="18" fill="#d9b18f"/>
+            <path d="M617 246 L607 251" stroke="#d9b18f" stroke-width="9" stroke-linecap="round"/>
+            <path d="M607 251 C582 251, 553 251, 525 252" stroke="#1a2e3b" stroke-width="20" stroke-linecap="round"/>
+            <path d="M575 247 C558 243, 543 245, 529 250" stroke="#1a2e3b" stroke-width="8" stroke-linecap="round"/>
+            <path d="M525 252 C513 252, 501 252, 490 252" stroke="#1a2e3b" stroke-width="18" stroke-linecap="round"/>
+            <path d="M490 252 C466 252, 442 252, 418 252" stroke="#1a2e3b" stroke-width="16" stroke-linecap="round"/>
+            <path d="M522 260 C511 260, 500 260, 490 260" stroke="#3d5a66" stroke-width="12" stroke-linecap="round"/>
+            <path d="M490 260 C466 260, 442 260, 418 260" stroke="#3d5a66" stroke-width="12" stroke-linecap="round"/>
+            <path d="M418 252 L403 252" stroke="#1a2e3b" stroke-width="9" stroke-linecap="round"/>
+            <path d="M418 260 L403 260" stroke="#3d5a66" stroke-width="8" stroke-linecap="round"/>
 
-            <circle class="pro-joint-glow" cx="421" cy="291" r="28" fill="#c8960c"/>
-            <circle cx="421" cy="291" r="8" fill="#c8960c"/>
+            <circle class="pro-joint-glow" cx="490" cy="252" r="23" fill="#c8960c"/>
+            <circle cx="490" cy="252" r="7" fill="#c8960c"/>
 
             <text x="86" y="84" fill="#0e4a57" font-size="15" font-weight="700">Linear accelerator</text>
             <line x1="153" y1="92" x2="153" y2="140" stroke="#0e4a57" stroke-width="1.8"/>
             <text x="333" y="94" fill="#0e4a57" font-size="15" font-weight="700">Treatment head</text>
             <line x1="358" y1="101" x2="358" y2="127" stroke="#0e4a57" stroke-width="1.8"/>
-            <text x="452" y="327" fill="#0e4a57" font-size="15" font-weight="700">Painful joint target</text>
-            <line x1="450" y1="315" x2="428" y2="296" stroke="#0e4a57" stroke-width="1.8"/>
+            <text x="510" y="214" fill="#0e4a57" font-size="15" font-weight="700">Painful knee target</text>
+            <line x1="508" y1="220" x2="490" y2="248" stroke="#0e4a57" stroke-width="1.8"/>
             <text x="535" y="386" fill="#0e4a57" font-size="15" font-weight="700">Treatment couch</text>
-            <line x1="552" y1="374" x2="530" y2="286" stroke="#0e4a57" stroke-width="1.8"/>
+            <line x1="552" y1="374" x2="530" y2="295" stroke="#0e4a57" stroke-width="1.8"/>
           </svg>
 
           <div class="animation-note-strip">
@@ -1417,6 +1428,7 @@ crossorigin="anonymous"></script>
         <tr><td><strong>Epic Care</strong></td><td>San Ramon / Pleasant Hill / Antioch / Emeryville, CA</td></tr>
         <tr><td><strong>Erlanger Health System</strong></td><td>Chattanooga, TN</td></tr>
         <tr><td><strong>Essentia Health</strong><span class="verify-mark">&#8224;</span></td><td>Minnesota / North Dakota region</td></tr>
+        <tr><td><strong>EvergreenHealth Cancer Care</strong></td><td>Kirkland, WA</td></tr>
         <tr><td><strong>EVMS Medical Group / Sentara Virginia Beach General Hospital</strong></td><td>Virginia Beach, VA</td></tr>
         <tr><td><strong>FHN / Leonard Ferguson Cancer Center</strong></td><td>Freeport, IL</td></tr>
         <tr><td><strong>Florida Oncology Tavares</strong><span class="verify-mark">&#8224;</span></td><td>Tavares, FL</td></tr>
@@ -1468,6 +1480,10 @@ crossorigin="anonymous"></script>
         <tr><td><strong>Mayo Clinic Rochester</strong><span class="verify-mark">&#8224;</span></td><td>Rochester, MN</td></tr>
         <tr><td><strong>McLeod Health</strong><span class="verify-mark">&#8224;</span></td><td>Florence, SC</td></tr>
         <tr><td><strong>MD Anderson Cancer Center</strong><span class="verify-mark">&#8224;</span></td><td>Houston, TX</td></tr>
+        <tr><td><strong>MD Anderson Cancer Center at Cooper - Camden</strong></td><td>Camden, NJ</td></tr>
+        <tr><td><strong>MD Anderson Cancer Center at Cooper - Voorhees</strong></td><td>Voorhees, NJ</td></tr>
+        <tr><td><strong>MD Anderson Cancer Center at Cooper - Moorestown</strong></td><td>Moorestown, NJ</td></tr>
+        <tr><td><strong>MD Anderson Cancer Center at Cooper Radiation Oncology</strong></td><td>Cape May Court House, NJ</td></tr>
         <tr><td><strong>Memorial Sloan Kettering</strong><span class="verify-mark">&#8224;</span></td><td>New York, NY</td></tr>
         <tr><td><strong>MemorialCare Cancer Institute at Saddleback Medical Center, Damsker Family Pavilion</strong></td><td>Laguna Hills, CA</td></tr>
         <tr><td><strong>Mercy Health - Springfield Regional</strong></td><td>Springfield, OH</td></tr>
@@ -1481,6 +1497,7 @@ crossorigin="anonymous"></script>
         <tr><td><strong>Nebraska Hematology-Oncology</strong></td><td>Lincoln, NE</td></tr>
         <tr><td><strong>New York Cancer &amp; Blood Specialists (NYCBS)</strong></td><td>Brooklyn / Bronx / Queens / Long Island, NY</td></tr>
         <tr><td><strong>New York Oncology Hematology (NYOH)</strong></td><td>Albany / Capital District, NY</td></tr>
+        <tr><td><strong>NewYork-Presbyterian Brooklyn Methodist Hospital</strong></td><td>506 6th Street, Brooklyn, NY 11215</td></tr>
         <tr><td><strong>North Arkansas Regional Medical Center / Claude Parrish Cancer Center</strong></td><td>Harrison, AR</td></tr>
         <tr><td><strong>North Cascade Cancer Center</strong></td><td>Bellingham, WA</td></tr>
         <tr><td><strong>Northeast Georgia Physicians Group</strong><span class="verify-mark">&#8224;</span></td><td>Gainesville / Northeast GA</td></tr>
@@ -1509,6 +1526,7 @@ crossorigin="anonymous"></script>
         <tr><td><strong>Princeton Radiation Oncology</strong></td><td>NJ / PA multiple locations</td></tr>
         <tr><td><strong>ProCure Proton Therapy Center</strong></td><td>Somerset, NJ</td></tr>
         <tr><td><strong>Providence Medical Group Petaluma / Santa Rosa</strong><span class="verify-mark">&#8224;</span></td><td>Petaluma / Santa Rosa, CA</td></tr>
+        <tr><td><strong>Providence Regional Cancer Partnership</strong></td><td>Everett, WA</td></tr>
         <tr><td><strong>Providence St. Joseph Hospital</strong></td><td>Orange, CA</td></tr>
         <tr><td><strong>Providence St. Mary Regional Cancer Center</strong><span class="verify-mark">&#8224;</span></td><td>Walla Walla, WA</td></tr>
         <tr><td><strong>Radiation Center of Greater Nashua</strong></td><td>Nashua, NH</td></tr>
@@ -1596,6 +1614,7 @@ crossorigin="anonymous"></script>
         <tr><td><strong>UPMC Hillman Cancer Center</strong></td><td>Pittsburgh, PA</td></tr>
         <tr><td><strong>USA Health Mitchell Cancer Institute</strong></td><td>Mobile / Fairhope, AL</td></tr>
         <tr><td><strong>UW Medical Center</strong><span class="verify-mark">&#8224;</span></td><td>Seattle, WA</td></tr>
+        <tr><td><strong>The Valley Hospital</strong></td><td>Paramus, NJ</td></tr>
         <tr><td><strong>Vandalia Health Cancer Center at Davis Medical Center</strong></td><td>Elkins / Buckhannon region, WV</td></tr>
         <tr><td><strong>Vanderbilt University Medical Center</strong></td><td>Nashville, TN</td></tr>
         <tr><td><strong>VCU</strong><span class="verify-mark">&#8224;</span></td><td>Richmond, VA</td></tr>
@@ -1794,10 +1813,17 @@ crossorigin="anonymous"></script>
     <details class="faq-item">
       <summary>Is LDRT actually proven to work?</summary>
       <div class="faq-body">
-        <p>The strongest recent evidence is a randomized, sham-controlled trial out of Seoul National University, presented at ASTRO's (American Society for Radiation Oncology) 2025 annual meeting. This one matters more than most, because it included a fake-treatment control group. That matters because osteoarthritis pain responds strongly to placebo on its own. 114 patients with knee osteoarthritis were randomly assigned to a real 3 Gy course, a much lower 0.3 Gy course, or a sham treatment. At four months, 70.3% of patients on the real 3 Gy dose reported meaningful improvement, versus 41.7% in the sham group, a statistically significant difference in favor of actual treatment.</p>
-        <p>A few other recent studies point the same direction. Vanderbilt University Medical Center's ongoing MOBILE study has followed 103 patients across 148 treated joints, and found average pain scores drop from 7.6 to 3.4 within six months, with 84% reporting improvement. A German multicenter trial (the Arthro-Rad study) found that higher radiation doses produced better results than lower doses, which is itself a meaningful clue, since a pure placebo effect wouldn't be expected to scale with dose.</p>
-        <p>Not everything lines up, and that's worth knowing too. A 2025 pooled analysis of 12 older studies (about 1,750 patients) didn't find a statistically significant edge for LDRT over sham treatment, and saw slightly more mild skin or nail irritation in the treated group. A smaller 2019 Dutch trial found something similar. Much of that older data used different protocols and patient selection than the newer sham-controlled trials above, which may explain some of the gap.</p>
-        <p>So where does that leave things? The newest and most rigorously controlled trial to date came out clearly in favor of real treatment over placebo, and several other recent studies support that direction. Still, this is an active area of research, not settled science. Ask your radiation oncologist what they've seen in their own patients and how they read the evidence.</p>
+        <p>The strongest recent evidence is a multicenter, randomized, sham-controlled trial led by investigators at Seoul National University and presented at the American Society for Radiation Oncology (ASTRO) 2025 Annual Meeting.<sup><a href="#faq-ref-1" style="color:var(--teal);font-weight:700;text-decoration:none;">[1]</a></sup> A sham-controlled design is especially important because placebo responses in osteoarthritis trials can be substantial.<sup><a href="#faq-ref-2" style="color:var(--teal);font-weight:700;text-decoration:none;">[2]</a></sup> In the trial, 114 patients with knee osteoarthritis were assigned to 3 Gy in six fractions, 0.3 Gy in six fractions, or sham treatment. At four months, 70.3% of patients in the 3 Gy group met the study's response criteria, compared with 41.7% in the sham group (p=0.014). The 0.3 Gy group was not significantly different from sham, and no treatment-related toxicity was reported.<sup><a href="#faq-ref-1" style="color:var(--teal);font-weight:700;text-decoration:none;">[1]</a></sup></p>
+        <p>Other recent findings are encouraging but need to be interpreted according to their study designs. The ongoing US MOBILE study is a prospective observational study rather than a randomized trial. Its 2025 interim analysis included 108 patients and 150 treated joint sites. Among the 76 sites with six-month follow-up, the mean pain score decreased from 7.6 before treatment to 3.4, and 84% of patients reported some pain improvement.<sup><a href="#faq-ref-3" style="color:var(--teal);font-weight:700;text-decoration:none;">[3]</a></sup> The German ArthroRad trial randomized patients to 3 Gy or 0.3 Gy. Both groups reported pain relief, but there was no statistically significant difference between the two doses at 12 months. Because ArthroRad did not include a sham group, it could not determine how much of the improvement was caused by radiation rather than placebo or other effects.<sup><a href="#faq-ref-4" style="color:var(--teal);font-weight:700;text-decoration:none;">[4]</a></sup></p>
+        <p>Not all of the evidence is positive. A 2025 systematic review and meta-analysis pooled 12 studies involving about 1,750 patients and found no statistically significant benefit of LDRT over sham treatment for pain or physical function. Most adverse events were similar between groups, although mild nail reactions were more frequent with LDRT.<sup><a href="#faq-ref-5" style="color:var(--teal);font-weight:700;text-decoration:none;">[5]</a></sup> A 2019 Dutch randomized, double-blinded, sham-controlled trial also found no substantial benefit for knee osteoarthritis symptoms or inflammatory signs.<sup><a href="#faq-ref-6" style="color:var(--teal);font-weight:700;text-decoration:none;">[6]</a></sup> Differences in dose, patient selection, outcome measures, and follow-up may contribute to the conflicting results, but that explanation has not yet been proven.</p>
+        <p>So where does that leave things? The 2025 Korean sham-controlled trial provides important positive evidence for a standard 3 Gy course, while the MOBILE study provides encouraging real-world interim results.<sup><a href="#faq-ref-1" style="color:var(--teal);font-weight:700;text-decoration:none;">[1]</a></sup><sup><a href="#faq-ref-3" style="color:var(--teal);font-weight:700;text-decoration:none;">[3]</a></sup> At the same time, ArthroRad, the 2025 meta-analysis, and the Dutch sham-controlled trial show why the evidence should not be described as settled.<sup><a href="#faq-ref-4" style="color:var(--teal);font-weight:700;text-decoration:none;">[4]</a></sup><sup><a href="#faq-ref-5" style="color:var(--teal);font-weight:700;text-decoration:none;">[5]</a></sup><sup><a href="#faq-ref-6" style="color:var(--teal);font-weight:700;text-decoration:none;">[6]</a></sup> A radiation oncologist can help interpret how these findings apply to a particular patient, joint, and treatment protocol.</p>
+        <p style="font-size:12.5px;color:var(--gray-3);line-height:1.65;margin-top:16px;"><strong>References:</strong><br>
+        <span id="faq-ref-1">1. Kim BH, et al. <em>Clinical Effectiveness of Single Course Low-Dose Radiation Therapy in Knee Osteoarthritis: Short-term Results from the Randomized, Sham-Controlled Trial.</em> ASTRO 67th Annual Meeting Late-Breaking Abstract LBA 06. 2025. <a href="https://www.astro.org/ASTRO/media/ASTRO/Meetings%20and%20Education/PDFs/AM25/AM25_LBAs.pdf" target="_blank" rel="noopener" style="color:var(--teal);font-weight:600;text-decoration:none;">Abstract</a></span><br>
+        <span id="faq-ref-2">2. Zhang W, Robertson J, Jones AC, Dieppe PA, Doherty M. <em>The placebo effect and its determinants in osteoarthritis: meta-analysis of randomised controlled trials.</em> Annals of the Rheumatic Diseases. 2008;67:1716-1723. <a href="https://pubmed.ncbi.nlm.nih.gov/18541604/" target="_blank" rel="noopener" style="color:var(--teal);font-weight:600;text-decoration:none;">PubMed</a></span><br>
+        <span id="faq-ref-3">3. Byrd HF, et al. <em>Interim Analysis of Mitigating Osteoarthritis by Intervention with Low-Dose Irradiation to Extremities (MOBILE).</em> ASTRO 2025 Annual Meeting, Abstract 249. <a href="https://am25.astro.org/sessions/ss-25-21606/interim-analysis-of-mitigating-osteoarthritis-by-intervention-with-low-dose-irradiation-to-ex-106782" target="_blank" rel="noopener" style="color:var(--teal);font-weight:600;text-decoration:none;">Abstract</a></span><br>
+        <span id="faq-ref-4">4. Niewald M, et al. <em>ArthroRad trial: randomized multicenter single-blinded trial on the effect of low-dose radiotherapy for painful osteoarthritis—final results after 12-month follow-up.</em> Strahlentherapie und Onkologie. 2024;200:134-142. <a href="https://pubmed.ncbi.nlm.nih.gov/37815599/" target="_blank" rel="noopener" style="color:var(--teal);font-weight:600;text-decoration:none;">PubMed</a></span><br>
+        <span id="faq-ref-5">5. Hammadeh BM, et al. <em>Efficacy, safety, and pain management of low-dose radiation therapy in osteoarthritis: a comprehensive systematic review and meta-analysis.</em> Rheumatology International. 2025;45:210. <a href="https://pubmed.ncbi.nlm.nih.gov/40888940/" target="_blank" rel="noopener" style="color:var(--teal);font-weight:600;text-decoration:none;">PubMed</a></span><br>
+        <span id="faq-ref-6">6. Mahler EAM, et al. <em>Effectiveness of low-dose radiation therapy on symptoms in patients with knee osteoarthritis: a randomised, double-blinded, sham-controlled trial.</em> Annals of the Rheumatic Diseases. 2019;78:83-90. <a href="https://pubmed.ncbi.nlm.nih.gov/30366945/" target="_blank" rel="noopener" style="color:var(--teal);font-weight:600;text-decoration:none;">PubMed</a></span></p>
       </div>
     </details>
 
@@ -1913,7 +1939,7 @@ crossorigin="anonymous"></script>
           <div class="stat-label">organizations contacted, across 25 states</div>
         </div>
         <div class="stat">
-          <div class="stat-num">270+</div>
+          <div class="stat-num">280+</div>
           <div class="stat-label">hospitals in our directory</div>
         </div>
         <div class="stat">
