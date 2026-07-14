@@ -695,6 +695,52 @@ crossorigin="anonymous"></script>
   .small-list { margin:8px 0 0; padding-left:19px; color:var(--gray-2); font-size:14px; line-height:1.65; }
   .small-list li { margin-bottom:6px; }
 
+
+  /* ── AMBASSADOR PAGE MOBILE WIDTH FIX ── */
+  #page-volunteer {
+    overflow-x: hidden;
+  }
+
+  @media (max-width: 760px) {
+    #page-volunteer .mission-banner {
+      padding: 30px 22px;
+    }
+
+    #page-volunteer .stat-strip-inner {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      padding: 24px 16px !important;
+      gap: 22px 12px !important;
+    }
+
+    #page-volunteer .card-grid[style*="grid-template-columns:repeat(3,1fr)"] {
+      grid-template-columns: 1fr !important;
+    }
+
+    #page-volunteer .two-col {
+      grid-template-columns: 1fr !important;
+      gap: 18px !important;
+    }
+
+    #page-volunteer .section {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    #page-volunteer .card,
+    #page-volunteer .signup-box,
+    #page-volunteer .contact-form,
+    #page-volunteer .edu-callout,
+    #page-volunteer .amber-box {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 420px) {
+    #page-volunteer .stat-strip-inner {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
 </style>
 </head>
 <body>
