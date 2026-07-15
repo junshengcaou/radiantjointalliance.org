@@ -3,6 +3,29 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Low-Dose Radiation Therapy (LDRT) for Arthritis | Radiant Joint Alliance</title>
+<meta name="description" content="A patient education resource on low-dose radiation therapy (LDRT) for osteoarthritis: the evidence, what treatment involves, and a directory of 300+ US hospitals that offer it."/>
+<link rel="canonical" href="https://radiantjointalliance.org/"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Radiant Joint Alliance"/>
+<meta property="og:title" content="Low-Dose Radiation Therapy (LDRT) for Arthritis | Radiant Joint Alliance"/>
+<meta property="og:description" content="A patient education resource on low-dose radiation therapy (LDRT) for osteoarthritis: the evidence, what treatment involves, and a directory of 300+ US hospitals that offer it."/>
+<meta property="og:url" content="https://radiantjointalliance.org/"/>
+<meta property="og:image" content="https://radiantjointalliance.org/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Low-Dose Radiation Therapy (LDRT) for Arthritis | Radiant Joint Alliance"/>
+<meta name="twitter:description" content="A patient education resource on low-dose radiation therapy (LDRT) for osteoarthritis, plus a directory of 300+ US hospitals that offer it."/>
+<meta name="twitter:image" content="https://radiantjointalliance.org/og-image.png"/>
+
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png"/>
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7678538186340844"
 crossorigin="anonymous"></script> 
  <!-- Google tag (gtag.js) -->
@@ -14,7 +37,6 @@ crossorigin="anonymous"></script>
 
   gtag('config', 'G-90VN0P1GXH', { send_page_view: false });
 </script>
-<title>Low-Dose Radiation Therapy (LDRT) for Arthritis | Radiant Joint Alliance</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -773,7 +795,7 @@ crossorigin="anonymous"></script>
  <div class="nav-dropdown" id="dropdown-involved">
  <a href="#" class="nav-dropdown-toggle" id="toggle-involved" onclick="toggleDropdown('involved'); return false;">Get Involved <span class="caret">▾</span></a>
  <div class="nav-dropdown-menu">
- <a href="#" onclick="return navFromDropdown('volunteer')" id="nav-volunteer">Ambassadors</a>
+ <a href="#" onclick="return navFromDropdown('volunteer')" id="nav-volunteer">Volunteer</a>
  <a href="#" onclick="return navFromDropdown('donate')" id="nav-donate">Donate</a>
  </div>
  </div>
@@ -1416,8 +1438,27 @@ crossorigin="anonymous"></script>
  <p style="font-size:13px;color:var(--gray-3);margin-top:10px;">Click any pin on the map for hospital details and location.</p>
  </div>
 
+ <div class="signup-box" style="margin-bottom:28px;">
+  <h3>Don't see your state yet?</h3>
+  <p>We're still filling in Iowa, Mississippi, and South Dakota, plus adding new locations everywhere else as we confirm them. Leave your email and we'll send a note when there's a new hospital near you.</p>
+  <form class="signup-form" id="newsletter-form-hospitals" data-success-id="signup-success-hospitals" action="https://formspree.io/f/mdavqlge" method="POST" onsubmit="return handleSignup(event)">
+   <input type="email" name="email" placeholder="you@example.com" required>
+   <input type="hidden" name="source" value="newsletter-signup-hospitals">
+   <input type="hidden" name="_subject" value="New newsletter signup from Hospitals page (not a contact message)">
+   <button class="btn btn-primary" type="submit">Notify Me</button>
+  </form>
+  <p class="signup-success" id="signup-success-hospitals" style="display:none;">Thanks, you're on the list. We'll let you know when there's something new near you.</p>
+  <p class="signup-note">We won't sell or share your email. Unsubscribe anytime.</p>
+ </div>
+
  <p style="font-size:14px;color:var(--gray-2);margin-bottom:16px;">
  When you call, ask for the <strong>Radiation Oncology</strong> department. Confirm that the location currently offers LDRT for osteoarthritis before making any travel or appointment plans.</p>
+
+ <div style="margin-bottom:18px;">
+  <input type="text" id="hospital-search" oninput="filterHospitals()" placeholder="Search by state (California or CA), city, or hospital name" style="width:100%;padding:13px 16px;font-size:15px;border:1px solid var(--mid-teal);border-radius:8px;font-family:'Inter',sans-serif;color:var(--gray-1);">
+  <p id="hospital-count" style="font-size:13px;color:var(--gray-3);margin-top:8px;">Showing all 301 locations. This table is sorted alphabetically by hospital name, not by state — search is usually faster.</p>
+ </div>
+
  <table class="hospital-table">
  <thead>
  <tr>
@@ -1425,7 +1466,7 @@ crossorigin="anonymous"></script>
  <th>City, State</th>
  </tr>
  </thead>
- <tbody>
+ <tbody id="hospital-tbody">
         <tr><td><strong>Ackerman Cancer Center</strong><span class="verify-mark">&#8224;</span></td><td>Jacksonville / Northeast FL</td></tr>
         <tr><td><strong>Advanced Radiation Centers of New York / SoftRay Therapy</strong></td><td>New York metro / Long Island, NY</td></tr>
         <tr><td><strong>AdventHealth Radiation Oncology Parker / Littleton</strong><span class="verify-mark">&#8224;</span></td><td>Parker / Littleton, CO</td></tr>
@@ -1925,10 +1966,10 @@ crossorigin="anonymous"></script>
     <details class="faq-item">
       <summary>Is LDRT actually proven to work?</summary>
       <div class="faq-body">
-        <p>The strongest recent evidence is a multicenter, randomized, sham-controlled trial led by investigators at Seoul National University and presented at the American Society for Radiation Oncology (ASTRO) 2025 Annual Meeting.<sup><a href="#faq-ref-1" style="color:var(--teal);font-weight:700;text-decoration:none;">[1]</a></sup> A sham-controlled design is especially important because placebo responses in osteoarthritis trials can be substantial.<sup><a href="#faq-ref-2" style="color:var(--teal);font-weight:700;text-decoration:none;">[2]</a></sup> In the trial, 114 patients with knee osteoarthritis were assigned to 3 Gy in six fractions, 0.3 Gy in six fractions, or sham treatment. At four months, 70.3% of patients in the 3 Gy group met the study's response criteria, compared with 41.7% in the sham group (p=0.014). The 0.3 Gy group was not significantly different from sham, and no treatment-related toxicity was reported.<sup><a href="#faq-ref-1" style="color:var(--teal);font-weight:700;text-decoration:none;">[1]</a></sup></p>
-        <p>Other recent findings are encouraging but need to be interpreted according to their study designs. The ongoing US MOBILE study is a prospective observational study rather than a randomized trial. Its 2025 interim analysis included 108 patients and 150 treated joint sites. Among the 76 sites with six-month follow-up, the mean pain score decreased from 7.6 before treatment to 3.4, and 84% of patients reported some pain improvement.<sup><a href="#faq-ref-3" style="color:var(--teal);font-weight:700;text-decoration:none;">[3]</a></sup> The German ArthroRad trial randomized patients to 3 Gy or 0.3 Gy. Both groups reported pain relief, but there was no statistically significant difference between the two doses at 12 months. Because ArthroRad did not include a sham group, it could not determine how much of the improvement was caused by radiation rather than placebo or other effects.<sup><a href="#faq-ref-4" style="color:var(--teal);font-weight:700;text-decoration:none;">[4]</a></sup></p>
-        <p>Not all of the evidence is positive. A 2025 systematic review and meta-analysis pooled 12 studies involving about 1,750 patients and found no statistically significant benefit of LDRT over sham treatment for pain or physical function. Most adverse events were similar between groups, although mild nail reactions were more frequent with LDRT.<sup><a href="#faq-ref-5" style="color:var(--teal);font-weight:700;text-decoration:none;">[5]</a></sup> A 2019 Dutch randomized, double-blinded, sham-controlled trial also found no substantial benefit for knee osteoarthritis symptoms or inflammatory signs.<sup><a href="#faq-ref-6" style="color:var(--teal);font-weight:700;text-decoration:none;">[6]</a></sup> Differences in dose, patient selection, outcome measures, and follow-up may contribute to the conflicting results, but that explanation has not yet been proven.</p>
-        <p>So where does that leave things? The 2025 Korean sham-controlled trial provides important positive evidence for a standard 3 Gy course, while the MOBILE study provides encouraging real-world interim results.<sup><a href="#faq-ref-1" style="color:var(--teal);font-weight:700;text-decoration:none;">[1]</a></sup><sup><a href="#faq-ref-3" style="color:var(--teal);font-weight:700;text-decoration:none;">[3]</a></sup> At the same time, ArthroRad, the 2025 meta-analysis, and the Dutch sham-controlled trial show why the evidence should not be described as settled.<sup><a href="#faq-ref-4" style="color:var(--teal);font-weight:700;text-decoration:none;">[4]</a></sup><sup><a href="#faq-ref-5" style="color:var(--teal);font-weight:700;text-decoration:none;">[5]</a></sup><sup><a href="#faq-ref-6" style="color:var(--teal);font-weight:700;text-decoration:none;">[6]</a></sup> A radiation oncologist can help interpret how these findings apply to a particular patient, joint, and treatment protocol.</p>
+        <p>The strongest recent evidence is a multicenter, randomized, sham-controlled trial led by investigators at Seoul National University and presented at the American Society for Radiation Oncology (ASTRO) 2025 Annual Meeting.<sup><a href="#" onclick="return scrollToRef('faq-ref-1')" style="color:var(--teal);font-weight:700;text-decoration:none;">[1]</a></sup> A sham-controlled design is especially important because placebo responses in osteoarthritis trials can be substantial.<sup><a href="#" onclick="return scrollToRef('faq-ref-2')" style="color:var(--teal);font-weight:700;text-decoration:none;">[2]</a></sup> In the trial, 114 patients with knee osteoarthritis were assigned to 3 Gy in six fractions, 0.3 Gy in six fractions, or sham treatment. At four months, 70.3% of patients in the 3 Gy group met the study's response criteria, compared with 41.7% in the sham group (p=0.014). The 0.3 Gy group was not significantly different from sham, and no treatment-related toxicity was reported.<sup><a href="#" onclick="return scrollToRef('faq-ref-1')" style="color:var(--teal);font-weight:700;text-decoration:none;">[1]</a></sup></p>
+        <p>Other recent findings are encouraging but need to be interpreted according to their study designs. The ongoing US MOBILE study is a prospective observational study rather than a randomized trial. Its 2025 interim analysis included 108 patients and 150 treated joint sites. Among the 76 sites with six-month follow-up, the mean pain score decreased from 7.6 before treatment to 3.4, and 84% of patients reported some pain improvement.<sup><a href="#" onclick="return scrollToRef('faq-ref-3')" style="color:var(--teal);font-weight:700;text-decoration:none;">[3]</a></sup> The German ArthroRad trial randomized patients to 3 Gy or 0.3 Gy. Both groups reported pain relief, but there was no statistically significant difference between the two doses at 12 months. Because ArthroRad did not include a sham group, it could not determine how much of the improvement was caused by radiation rather than placebo or other effects.<sup><a href="#" onclick="return scrollToRef('faq-ref-4')" style="color:var(--teal);font-weight:700;text-decoration:none;">[4]</a></sup></p>
+        <p>Not all of the evidence is positive. A 2025 systematic review and meta-analysis pooled 12 studies involving about 1,750 patients and found no statistically significant benefit of LDRT over sham treatment for pain or physical function. Most adverse events were similar between groups, although mild nail reactions were more frequent with LDRT.<sup><a href="#" onclick="return scrollToRef('faq-ref-5')" style="color:var(--teal);font-weight:700;text-decoration:none;">[5]</a></sup> A 2019 Dutch randomized, double-blinded, sham-controlled trial also found no substantial benefit for knee osteoarthritis symptoms or inflammatory signs.<sup><a href="#" onclick="return scrollToRef('faq-ref-6')" style="color:var(--teal);font-weight:700;text-decoration:none;">[6]</a></sup> Differences in dose, patient selection, outcome measures, and follow-up may contribute to the conflicting results, but that explanation has not yet been proven.</p>
+        <p>So where does that leave things? The 2025 Korean sham-controlled trial provides important positive evidence for a standard 3 Gy course, while the MOBILE study provides encouraging real-world interim results.<sup><a href="#" onclick="return scrollToRef('faq-ref-1')" style="color:var(--teal);font-weight:700;text-decoration:none;">[1]</a></sup><sup><a href="#" onclick="return scrollToRef('faq-ref-3')" style="color:var(--teal);font-weight:700;text-decoration:none;">[3]</a></sup> At the same time, ArthroRad, the 2025 meta-analysis, and the Dutch sham-controlled trial show why the evidence should not be described as settled.<sup><a href="#" onclick="return scrollToRef('faq-ref-4')" style="color:var(--teal);font-weight:700;text-decoration:none;">[4]</a></sup><sup><a href="#" onclick="return scrollToRef('faq-ref-5')" style="color:var(--teal);font-weight:700;text-decoration:none;">[5]</a></sup><sup><a href="#" onclick="return scrollToRef('faq-ref-6')" style="color:var(--teal);font-weight:700;text-decoration:none;">[6]</a></sup> A radiation oncologist can help interpret how these findings apply to a particular patient, joint, and treatment protocol.</p>
         <p style="font-size:12.5px;color:var(--gray-3);line-height:1.65;margin-top:16px;"><strong>References:</strong><br>
         <span id="faq-ref-1">1. Kim BH, et al. <em>Clinical Effectiveness of Single Course Low-Dose Radiation Therapy in Knee Osteoarthritis: Short-term Results from the Randomized, Sham-Controlled Trial.</em> ASTRO 67th Annual Meeting Late-Breaking Abstract LBA 06. 2025. <a href="https://www.astro.org/ASTRO/media/ASTRO/Meetings%20and%20Education/PDFs/AM25/AM25_LBAs.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--teal);font-weight:600;text-decoration:none;">Abstract</a></span><br>
         <span id="faq-ref-2">2. Zhang W, Robertson J, Jones AC, Dieppe PA, Doherty M. <em>The placebo effect and its determinants in osteoarthritis: meta-analysis of randomised controlled trials.</em> Annals of the Rheumatic Diseases. 2008;67:1716-1723. <a href="https://pubmed.ncbi.nlm.nih.gov/18541604/" target="_blank" rel="noopener noreferrer" style="color:var(--teal);font-weight:600;text-decoration:none;">PubMed</a></span><br>
@@ -1971,7 +2012,7 @@ crossorigin="anonymous"></script>
         <p>Programs generally consider adults with osteoarthritis or degenerative joint pain, most often in the knees, hips, hands, shoulders, elbows, ankles, or feet, who have not gotten enough relief from medications, injections, physical therapy, or other conservative treatments and want to discuss a non-surgical option. Evidence is not equally strong for every joint.</p>
         <p>Many programs are cautious about using LDRT in younger adults because radiation-related risk has more time to develop. Age requirements vary by program, and the radiation oncologist considers age together with the joint being treated, prior care, imaging, and overall health.</p>
         <p>People who may be better candidates generally have persistent, function-limiting pain in at least the moderate range (roughly 4 out of 10 or higher). This is not a universal cutoff, and each radiation oncology program may use different criteria.</p>
-        <p>The strongest recent sham-controlled evidence involved patients with mild-to-moderate knee osteoarthritis. Patients with advanced structural damage may be less likely to improve because LDRT cannot regrow cartilage or restore a severely damaged joint.<sup><a href="#candidate-ref-1" style="color:var(--teal);font-weight:700;text-decoration:none;">[1]</a></sup></p>
+        <p>The strongest recent sham-controlled evidence involved patients with mild-to-moderate knee osteoarthritis. Patients with advanced structural damage may be less likely to improve because LDRT cannot regrow cartilage or restore a severely damaged joint.<sup><a href="#" onclick="return scrollToRef('candidate-ref-1')" style="color:var(--teal);font-weight:700;text-decoration:none;">[1]</a></sup></p>
         <p>LDRT is generally not used for rheumatoid, psoriatic, or other autoimmune forms of arthritis. Those are managed differently, and a rheumatologist is the right first call for those conditions.</p>
         <p id="candidate-ref-1" style="font-size:12.5px;color:var(--gray-3);line-height:1.65;margin-top:16px;"><strong>Reference:</strong> 1. Kim BH, et al. <em>Clinical Effectiveness of Single Course Low-Dose Radiation Therapy in Knee Osteoarthritis: Short-term Results from the Randomized, Sham-Controlled Trial.</em> ASTRO 67th Annual Meeting Late-Breaking Abstract LBA 06. 2025. <a href="https://amportal.astro.org/sessions/ct-01-21645/clinical-effectiveness-of-single-course-low-dose-radiation-therapy-in-knee-osteoarthritis-sho-109482" target="_blank" rel="noopener noreferrer" style="color:var(--teal);font-weight:600;text-decoration:none;">Abstract</a></p>
       </div>
@@ -2041,6 +2082,8 @@ crossorigin="anonymous"></script>
   </div>
 
   <div class="section">
+
+    <p style="text-align:center;font-size:14px;color:var(--gray-2);margin-bottom:18px;">Not in high school? <a href="#" onclick="document.getElementById('adult-volunteer').scrollIntoView({behavior:'smooth',block:'start'}); return false;">See adult volunteer roles below</a>.</p>
 
     <div class="mission-banner" style="text-align:center;margin-bottom:44px;">
       <h2>Help Build a Nationwide Student Network</h2>
@@ -2294,6 +2337,7 @@ crossorigin="anonymous"></script>
         <input type="hidden" name="_subject" value="New RJA State Outreach Ambassador application">
         <button class="btn btn-primary" type="submit" style="width:100%;margin-top:4px;">Join the Founding Ambassador Class</button>
       </form>
+      <p style="font-size:13px;color:var(--gray-3);margin-top:14px;text-align:center;">Parents and guardians, feel free to email us first with any questions at <a href="mailto:contact@radiantjointalliance.org">contact@radiantjointalliance.org</a>. We only use this information to follow up about the ambassador program, and we don't sell or share it.</p>
     </div>
 
     <div style="margin-top:32px;">
@@ -2302,6 +2346,85 @@ crossorigin="anonymous"></script>
         <div class="share-actions">
           <button class="share-btn" onclick="handleShare(this, 'https://radiantjointalliance.org', 'RJA State Outreach Ambassadors')">Share this page</button>
         </div>
+      </div>
+    </div>
+
+    <div id="adult-volunteer" style="margin-top:64px;scroll-margin-top:90px;border-top:1px solid var(--mid-teal, #c2dde4);padding-top:56px;">
+      <h2 class="section-title">Not in High School? We Still Need You</h2>
+      <div class="divider-line"></div>
+      <p style="font-size:15px;color:var(--gray-2);line-height:1.75;max-width:720px;margin-bottom:30px;">
+        Everything above is set up specifically for high school students, but plenty of what we do doesn't require a school ID. If you're a parent, a retiree, a nurse, or just someone who cares about this getting in front of more patients, there's a role here too.
+      </p>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-icon">
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#1a6b7a"/></svg>
+          </div>
+          <h3>Local Outreach</h3>
+          <p>Share our site and hospital directory where you already spend time: a Nextdoor post, a local Facebook group, a senior center bulletin board, or a note to your own doctor's office.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#1a6b7a"/></svg>
+          </div>
+          <h3>Hospital Research</h3>
+          <p>Help us track down LDRT programs that aren't in our directory yet, especially in states where we have few or no listings. Good fit if you don't mind some digging and a few phone calls.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="#1a6b7a"/></svg>
+          </div>
+          <h3>Community Events</h3>
+          <p>Represent Radiant Joint Alliance at health fairs, senior center visits, or community events in your area. Hand out flyers, answer basic questions, point people to the site.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" fill="#1a6b7a"/></svg>
+          </div>
+          <h3>Something Else</h3>
+          <p>Translation, graphic design, social media, data entry, or something we haven't thought of. Tell us what you're good at and we'll find a way to use it.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:40px;">
+        <form class="contact-form" action="https://formspree.io/f/mdavqlge" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="adult-vol-name">Name</label>
+              <input id="adult-vol-name" name="name" type="text" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label for="adult-vol-email">Email</label>
+              <input id="adult-vol-email" name="email" type="email" placeholder="you@example.com" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="adult-vol-location">City / State</label>
+              <input id="adult-vol-location" name="location" type="text" placeholder="e.g., Newark, NJ">
+            </div>
+            <div class="form-group">
+              <label for="adult-vol-role">I'm interested in</label>
+              <select id="adult-vol-role" name="role" required>
+                <option value="">Select one</option>
+                <option>Local Outreach</option>
+                <option>Hospital Research</option>
+                <option>Community Events</option>
+                <option>Something else / not sure yet</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="adult-vol-message">Anything else we should know?</label>
+            <textarea id="adult-vol-message" name="message" placeholder="Time you have available, relevant skills, or questions."></textarea>
+          </div>
+
+          <input type="hidden" name="_subject" value="New RJA adult volunteer inquiry (not a contact message)">
+          <button class="btn btn-primary" type="submit" style="width:100%;margin-top:4px;">Sign Up to Volunteer</button>
+        </form>
       </div>
     </div>
 
@@ -2448,7 +2571,7 @@ crossorigin="anonymous"></script>
       <div class="signup-box">
         <h3>Want to hear when we add new hospitals?</h3>
         <p>We add new locations to the directory as we confirm them. Leave your email if you'd like a note when that happens. We send these out ourselves, only a handful of times a year.</p>
-        <form class="signup-form" id="newsletter-form" action="https://formspree.io/f/mdavqlge" method="POST" onsubmit="return handleSignup(event)">
+        <form class="signup-form" id="newsletter-form" data-success-id="signup-success" action="https://formspree.io/f/mdavqlge" method="POST" onsubmit="return handleSignup(event)">
           <input type="email" name="email" placeholder="you@example.com" required>
           <input type="hidden" name="source" value="newsletter-signup">
           <input type="hidden" name="_subject" value="New newsletter signup (not a contact message)">
@@ -2501,7 +2624,7 @@ crossorigin="anonymous"></script>
  const PAGE_TITLES = {
  home: 'Home', about: 'About', arthritis: 'Arthritis Basics', options: 'Treatment Options', treatment: 'LDRT Treatment',
  expect: 'What to Expect', hospitals: 'Find a Hospital', research: 'Research & Evidence',
- faq: 'FAQ', volunteer: 'Ambassadors', donate: 'Donate', contact: 'Contact Us',
+ faq: 'FAQ', volunteer: 'Volunteer', donate: 'Donate', contact: 'Contact Us',
  survey: 'Survey'
  };
  function copyOrPrompt(btn, url) {
@@ -2558,6 +2681,68 @@ crossorigin="anonymous"></script>
  }
  copyOrPrompt(btn, url);
  }
+ const STATE_ABBR = {
+ alabama:'AL', alaska:'AK', arizona:'AZ', arkansas:'AR', california:'CA', colorado:'CO',
+ connecticut:'CT', delaware:'DE', florida:'FL', georgia:'GA', hawaii:'HI', idaho:'ID',
+ illinois:'IL', indiana:'IN', iowa:'IA', kansas:'KS', kentucky:'KY', louisiana:'LA',
+ maine:'ME', maryland:'MD', massachusetts:'MA', michigan:'MI', minnesota:'MN',
+ mississippi:'MS', missouri:'MO', montana:'MT', nebraska:'NE', nevada:'NV',
+ 'new hampshire':'NH', 'new jersey':'NJ', 'new mexico':'NM', 'new york':'NY',
+ 'north carolina':'NC', 'north dakota':'ND', ohio:'OH', oklahoma:'OK', oregon:'OR',
+ pennsylvania:'PA', 'rhode island':'RI', 'south carolina':'SC', 'south dakota':'SD',
+ tennessee:'TN', texas:'TX', utah:'UT', vermont:'VT', virginia:'VA', washington:'WA',
+ 'west virginia':'WV', wisconsin:'WI', wyoming:'WY', 'district of columbia':'DC'
+ };
+
+ function filterHospitals() {
+ const input = document.getElementById('hospital-search');
+ const tbody = document.getElementById('hospital-tbody');
+ const countEl = document.getElementById('hospital-count');
+ if (!input || !tbody) return;
+ const raw = input.value.trim().toLowerCase();
+ const rows = tbody.querySelectorAll('tr');
+ let visible = 0;
+
+ let matcher;
+ if (raw === '') {
+ matcher = () => true;
+ } else {
+ let stateCode = STATE_ABBR[raw] || null;
+ if (!stateCode && raw.length >= 4) {
+ const matchedName = Object.keys(STATE_ABBR).find(name => name.startsWith(raw));
+ if (matchedName) stateCode = STATE_ABBR[matchedName];
+ }
+ if (stateCode) {
+ const re = new RegExp('\\b' + stateCode + '\\b', 'i');
+ matcher = (text) => re.test(text);
+ } else if (raw.length <= 2) {
+ const escaped = raw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+ const re = new RegExp('\\b' + escaped + '\\b', 'i');
+ matcher = (text) => re.test(text);
+ } else {
+ matcher = (text) => text.toLowerCase().includes(raw);
+ }
+ }
+
+ rows.forEach(row => {
+ const match = matcher(row.textContent);
+ row.style.display = match ? '' : 'none';
+ if (match) visible++;
+ });
+ if (countEl) {
+ if (raw === '') {
+ countEl.textContent = 'Showing all ' + rows.length + ' locations. This table is sorted alphabetically by hospital name, not by state — search is usually faster.';
+ } else if (visible === 0) {
+ countEl.textContent = 'No matches for "' + input.value.trim() + '". Try a state name, a state abbreviation (e.g. CA), or a city name.';
+ } else {
+ countEl.textContent = 'Showing ' + visible + ' of ' + rows.length + ' locations.';
+ }
+ }
+ if (typeof gtag === 'function' && raw.length > 1) {
+ gtag('event', 'hospital_search', { search_term: raw });
+ }
+ }
+
  function handleSignup(e) {
  e.preventDefault();
  const form = e.target;
@@ -2566,7 +2751,9 @@ crossorigin="anonymous"></script>
  .then(r => {
  if (r.ok) {
  form.style.display = 'none';
- document.getElementById('signup-success').style.display = 'block';
+ const successId = form.dataset.successId || 'signup-success';
+ const successEl = document.getElementById(successId);
+ if (successEl) successEl.style.display = 'block';
  if (typeof gtag === 'function') {
  gtag('event', 'sign_up', { method: 'newsletter' });
  }
@@ -2603,6 +2790,13 @@ crossorigin="anonymous"></script>
  const target = document.getElementById(sectionId);
  if (!target) return false;
  target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+ return false;
+ }
+
+ function scrollToRef(refId) {
+ const target = document.getElementById(refId);
+ if (!target) return false;
+ target.scrollIntoView({ behavior: 'smooth', block: 'center' });
  return false;
  }
 
