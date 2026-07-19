@@ -9,6 +9,27 @@ nav: "hospitals"
 <h1>Find a Treatment Location</h1>
 <p>US hospitals, cancer centers, and practices we found offering low-dose radiation therapy for osteoarthritis / degenerative joint pain</p>
 </div>
+
+{% assign live_locations = site.data.directory | where_exp: "e", "e.secondary != true" %}
+{% assign live_states = site.data.directory | group_by: "state" %}
+{% assign live_cities = site.pages | where_exp: "p", "p.layout == 'city'" %}
+<div class="stat-strip" style="border-radius:var(--radius);margin:32px auto;max-width:900px;">
+<div class="stat-strip-inner" style="grid-template-columns:repeat(3,1fr);">
+<div class="stat">
+<div class="stat-num">{{ live_locations.size }}</div>
+<div class="stat-label">confirmed treatment locations</div>
+</div>
+<div class="stat">
+<div class="stat-num">{{ live_states.size }}</div>
+<div class="stat-label">states &amp; DC in the directory</div>
+</div>
+<div class="stat">
+<div class="stat-num">{{ live_cities.size }}</div>
+<div class="stat-label">cities with a dedicated page</div>
+</div>
+</div>
+</div>
+
 <div class="section" style="max-width:900px;margin:0 auto;">
 <h2 class="section-title">Browse by State</h2>
 <div class="divider-line"></div>

@@ -78,13 +78,15 @@ nav: "volunteer"
         Our goal is to have ambassadors serving communities in all 50 states. Each state may have several students working independently or as a small team. We do not know how quickly the program will grow, but every new ambassador helps us reach communities we could not reach alone.
       </p>
 <div class="stat-strip" style="border-radius:var(--radius);margin-bottom:36px;">
+{% assign live_locations = site.data.directory | where_exp: "e", "e.secondary != true" %}
+{% assign live_states = site.data.directory | group_by: "state" %}
 <div class="stat-strip-inner" style="grid-template-columns:repeat(4,1fr);max-width:none;">
 <div class="stat">
-<div class="stat-num">426</div>
+<div class="stat-num">{{ live_locations.size }}</div>
 <div class="stat-label">treatment locations listed</div>
 </div>
 <div class="stat">
-<div class="stat-num">49</div>
+<div class="stat-num">{{ live_states.size }}</div>
 <div class="stat-label">states in the location directory</div>
 </div>
 <div class="stat">
