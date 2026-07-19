@@ -1,0 +1,50 @@
+---
+layout: default
+---
+<div class="page-hero">
+<h1>LDRT Treatment Locations in {{ page.state_name }}</h1>
+<p>{{ page.entries.size }} confirmed location{% if page.entries.size != 1 %}s{% endif %} offering low-dose radiation therapy for osteoarthritis in {{ page.state_name }}</p>
+</div>
+
+<div class="section">
+<div style="text-align:center;margin:0 0 24px;margin-top:-21px;">
+<a href="{{ '/map.html' | relative_url }}" style="
+display:inline-flex;align-items:center;gap:10px;
+background:var(--dark-teal);color:var(--white);
+text-decoration:none;padding:14px 28px;border-radius:10px;
+font-size:15px;font-weight:600;font-family:'Inter',sans-serif;
+box-shadow:0 2px 12px rgba(14,74,87,.18);
+transition:background .18s;
+" onmouseover="this.style.background='#082f3a'" onmouseout="this.style.background='var(--dark-teal)'">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="white"/>
+</svg>
+View Interactive Map
+</a>
+<p style="font-size:13px;color:var(--gray-3);margin-top:10px;">Click any pin on the map for location details.</p>
+</div>
+
+<div style="margin-bottom:20px;">
+<input type="text" id="hospital-search" oninput="filterHospitals()" placeholder="Search by city or facility name" style="width:100%;padding:13px 16px;font-size:15px;border:1px solid var(--mid-teal);border-radius:8px;font-family:'Inter',sans-serif;color:var(--gray-1);">
+<p id="hospital-count" style="font-size:13px;color:var(--gray-3);margin-top:8px;"></p>
+</div>
+
+<table class="hospital-table">
+<thead><tr><th>Facility</th><th>Location</th></tr></thead>
+<tbody id="hospital-tbody">
+{% for entry in page.entries %}<tr><td>{{ entry.name }}</td><td>{{ entry.location }}</td></tr>
+{% endfor %}</tbody>
+</table>
+<p style="font-size:13px;color:var(--gray-3);margin-top:16px;">Please call ahead to confirm current service availability. This directory is for educational purposes; services may change. See the <a href="{{ '/find-a-treatment-location.html' | relative_url }}" style="color:var(--teal);">full interactive directory and map</a> for all locations nationwide.</p>
+
+{% assign cities = site.pages | where_exp: "p", "p.state_abbr == page.state_abbr" | where_exp: "p", "p.city" %}
+{% if cities.size > 0 %}
+<p style="max-width:720px;margin:16px auto 0;font-size:14px;">See detailed city pages:
+{% for c in cities %}<a href="{{ c.url | relative_url }}" style="color:var(--teal);">{{ c.city }}</a>{% unless forloop.last %} &nbsp;|&nbsp; {% endunless %}{% endfor %}
+</p>
+{% endif %}
+</div>
+
+<div class="section" style="max-width:720px;margin:0 auto;">
+<p>Not sure if LDRT is right for you? Start with our guide to <a href="{{ '/ldrt-treatment.html' | relative_url }}" style="color:var(--teal);">what LDRT is and how it works</a>, or read <a href="{{ '/who-is-a-good-candidate-for-ldrt.html' | relative_url }}" style="color:var(--teal);">who is generally a good candidate</a>.</p>
+</div>

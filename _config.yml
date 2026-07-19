@@ -1,0 +1,18 @@
+title: Radiant Joint Alliance
+url: "https://radiantjointalliance.org"
+baseurl: ""
+
+markdown: kramdown
+plugins:
+  - jekyll-sitemap
+
+# index.html and map.html are hand-maintained (the native app depends on
+# index.html's exact structure) — never let Jekyll touch them.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+keep_files:
+  - index.html
+  - map.html

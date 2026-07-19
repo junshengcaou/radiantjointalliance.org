@@ -1,0 +1,1718 @@
+- name: Ackerman Cancer Center
+  city: Jacksonville
+  state: FL
+  location: Jacksonville, FL
+- name: Advanced Radiation Centers of New York / SoftRay Therapy
+  city: New York metro / Long Island
+  state: NY
+  location: New York metro / Long Island, NY
+- name: AdventHealth Altamonte Springs
+  city: Altamonte Springs
+  state: FL
+  location: Altamonte Springs, FL
+- name: AdventHealth Celebration
+  city: Celebration
+  state: FL
+  location: Celebration, FL
+- name: AdventHealth Daytona Beach
+  city: Daytona Beach
+  state: FL
+  location: Daytona Beach, FL
+- name: AdventHealth East Orlando
+  city: Orlando
+  state: FL
+  location: Orlando, FL
+- name: AdventHealth Orlando
+  city: Orlando
+  state: FL
+  location: Orlando, FL
+- name: AdventHealth Radiation Oncology Parker / Littleton
+  city: Parker / Littleton
+  state: CO
+  location: Parker / Littleton, CO
+- name: AdventHealth Waterman
+  city: Tavares
+  state: FL
+  location: Tavares, FL
+- name: Adventist Health Sonora - Diana J. White Cancer Institute
+  city: Sonora
+  state: CA
+  location: Sonora, CA
+- name: Advocate Radiation Oncology
+  city: Fort Myers / Southwest FL
+  state: FL
+  location: Fort Myers / Southwest FL
+- name: Advocate Radiation Oncology
+  city: Multiple locations
+  state: IL
+  location: Multiple locations, IL
+- name: Alabama Cancer Care of Montgomery
+  city: Montgomery
+  state: AL
+  location: Montgomery, AL
+- name: Allegheny Health Network (AHN) - Allegheny General
+  city: Pittsburgh
+  state: PA
+  location: Pittsburgh, PA
+- name: Allegheny Health Network (AHN) - Allegheny Valley Hospital
+  city: Natrona Heights
+  state: PA
+  location: Natrona Heights, PA
+- name: Allegheny Health Network (AHN) - Armstrong County Memorial Hospital
+  city: Kittanning
+  state: PA
+  location: Kittanning, PA
+- name: Allegheny Health Network (AHN) - Beaver Cancer Center
+  city: Beaver
+  state: PA
+  location: Beaver, PA
+- name: Allegheny Health Network (AHN) - Clarion Hospital
+  city: Clarion
+  state: PA
+  location: Clarion, PA
+- name: Allegheny Health Network (AHN) - Forbes Hospital
+  city: Monroeville
+  state: PA
+  location: Monroeville, PA
+- name: Allegheny Health Network (AHN) - Jefferson Regional Medical Center
+  city: West Mifflin
+  state: PA
+  location: West Mifflin, PA
+- name: Allegheny Health Network (AHN) - Peters Township Health + Wellness Pavilion
+  city: McMurray
+  state: PA
+  location: McMurray, PA
+- name: Allegheny Health Network (AHN) - Saint Vincent Cancer Center
+  city: Erie
+  state: PA
+  location: Erie, PA
+- name: Allegheny Health Network (AHN) - Tony Teramana Cancer Center
+  city: Steubenville
+  state: OH
+  location: Steubenville, OH
+- name: Allegheny Health Network (AHN) - West Penn Hospital
+  city: Pittsburgh
+  state: PA
+  location: Pittsburgh, PA
+- name: Allegheny Health Network (AHN) - Wexford Health + Wellness Pavilion
+  city: Wexford
+  state: PA
+  location: Wexford, PA
+- name: Alliance Cancer Care †
+  city: Huntsville / North Alabama
+  state: AL
+  location: Huntsville / North Alabama
+- name: Alliance Cancer Center
+  city: Greenville
+  state: MS
+  location: Greenville, MS
+- name: Allina Health Cancer Institute
+  city: Minneapolis / St. Paul
+  state: MN
+  location: Minneapolis / St. Paul, MN
+- name: Anchorage Radiation Oncology Center †
+  city: Anchorage
+  state: AK
+  location: Anchorage, AK
+- name: AnMed Cancer Center
+  city: Anderson
+  state: SC
+  location: Anderson, SC
+- name: APEX Cancer Care / Urology Austin
+  city: Austin / Central Texas
+  state: TX
+  location: Austin / Central Texas
+- name: Astera Health
+  city: Wadena
+  state: MN
+  location: Wadena, MN
+- name: Atrium Health Levine Cancer
+  city: Charlotte / Albemarle
+  state: NC
+  location: Charlotte / Albemarle, NC
+- name: Augusta Health - Center for Cancer and Blood Disorders
+  city: Fishersville
+  state: VA
+  location: Fishersville, VA
+- name: Aurora BayCare Medical Center
+  city: Green Bay
+  state: WI
+  location: Green Bay, WI
+- name: Banner Health Tucson †
+  city: Tucson
+  state: AZ
+  location: Tucson, AZ
+- name: Baptist Health Corbin
+  city: Corbin
+  state: KY
+  location: Corbin, KY
+- name: Baptist Health CyberKnife Radiosurgery Center †
+  city: Louisville
+  state: KY
+  location: Louisville, KY
+- name: BASS Medical / Gregory Rhodes MD Cancer Center
+  city: Walnut Creek
+  state: CA
+  location: Walnut Creek, CA
+- name: Bassett Medical Center †
+  city: Oneonta
+  state: NY
+  location: Oneonta, NY
+- name: Beacon Health System Radiation Oncology
+  city: South Bend
+  state: IN
+  location: South Bend, IN
+- name: Beth Israel Deaconess Hospital - Plymouth
+  city: Plymouth
+  state: MA
+  location: Plymouth, MA
+- name: Beth Israel Deaconess Medical Center †
+  city: Boston
+  state: MA
+  location: Boston, MA
+- name: Beth Israel Lahey Health / Anna Jaques Hospital †
+  city: Newburyport
+  state: MA
+  location: Newburyport, MA
+- name: Billings Clinic †
+  city: Billings
+  state: MT
+  location: Billings, MT
+- name: Boulder Community Health
+  city: Boulder
+  state: CO
+  location: Boulder, CO
+- name: BR General Pennington Cancer Center †
+  city: Baton Rouge
+  state: LA
+  location: Baton Rouge, LA
+- name: Cancer Care Centers of Brevard (CCCB)
+  city: Melbourne / Brevard County
+  state: FL
+  location: Melbourne / Brevard County, FL
+- name: Cancer Center of Hawaii - Liliha †
+  city: Honolulu
+  state: HI
+  location: Honolulu, HI
+- name: Cancer Centers of Northern Arizona †
+  city: Northern Arizona
+  state: AZ
+  location: Northern Arizona
+- name: Cancer Specialists of North Florida †
+  city: North Florida
+  state: FL
+  location: North Florida
+- name: Capital Radiosurgery Centers
+  city: Halethorpe
+  state: MD
+  location: Halethorpe, MD
+- name: Carson Tahoe Radiation Oncology Associates †
+  city: Carson City
+  state: NV
+  location: Carson City, NV
+- name: CARTI Cancer Center
+  city: Little Rock / Conway / El Dorado / North Little Rock / Pine Bluff / Searcy
+  state: AR
+  location: Little Rock / Conway / El Dorado / North Little Rock / Pine Bluff / Searcy,
+    AR
+- name: Cedars-Sinai Medical Center
+  city: Los Angeles
+  state: CA
+  location: Los Angeles, CA
+- name: The Center for Cancer & Blood Disorders
+  city: Fort Worth / North Texas
+  state: TX
+  location: Fort Worth / North Texas
+- name: The Center for Cancer & Blood Disorders
+  city: Weatherford
+  state: TX
+  location: Weatherford, TX
+- name: Centerpoint Radiation Oncology †
+  city: Beverly Hills / Southern CA
+  state: CA
+  location: Beverly Hills / Southern CA
+- name: CentraHealth Alan B. Pearson Regional Cancer Center †
+  city: Lynchburg
+  state: VA
+  location: Lynchburg, VA
+- name: CentraState Medical Center
+  city: Freehold
+  state: NJ
+  location: Freehold, NJ
+- name: Charleston Area Medical Center (CAMC) Radiation Oncology
+  city: Charleston
+  state: WV
+  location: Charleston, WV
+- name: CHI Health St. Elizabeth
+  city: Lincoln
+  state: NE
+  location: Lincoln, NE
+- name: CHI Health St. Francis
+  city: Grand Island
+  state: NE
+  location: Grand Island, NE
+- name: CHI St. Joseph Health - St. Joseph Health Bryan Hospital
+  city: Bryan
+  state: TX
+  location: Bryan, TX
+- name: Chilton Medical Center
+  city: Pompton Plains
+  state: NJ
+  location: Pompton Plains, NJ
+- name: The Christ Hospital Cancer Center
+  city: Cincinnati
+  state: OH
+  location: Cincinnati, OH
+- name: ChristianaCare - Helen F. Graham Cancer Center / Concord Health Center
+  city: Newark, DE / Chadds Ford
+  state: PA
+  location: Newark, DE / Chadds Ford, PA
+- name: CHRISTUS St. Vincent Regional Cancer Center †
+  city: Santa Fe
+  state: NM
+  location: Santa Fe, NM
+- name: City of Hope - Antelope Valley
+  city: Lancaster
+  state: CA
+  location: Lancaster, CA
+- name: City of Hope - Arcadia
+  city: Arcadia
+  state: CA
+  location: Arcadia, CA
+- name: City of Hope - Corona
+  city: Corona
+  state: CA
+  location: Corona, CA
+- name: City of Hope - Duarte
+  city: Duarte
+  state: CA
+  location: Duarte, CA
+- name: City of Hope - Mission Hills
+  city: Mission Hills
+  state: CA
+  location: Mission Hills, CA
+- name: City of Hope - Phoenix
+  city: Phoenix
+  state: AZ
+  location: Phoenix, AZ
+- name: City of Hope - San Bernardino Radiation Oncology
+  city: San Bernardino
+  state: CA
+  location: San Bernardino, CA
+- name: City of Hope - Santa Clarita
+  city: Santa Clarita
+  state: CA
+  location: Santa Clarita, CA
+- name: City of Hope - Sherman Oaks Radiation Oncology
+  city: Sherman Oaks
+  state: CA
+  location: Sherman Oaks, CA
+- name: City of Hope - South Bay
+  city: Torrance
+  state: CA
+  location: Torrance, CA
+- name: City of Hope - South Pasadena
+  city: South Pasadena
+  state: CA
+  location: South Pasadena, CA
+- name: City of Hope - Temecula Radiation Oncology
+  city: Temecula
+  state: CA
+  location: Temecula, CA
+- name: City of Hope - Upland
+  city: Upland
+  state: CA
+  location: Upland, CA
+- name: City of Hope - West Hills Radiation Oncology
+  city: West Hills
+  state: CA
+  location: West Hills, CA
+- name: City of Hope - Wildomar Radiation Oncology
+  city: Wildomar
+  state: CA
+  location: Wildomar, CA
+- name: City of Hope Chicago
+  city: Chicago
+  state: IL
+  location: Chicago, IL
+- name: Clearwater Radiation Oncology
+  city: Clearwater
+  state: FL
+  location: Clearwater, FL
+- name: Cleveland Clinic - Akron General
+  city: Akron
+  state: OH
+  location: Akron, OH
+- name: Cleveland Clinic - Cancer Center, Mansfield
+  city: Mansfield
+  state: OH
+  location: Mansfield, OH
+- name: Cleveland Clinic - Hillcrest Hospital
+  city: Mayfield Heights
+  state: OH
+  location: Mayfield Heights, OH
+- name: Cleveland Clinic - Independence Family Health Center
+  city: Independence
+  state: OH
+  location: Independence, OH
+- name: Cleveland Clinic - Indian River Hospital / Scully-Welsh Cancer Center
+  city: Vero Beach
+  state: FL
+  location: Vero Beach, FL
+- name: Cleveland Clinic - Judith & Richard Kinzel Cancer Center, Sandusky
+  city: Sandusky
+  state: OH
+  location: Sandusky, OH
+- name: Cleveland Clinic - Martin North Robert & Carol Weissman Cancer Center
+  city: Stuart
+  state: FL
+  location: Stuart, FL
+- name: Cleveland Clinic - Mercy Hospital
+  city: Canton
+  state: OH
+  location: Canton, OH
+- name: Cleveland Clinic - Moll Cancer Center at Fairview Hospital
+  city: Cleveland
+  state: OH
+  location: Cleveland, OH
+- name: Cleveland Clinic - Strongsville Family Health & Surgery Center
+  city: Strongsville
+  state: OH
+  location: Strongsville, OH
+- name: Cleveland Clinic - Taussig Cancer Center (Main Campus)
+  city: Cleveland
+  state: OH
+  location: Cleveland, OH
+- name: Cleveland Clinic - Union Hospital, Dover
+  city: Dover
+  state: OH
+  location: Dover, OH
+- name: Cleveland Clinic - Weston Hospital
+  city: Weston
+  state: FL
+  location: Weston, FL
+- name: Cleveland Clinic - Wooster Milltown Specialty & Surgery Center
+  city: Wooster
+  state: OH
+  location: Wooster, OH
+- name: Coastal Cancer Center
+  city: Myrtle Beach
+  state: SC
+  location: Myrtle Beach, SC
+- name: CommonSpirit Holy Cross - Jordan Valley
+  city: West Jordan
+  state: UT
+  location: West Jordan, UT
+- name: CommonSpirit St. Mary-Corwin Hospital
+  city: Pueblo
+  state: CO
+  location: Pueblo, CO
+- name: Community Medical Center
+  city: Toms River
+  state: NJ
+  location: Toms River, NJ
+- name: Compass Oncology
+  city: Portland, OR / Vancouver
+  state: WA
+  location: Portland, OR / Vancouver, WA
+- name: Comprehensive Cancer Centers
+  city: Las Vegas / Henderson
+  state: NV
+  location: Las Vegas / Henderson, NV
+- name: Comprehensive Cancer Centers of Nevada
+  city: Las Vegas
+  state: NV
+  location: Las Vegas, NV
+- name: Cone Health Cancer Center at Wesley Long Hospital
+  city: Greensboro
+  state: NC
+  location: Greensboro, NC
+- name: Conemaugh / Johnstown Cancer Center
+  city: Johnstown
+  state: PA
+  location: Johnstown, PA
+- name: Cooperman Barnabas Medical Center
+  city: Livingston
+  state: NJ
+  location: Livingston, NJ
+- name: Corewell Health / Beaumont Health - Grosse Pointe
+  city: Grosse Pointe
+  state: MI
+  location: Grosse Pointe, MI
+- name: CrozerHealth / Grand View Radiation Oncology †
+  city: Pennsylvania
+  state: PA
+  location: Pennsylvania
+- name: CyberKnife Center of Miami
+  city: Miami
+  state: FL
+  location: Miami, FL
+- name: Dartmouth Hitchcock Medical Center
+  city: Lebanon
+  state: NH
+  location: Lebanon, NH
+- name: Dayton Physicians Network Radiation Oncology at Atrium Medical Center †
+  city: Franklin
+  state: OH
+  location: Franklin, OH
+- name: Dayton Physicians Network Radiation Oncology at Miami Valley Hospital North
+    †
+  city: Dayton
+  state: OH
+  location: Dayton, OH
+- name: Dayton Physicians Network Radiation Oncology at Miami Valley Hospital South
+    †
+  city: Centerville
+  state: OH
+  location: Centerville, OH
+- name: DCH Health System
+  city: Tuscaloosa / West Alabama
+  state: AL
+  location: Tuscaloosa / West Alabama
+- name: Dignity Health Cancer Institute at St. Joseph's †
+  city: Phoenix
+  state: AZ
+  location: Phoenix, AZ
+- name: Door County Cancer Center
+  city: Sturgeon Bay
+  state: WI
+  location: Sturgeon Bay, WI
+- name: Duke Radiation Oncology †
+  city: Durham
+  state: NC
+  location: Durham, NC
+- name: EHS / St. John's Episcopal Hospital
+  city: Far Rockaway
+  state: NY
+  location: Far Rockaway, NY
+- name: Emory University / Winship Cancer Institute
+  city: Atlanta
+  state: GA
+  location: Atlanta, GA
+- name: Epic Care
+  city: San Ramon / Pleasant Hill / Antioch / Emeryville
+  state: CA
+  location: San Ramon / Pleasant Hill / Antioch / Emeryville, CA
+- name: Episcopal Health Services RAPID Program at Walsh Ambulatory Pavilion
+  city: Far Rockaway
+  state: NY
+  location: Far Rockaway, NY
+- name: Erlanger Health System
+  city: Chattanooga
+  state: TN
+  location: Chattanooga, TN
+- name: Essentia Health Radiation Oncology - Duluth †
+  city: Duluth
+  state: MN
+  location: Duluth, MN
+- name: Essentia Health Radiation Oncology - Fargo †
+  city: Fargo
+  state: ND
+  location: Fargo, ND
+- name: EvergreenHealth Cancer Care
+  city: Kirkland
+  state: WA
+  location: Kirkland, WA
+- name: EVMS Medical Group / Sentara Virginia Beach General Hospital
+  city: Virginia Beach
+  state: VA
+  location: Virginia Beach, VA
+- name: FHN / Leonard Ferguson Cancer Center
+  city: Freeport
+  state: IL
+  location: Freeport, IL
+- name: Florida Oncology Tavares †
+  city: Tavares
+  state: FL
+  location: Tavares, FL
+- name: Florida Radiation Oncology
+  city: Winter Park
+  state: FL
+  location: Winter Park, FL
+- name: Freeman Cornell-Beshore Cancer Institute †
+  city: Joplin
+  state: MO
+  location: Joplin, MO
+- name: Generations Radiotherapy & Oncology PC
+  city: Alabaster
+  state: AL
+  location: Alabaster, AL
+- name: Genesis Healthcare / Unio Specialty Care †
+  city: Southern California
+  state: CA
+  location: Southern California
+- name: Gibbs Cancer Center †
+  city: Spartanburg
+  state: SC
+  location: Spartanburg, SC
+- name: Good Samaritan Radiation Oncology
+  city: Vincennes
+  state: IN
+  location: Vincennes, IN
+- name: Greater Dayton Cancer Center †
+  city: Kettering
+  state: OH
+  location: Kettering, OH
+- name: Greenwich Hospital / Yale New Haven Health
+  city: Greenwich
+  state: CT
+  location: Greenwich, CT
+- name: H.R. Hoover, MD Cancer Center at Willamette Valley Medical Center
+  city: McMinnville
+  state: OR
+  location: McMinnville, OR
+- name: Hackensack Meridian - Jersey Shore University Medical Center
+  city: Neptune
+  state: NJ
+  location: Neptune, NJ
+- name: Hackettstown Medical Center
+  city: Hackettstown
+  state: NJ
+  location: Hackettstown, NJ
+- name: Harrington Cancer Center †
+  city: Amarillo
+  state: TX
+  location: Amarillo, TX
+- name: HCA Florida Capital Cancer Center
+  city: Tallahassee
+  state: FL
+  location: Tallahassee, FL
+- name: HCA Houston Healthcare North Cypress
+  city: Cypress
+  state: TX
+  location: Cypress, TX
+- name: Heelex †
+  city: Tennessee
+  state: TN
+  location: Tennessee
+- name: Hematology-Oncology Associates of Central New York (HOA CNY)
+  city: East Syracuse / Auburn
+  state: NY
+  location: East Syracuse / Auburn, NY
+- name: Hendrick Health - Hendrick Cancer Center
+  city: Abilene
+  state: TX
+  location: Abilene, TX
+- name: Hendrick Health - Walker Cancer Center
+  city: Brownwood
+  state: TX
+  location: Brownwood, TX
+- name: Hill Country Cancer Care / Friendship Lane Center for Cancer Care †
+  city: Texas Hill Country
+  state: TX
+  location: Texas Hill Country
+- name: Holy Cross Radiation Therapy Center †
+  city: Mission Hills
+  state: CA
+  location: Mission Hills, CA
+- name: Holzer Center for Cancer Care
+  city: Gallipolis
+  state: OH
+  location: Gallipolis, OH
+- name: Hospital Sisters Health System (HSHS) - St. Nicholas Hospital
+  city: Sheboygan
+  state: WI
+  location: Sheboygan, WI
+- name: Hospital Sisters Health System (HSHS) - St. Vincent Hospital Cancer Centers
+  city: Green Bay
+  state: WI
+  location: Green Bay, WI
+- name: Houston Methodist Neal Cancer Center †
+  city: Houston
+  state: TX
+  location: Houston, TX
+- name: Hunterdon Regional Cancer Center
+  city: Flemington
+  state: NJ
+  location: Flemington, NJ
+- name: Hux Cancer Center / Union Health †
+  city: Terre Haute
+  state: IN
+  location: Terre Haute, IN
+- name: Idaho Cancer Center †
+  city: Idaho Falls
+  state: ID
+  location: Idaho Falls, ID
+- name: Imperial Valley Radiation Oncology
+  city: El Centro
+  state: CA
+  location: El Centro, CA
+- name: Inova Fairfax Hospital †
+  city: Falls Church
+  state: VA
+  location: Falls Church, VA
+- name: INTEGRIS Health Cancer Institute
+  city: Oklahoma City
+  state: OK
+  location: Oklahoma City, OK
+- name: Ironwood Cancer & Research Center †
+  city: Phoenix / greater Arizona
+  state: AZ
+  location: Phoenix / greater Arizona
+- name: IU Health (Indiana University Health)
+  city: Indiana (multiple locations)
+  state: IN
+  location: Indiana (multiple locations)
+- name: Jefferson Abington Hospital
+  city: Abington
+  state: PA
+  location: Abington, PA
+- name: Jefferson Cherry Hill Hospital
+  city: Cherry Hill
+  state: NJ
+  location: Cherry Hill, NJ
+- name: Jefferson Einstein Montgomery Hospital
+  city: East Norriton
+  state: PA
+  location: East Norriton, PA
+- name: Jefferson Einstein Philadelphia Hospital
+  city: Philadelphia
+  state: PA
+  location: Philadelphia, PA
+- name: Jefferson Hospital for Neuroscience
+  city: Philadelphia
+  state: PA
+  location: Philadelphia, PA
+- name: Jefferson Lehigh Valley
+  city: Lehigh Valley
+  state: PA
+  location: Lehigh Valley, PA
+- name: Jefferson Radiation Oncology Associates
+  city: Bensalem
+  state: PA
+  location: Bensalem, PA
+- name: Jefferson Radiation Oncology Northeast
+  city: Philadelphia
+  state: PA
+  location: Philadelphia, PA
+- name: Jefferson Torresdale Hospital
+  city: Philadelphia
+  state: PA
+  location: Philadelphia, PA
+- name: Jefferson Washington Township Hospital
+  city: Sewell
+  state: NJ
+  location: Sewell, NJ
+- name: John Muir Health
+  city: Walnut Creek
+  state: CA
+  location: Walnut Creek, CA
+- name: Johnston-Willis Hospital / HCA Virginia
+  city: Richmond
+  state: VA
+  location: Richmond, VA
+- name: Kaiser Permanente Anaheim †
+  city: Anaheim
+  state: CA
+  location: Anaheim, CA
+- name: Kaiser Permanente Interstate Radiation Oncology †
+  city: Portland
+  state: OR
+  location: Portland, OR
+- name: Kaiser Permanente Oakland Medical Center
+  city: Oakland
+  state: CA
+  location: Oakland, CA
+- name: Kaufman Cancer Center at UM Upper Chesapeake Medical Center
+  city: Bel Air
+  state: MD
+  location: Bel Air, MD
+- name: Keck Medicine of USC - Arcadia Radiation Oncology
+  city: Arcadia
+  state: CA
+  location: Arcadia, CA
+- name: Keck Medicine of USC - Buena Park Radiation Oncology
+  city: Buena Park
+  state: CA
+  location: Buena Park, CA
+- name: Keck Medicine of USC - Newport Beach Radiation Oncology and Imaging
+  city: Newport Beach
+  state: CA
+  location: Newport Beach, CA
+- name: Keck Medicine of USC - Norris Comprehensive Cancer Center
+  city: Los Angeles
+  state: CA
+  location: Los Angeles, CA
+- name: Keck Medicine of USC - Pasadena Radiation Oncology
+  city: Pasadena
+  state: CA
+  location: Pasadena, CA
+- name: Keck Medicine of USC - Santa Clarita Radiation Oncology
+  city: Santa Clarita
+  state: CA
+  location: Santa Clarita, CA
+- name: Kelsey-Seybold Clinic †
+  city: Houston
+  state: TX
+  location: Houston, TX
+- name: Kettering Health - Beavercreek
+  city: Beavercreek
+  state: OH
+  location: Beavercreek, OH
+- name: Kettering Health - Englewood
+  city: Englewood
+  state: OH
+  location: Englewood, OH
+- name: Kettering Health - Hamilton
+  city: Hamilton
+  state: OH
+  location: Hamilton, OH
+- name: Kettering Health - Main Campus
+  city: Kettering
+  state: OH
+  location: Kettering, OH
+- name: Kettering Health - Troy
+  city: Troy
+  state: OH
+  location: Troy, OH
+- name: Lahey Clinic / Beth Israel Lahey Health
+  city: Burlington / greater Boston
+  state: MA
+  location: Burlington / greater Boston, MA
+- name: Lake Charles Memorial Health System †
+  city: Lake Charles
+  state: LA
+  location: Lake Charles, LA
+- name: Lake Huron Medical Center
+  city: Port Huron
+  state: MI
+  location: Port Huron, MI
+- name: Lankenau Medical Center †
+  city: Wynnewood
+  state: PA
+  location: Wynnewood, PA
+- name: Lehigh Valley Health Network
+  city: Allentown
+  state: PA
+  location: Allentown, PA
+- name: LMH Health †
+  city: Lawrence
+  state: KS
+  location: Lawrence, KS
+- name: Logan Health †
+  city: Kalispell
+  state: MT
+  location: Kalispell, MT
+- name: Loyola University Medical Center
+  city: Maywood / Tinley Park
+  state: IL
+  location: Maywood / Tinley Park, IL
+- name: Luminis Health
+  city: Annapolis / Maryland region
+  state: MD
+  location: Annapolis / Maryland region
+- name: Marin Cancer Center †
+  city: Marin County
+  state: CA
+  location: Marin County, CA
+- name: Mary Bird Perkins Cancer Center †
+  city: Louisiana
+  state: LA
+  location: Louisiana
+- name: Maryland Oncology Hematology
+  city: Maryland (multiple locations)
+  state: MD
+  location: Maryland (multiple locations)
+- name: Maryland Proton Treatment Center
+  city: Baltimore
+  state: MD
+  location: Baltimore, MD
+- name: Mass General Cancer Center at Wentworth-Douglass Hospital
+  city: Dover
+  state: NH
+  location: Dover, NH
+- name: Mayo Clinic Phoenix †
+  city: Phoenix
+  state: AZ
+  location: Phoenix, AZ
+- name: Mayo Clinic Rochester
+  city: Rochester
+  state: MN
+  location: Rochester, MN
+- name: McLeod Health †
+  city: Florence
+  state: SC
+  location: Florence, SC
+- name: MD Anderson Cancer Center
+  city: Houston
+  state: TX
+  location: Houston, TX
+- name: MD Anderson Cancer Center at Cooper - Camden
+  city: Camden
+  state: NJ
+  location: Camden, NJ
+- name: MD Anderson Cancer Center at Cooper - Moorestown
+  city: Moorestown
+  state: NJ
+  location: Moorestown, NJ
+- name: MD Anderson Cancer Center at Cooper - Voorhees
+  city: Voorhees
+  state: NJ
+  location: Voorhees, NJ
+- name: MD Anderson Cancer Center at Cooper Cape Regional
+  city: Cape May Court House
+  state: NJ
+  location: Cape May Court House, NJ
+- name: MedStar Georgetown University Hospital
+  city: Washington
+  state: DC
+  location: Washington, DC
+- name: Memorial Sloan Kettering †
+  city: New York
+  state: NY
+  location: New York, NY
+- name: MemorialCare - Long Beach Medical Center
+  city: Long Beach
+  state: CA
+  location: Long Beach, CA
+- name: MemorialCare - Orange Coast Medical Center
+  city: Fountain Valley
+  state: CA
+  location: Fountain Valley, CA
+- name: MemorialCare - Saddleback Medical Center
+  city: Laguna Hills
+  state: CA
+  location: Laguna Hills, CA
+- name: Mercy Health - Springfield Regional
+  city: Springfield
+  state: OH
+  location: Springfield, OH
+- name: Mercy Health Springfield Regional Cancer Center
+  city: Springfield
+  state: OH
+  location: Springfield, OH
+- name: Mercyhealth Cancer Center - Freeport
+  city: Freeport
+  state: IL
+  location: Freeport, IL
+- name: Minnesota Oncology
+  city: Maplewood
+  state: MN
+  location: Maplewood, MN
+- name: Missouri Cancer Associates - Columbia
+  city: Columbia
+  state: MO
+  location: Columbia, MO
+- name: Missouri Cancer Associates - George Rea Cancer Treatment Center
+  city: Kirksville
+  state: MO
+  location: Kirksville, MO
+- name: Moffitt Cancer Center - International Plaza
+  city: Tampa
+  state: FL
+  location: Tampa, FL
+- name: Moffitt Cancer Center - Magnolia Campus
+  city: Tampa
+  state: FL
+  location: Tampa, FL
+- name: Moffitt Cancer Center - McKinley Hospital
+  city: Tampa
+  state: FL
+  location: Tampa, FL
+- name: Moffitt Cancer Center - Morton Plant Hospital
+  city: Clearwater
+  state: FL
+  location: Clearwater, FL
+- name: Moffitt Cancer Center - Richard M. Schulze Family Foundation Outpatient Center
+  city: Tampa
+  state: FL
+  location: Tampa, FL
+- name: Moffitt Cancer Center - SouthShore
+  city: Ruskin
+  state: FL
+  location: Ruskin, FL
+- name: Moffitt Cancer Center - Speros Campus
+  city: Pasco County
+  state: FL
+  location: Pasco County, FL
+- name: Moffitt Cancer Center - Wesley Chapel
+  city: Wesley Chapel
+  state: FL
+  location: Wesley Chapel, FL
+- name: Morristown Medical Center
+  city: Morristown
+  state: NJ
+  location: Morristown, NJ
+- name: Mount Nittany Health †
+  city: State College
+  state: PA
+  location: State College, PA
+- name: Mount Sinai West
+  city: New York
+  state: NY
+  location: New York, NY
+- name: MUSC Charleston †
+  city: Charleston
+  state: SC
+  location: Charleston, SC
+- name: Naval Medical Center San Diego †
+  city: San Diego
+  state: CA
+  location: San Diego, CA
+- name: Nebraska Hematology-Oncology
+  city: Lincoln
+  state: NE
+  location: Lincoln, NE
+- name: New York Cancer & Blood Specialists (NYCBS)
+  city: Brooklyn / Bronx / Queens / Long Island
+  state: NY
+  location: Brooklyn / Bronx / Queens / Long Island, NY
+- name: New York Oncology Hematology (NYOH)
+  city: Albany / Capital District
+  state: NY
+  location: Albany / Capital District, NY
+- name: NewYork-Presbyterian / Columbia University Irving Medical Center
+  city: New York
+  state: NY
+  location: New York, NY
+- name: NewYork-Presbyterian / Weill Cornell Medical Center
+  city: New York
+  state: NY
+  location: New York, NY
+- name: NewYork-Presbyterian Brooklyn Methodist Hospital
+  city: 506 6th Street, Brooklyn, NY 11215
+  state: NY
+  location: 506 6th Street, Brooklyn, NY 11215
+- name: North Arkansas Regional Medical Center / Claude Parrish Cancer Center
+  city: Harrison
+  state: AR
+  location: Harrison, AR
+- name: North Cascade Cancer Center
+  city: Bellingham
+  state: WA
+  location: Bellingham, WA
+- name: North Cascade Cancer Center
+  city: Bellingham
+  state: WA
+  location: Bellingham, WA
+- name: Northeast Georgia Medical Center - Braselton
+  city: Braselton
+  state: GA
+  location: Braselton, GA
+- name: Northeast Georgia Medical Center - Gainesville
+  city: Gainesville
+  state: GA
+  location: Gainesville, GA
+- name: Northeast Georgia Medical Center - Toccoa
+  city: Toccoa
+  state: GA
+  location: Toccoa, GA
+- name: Northeastern Radiation Oncology
+  city: Saratoga Springs
+  state: NY
+  location: Saratoga Springs, NY
+- name: Northside Hospital Cancer Institute
+  city: Atlanta
+  state: GA
+  location: Atlanta, GA
+- name: Northwell Cancer Institute Queens Radiation Center
+  city: Forest Hills
+  state: NY
+  location: Forest Hills, NY
+- name: Northwell Health / Lenox Hill Hospital
+  city: New York
+  state: NY
+  location: New York, NY
+- name: Northwest Cancer Clinic
+  city: Kennewick
+  state: WA
+  location: Kennewick, WA
+- name: Northwestern Memorial Hospital †
+  city: Chicago
+  state: IL
+  location: Chicago, IL
+- name: Novant Health Derrick L. Davis Cancer Center †
+  city: Winston-Salem
+  state: NC
+  location: Winston-Salem, NC
+- name: Novant Health Zimmer Cancer Institute (New Hanover Regional Medical Center)
+  city: Wilmington
+  state: NC
+  location: Wilmington, NC
+- name: Nuvance Health / Northwell - Norwalk Hospital and Putnam Hospital
+  city: Norwalk, CT / Putnam County
+  state: NY
+  location: Norwalk, CT / Putnam County, NY
+- name: Ogden Regional Medical Center
+  city: Ogden
+  state: UT
+  location: Ogden, UT
+- name: OHC / Oncology Hematology Care
+  city: Cincinnati-area
+  state: OH
+  location: Cincinnati-area, OH
+- name: OHSU †
+  city: Portland
+  state: OR
+  location: Portland, OR
+- name: Oklahoma Proton Center / Oklahoma Cancer Center
+  city: Oklahoma City
+  state: OK
+  location: Oklahoma City, OK
+- name: Oncology Las Vegas
+  city: Las Vegas / Henderson
+  state: NV
+  location: Las Vegas / Henderson, NV
+- name: Oncology Nevada †
+  city: Reno / northern Nevada
+  state: NV
+  location: Reno / northern Nevada
+- name: Onvida Health Cancer and Blood Disorders Center
+  city: Yuma
+  state: AZ
+  location: Yuma, AZ
+- name: OSF Sacred Heart - Danville
+  city: Danville
+  state: IL
+  location: Danville, IL
+- name: Overlook Medical Center
+  city: Summit
+  state: NJ
+  location: Summit, NJ
+- name: Peninsula Radiation Oncology Center †
+  city: Soldotna
+  state: AK
+  location: Soldotna, AK
+- name: Penn Medicine - Abramson Cancer Center, Valley Forge
+  city: Valley Forge
+  state: PA
+  location: Valley Forge, PA
+- name: Penn Medicine - Chestnut Hill Hospital
+  city: Philadelphia
+  state: PA
+  location: Philadelphia, PA
+- name: Penn Medicine - Doylestown Hospital
+  city: Doylestown
+  state: PA
+  location: Doylestown, PA
+- name: Penn Medicine - Hospital of the University of Pennsylvania
+  city: Philadelphia
+  state: PA
+  location: Philadelphia, PA
+- name: Penn Medicine - Lancaster General Hospital
+  city: Lancaster
+  state: PA
+  location: Lancaster, PA
+- name: Penn Medicine - Penn Presbyterian Medical Center
+  city: Philadelphia
+  state: PA
+  location: Philadelphia, PA
+- name: Penn Medicine - Pennsylvania Hospital
+  city: Philadelphia
+  state: PA
+  location: Philadelphia, PA
+- name: Penn Medicine - Perelman Center for Advanced Medicine / Roberts Proton Therapy
+    Center
+  city: Philadelphia
+  state: PA
+  location: Philadelphia, PA
+- name: Penn Medicine - Princeton Medical Center †
+  city: Plainsboro
+  state: NJ
+  location: Plainsboro, NJ
+- name: Penn Medicine Cherry Hill
+  city: Cherry Hill
+  state: NJ
+  location: Cherry Hill, NJ
+- name: Penn Medicine Radnor
+  city: Radnor
+  state: PA
+  location: Radnor, PA
+- name: Penn Medicine | Virtua Mount Holly
+  city: Mount Holly
+  state: NJ
+  location: Mount Holly, NJ
+- name: Penn Medicine | Virtua Washington Township
+  city: Sewell
+  state: NJ
+  location: Sewell, NJ
+- name: Phoenix CyberKnife at Palo Verde / Banner Good Samaritan †
+  city: Phoenix
+  state: AZ
+  location: Phoenix, AZ
+- name: Precision Radiation Oncology †
+  city: Pennsylvania
+  state: PA
+  location: Pennsylvania
+- name: Precision Radiation Oncology of Rhode Island †
+  city: Providence
+  state: RI
+  location: Providence, RI
+- name: Precision Radiation Oncology of Rhode Island - Warwick †
+  city: Warwick
+  state: RI
+  location: Warwick, RI
+- name: Precision Radiation Oncology of Rhode Island - Woonsocket †
+  city: Woonsocket
+  state: RI
+  location: Woonsocket, RI
+- name: Princeton Radiation Oncology
+  city: NJ / PA multiple locations
+  state: NJ
+  location: NJ / PA multiple locations
+- name: ProCure Proton Therapy Center
+  city: Somerset
+  state: NJ
+  location: Somerset, NJ
+- name: Providence Medical Group Petaluma / Santa Rosa †
+  city: Petaluma / Santa Rosa
+  state: CA
+  location: Petaluma / Santa Rosa, CA
+- name: Providence Regional Cancer Partnership
+  city: Everett
+  state: WA
+  location: Everett, WA
+- name: Providence St. Joseph Hospital
+  city: Orange
+  state: CA
+  location: Orange, CA
+- name: Providence St. Joseph Hospital Orange
+  city: Orange
+  state: CA
+  location: Orange, CA
+- name: Providence St. Mary Regional Cancer Center †
+  city: Walla Walla
+  state: WA
+  location: Walla Walla, WA
+- name: Radiation Center of Greater Nashua
+  city: Nashua
+  state: NH
+  location: Nashua, NH
+- name: Radiation Oncology Associates of the National Capital Region †
+  city: Washington, DC / Northern Virginia region
+  state: DC
+  location: Washington, DC / Northern Virginia region
+- name: Radiation Oncology Associates Winter Haven †
+  city: Winter Haven
+  state: FL
+  location: Winter Haven, FL
+- name: Radiotherapy Centers of Kentuckiana †
+  city: Louisville / Southern Indiana region
+  state: IN
+  location: Louisville / Southern Indiana region
+- name: Rapides Cancer Center
+  city: Alexandria
+  state: LA
+  location: Alexandria, LA
+- name: Requard Radiation Oncology Center at UM Shore Regional Health
+  city: Easton
+  state: MD
+  location: Easton, MD
+- name: Revere Health †
+  city: Utah
+  state: UT
+  location: Utah
+- name: Rex Cancer Center of Wakefield †
+  city: Raleigh / Wakefield
+  state: NC
+  location: Raleigh / Wakefield, NC
+- name: Richard E. Winter Cancer Treatment Center
+  city: Ogdensburg
+  state: NY
+  location: Ogdensburg, NY
+- name: Riddle Hospital †
+  city: Media
+  state: PA
+  location: Media, PA
+- name: Riverside Radiation Oncology Specialists
+  city: Newport News
+  state: VA
+  location: Newport News, VA
+- name: Riverside Radiation Oncology Specialists
+  city: Gloucester
+  state: VA
+  location: Gloucester, VA
+- name: Riverside Radiation Oncology Specialists
+  city: Williamsburg
+  state: VA
+  location: Williamsburg, VA
+- name: Riverside Radiation Oncology Specialists / Eastern Shore
+  city: Onancock / Eastern Shore
+  state: VA
+  location: Onancock / Eastern Shore, VA
+- name: Robert Boissoneault Oncology Institute †
+  city: Florida
+  state: FL
+  location: Florida
+- name: Robert Wood Johnson University Hospital
+  city: New Brunswick
+  state: NJ
+  location: New Brunswick, NJ
+- name: Rocky Mountain Cancer Centers
+  city: Denver
+  state: CO
+  location: Denver, CO
+- name: Roy & Patricia Disney Family Cancer Center †
+  city: Burbank
+  state: CA
+  location: Burbank, CA
+- name: RUSH MD Anderson Cancer Center at Copley
+  city: Aurora
+  state: IL
+  location: Aurora, IL
+- name: RUSH MD Anderson Cancer Center at Rush Lisle
+  city: Lisle
+  state: IL
+  location: Lisle, IL
+- name: RUSH MD Anderson Cancer Center at Rush University Medical Center
+  city: Chicago
+  state: IL
+  location: Chicago, IL
+- name: Rush University Medical Center Radiation Oncology
+  city: Oak Park
+  state: IL
+  location: Oak Park, IL
+- name: Russell Medical Center / UAB Radiation Oncology
+  city: Alexander City
+  state: AL
+  location: Alexander City, AL
+- name: Rutland Regional Medical Center †
+  city: Rutland
+  state: VT
+  location: Rutland, VT
+- name: RWJBarnabas Health
+  city: Multiple locations
+  state: NJ
+  location: Multiple locations, NJ
+- name: Saint Francis Hospital / Trinity Health of New England
+  city: Hartford
+  state: CT
+  location: Hartford, CT
+- name: Saint Peter's University Hospital †
+  city: New Brunswick
+  state: NJ
+  location: New Brunswick, NJ
+- name: Salem Health †
+  city: Salem
+  state: OR
+  location: Salem, OR
+- name: Sanford Cancer Center †
+  city: Sioux Falls
+  state: SD
+  location: Sioux Falls, SD
+- name: SC Oncology Associates †
+  city: Columbia
+  state: SC
+  location: Columbia, SC
+- name: Scripps Clinic Torrey Pines †
+  city: La Jolla / San Diego
+  state: CA
+  location: La Jolla / San Diego, CA
+- name: Sentara Radiation Oncology
+  city: Elizabeth City
+  state: NC
+  location: Elizabeth City, NC
+- name: SERO / Southeast Radiation Oncology †
+  city: Charlotte / Southeast region
+  state: NC
+  location: Charlotte / Southeast region
+- name: Shaw Cancer Center / Vail Health
+  city: Edwards
+  state: CO
+  location: Edwards, CO
+- name: Sidney Kimmel Comprehensive Cancer Center - Bucks
+  city: Bucks County
+  state: PA
+  location: Bucks County, PA
+- name: Sidney Kimmel Comprehensive Cancer Center - Torresdale
+  city: Philadelphia
+  state: PA
+  location: Philadelphia, PA
+- name: Siteman Cancer Center †
+  city: St. Louis
+  state: MO
+  location: St. Louis, MO
+- name: South Bay Radiation Oncology
+  city: Chula Vista
+  state: CA
+  location: Chula Vista, CA
+- name: Southeast Radiation Oncology Center
+  city: Juneau
+  state: AK
+  location: Juneau, AK
+- name: Spectrum Healthcare Partners
+  city: Maine (6 locations) / Portsmouth
+  state: NH
+  location: Maine (6 locations) / Portsmouth, NH
+- name: Spencer Cancer Center
+  city: Opelika
+  state: AL
+  location: Opelika, AL
+- name: St. Charles Bend †
+  city: Bend
+  state: OR
+  location: Bend, OR
+- name: St. Elizabeth Healthcare
+  city: Edgewood, KY (KY/IN/OH tri-state)
+  state: KY
+  location: Edgewood, KY (KY/IN/OH tri-state)
+- name: St. Joseph's Health / Totowa Cancer Center
+  city: Totowa
+  state: NJ
+  location: Totowa, NJ
+- name: St. Joseph's University Medical Center
+  city: Paterson
+  state: NJ
+  location: Paterson, NJ
+- name: St. Mark's Hospital / Utah Cancer Center †
+  city: Salt Lake City
+  state: UT
+  location: Salt Lake City, UT
+- name: St. Mary's Medical Center Regional Cancer Center
+  city: Huntington
+  state: WV
+  location: Huntington, WV
+- name: St. Peter's Radiation Oncology †
+  city: Albany
+  state: NY
+  location: Albany, NY
+- name: Stanford Health Care †
+  city: Stanford / Palo Alto
+  state: CA
+  location: Stanford / Palo Alto, CA
+- name: Stephenson Cancer Center / OU Health †
+  city: Oklahoma City
+  state: OK
+  location: Oklahoma City, OK
+- name: Stony Brook Medicine †
+  city: Stony Brook
+  state: NY
+  location: Stony Brook, NY
+- name: Summit Health / Dr. Niti Dube †
+  city: New York region
+  state: NY
+  location: New York region
+- name: SunState Medical Specialists (formerly GenesisCare Florida)
+  city: Multiple Florida locations
+  state: FL
+  location: Multiple Florida locations
+- name: SUNY Upstate Medical University
+  city: Syracuse
+  state: NY
+  location: Syracuse, NY
+- name: Sutter / Palo Alto Center †
+  city: Palo Alto
+  state: CA
+  location: Palo Alto, CA
+- name: Swedish First Hill Radiation Oncology
+  city: Seattle
+  state: WA
+  location: Seattle, WA
+- name: Sweetwater Regional Cancer Center
+  city: Rock Springs
+  state: WY
+  location: Rock Springs, WY
+- name: Tampa Oncology and Proton †
+  city: Tampa
+  state: FL
+  location: Tampa, FL
+- name: Tanner Health System †
+  city: Carrollton
+  state: GA
+  location: Carrollton, GA
+- name: Tate Cancer Center at UM Baltimore Washington Medical Center
+  city: Glen Burnie
+  state: MD
+  location: Glen Burnie, MD
+- name: Tennessee Oncology
+  city: Nashville / Multiple TN locations
+  state: TN
+  location: Nashville / Multiple TN locations
+- name: Tennova Radiation Oncology †
+  city: Tennessee
+  state: TN
+  location: Tennessee
+- name: Texarkana Radiation Oncology / New Hope Institute
+  city: Texarkana
+  state: TX
+  location: Texarkana, TX
+- name: Texas Oncology
+  city: Multiple Texas locations
+  state: TX
+  location: Multiple Texas locations
+- name: Therapeutic Radiologists Inc. †
+  city: Kansas City / Missouri region
+  state: KS
+  location: Kansas City / Missouri region
+- name: Thomas & Dorothy Leavey Radiation Oncology Center at Long Beach Medical Center
+  city: Long Beach
+  state: CA
+  location: Long Beach, CA
+- name: Thomas Jefferson University Hospital
+  city: Philadelphia
+  state: PA
+  location: Philadelphia, PA
+- name: Timpanogos Regional Hospital †
+  city: Orem
+  state: UT
+  location: Orem, UT
+- name: The Toledo Clinic †
+  city: Toledo
+  state: OH
+  location: Toledo, OH
+- name: Totowa Health Campus Cancer Center
+  city: Totowa
+  state: NJ
+  location: Totowa, NJ
+- name: Tower Health †
+  city: Reading
+  state: PA
+  location: Reading, PA
+- name: UAB Radiation Oncology
+  city: Birmingham
+  state: AL
+  location: Birmingham, AL
+- name: UAB Radiation Oncology - Kirklin Clinic at Acton Road
+  city: Birmingham
+  state: AL
+  location: Birmingham, AL
+- name: UAB St. Vincent's Birmingham Bruno Cancer Center
+  city: Birmingham
+  state: AL
+  location: Birmingham, AL
+- name: UAB St. Vincent's East Cancer Treatment Center
+  city: Birmingham
+  state: AL
+  location: Birmingham, AL
+- name: UC Health (University of Cincinnati)
+  city: Cincinnati
+  state: OH
+  location: Cincinnati, OH
+- name: UC San Diego Health - 4S Ranch
+  city: San Diego
+  state: CA
+  location: San Diego, CA
+- name: UC San Diego Health - El Centro †
+  city: El Centro
+  state: CA
+  location: El Centro, CA
+- name: UC San Diego Health - Encinitas
+  city: Encinitas
+  state: CA
+  location: Encinitas, CA
+- name: UC San Diego Health - Moores Cancer Center
+  city: La Jolla
+  state: CA
+  location: La Jolla, CA
+- name: UC San Diego Health - South Bay
+  city: Chula Vista
+  state: CA
+  location: Chula Vista, CA
+- name: UCHealth - Memorial Hospital Central
+  city: Colorado Springs
+  state: CO
+  location: Colorado Springs, CO
+- name: UCHealth Cherry Creek Medical Center
+  city: Denver
+  state: CO
+  location: Denver, CO
+- name: UCHealth Fort Collins †
+  city: Fort Collins
+  state: CO
+  location: Fort Collins, CO
+- name: UCHealth Highlands Ranch Hospital
+  city: Highlands Ranch
+  state: CO
+  location: Highlands Ranch, CO
+- name: UCHealth Longs Peak Medical Center
+  city: Longmont
+  state: CO
+  location: Longmont, CO
+- name: UCHealth Radiation Oncology - Anschutz Medical Campus
+  city: Aurora
+  state: CO
+  location: Aurora, CO
+- name: UCHealth Radiation Oncology - Memorial Hospital Central
+  city: Colorado Springs
+  state: CO
+  location: Colorado Springs, CO
+- name: UCHealth Radiation Oncology - Memorial Hospital North
+  city: Colorado Springs
+  state: CO
+  location: Colorado Springs, CO
+- name: UCLA Health - El Segundo Radiation Oncology
+  city: El Segundo
+  state: CA
+  location: El Segundo, CA
+- name: UCLA Health - Santa Clarita Radiation Oncology
+  city: Santa Clarita
+  state: CA
+  location: Santa Clarita, CA
+- name: UCLA Health - Santa Monica 16th Street Cancer Care
+  city: Santa Monica
+  state: CA
+  location: Santa Monica, CA
+- name: UCLA Health - Westwood Radiation Oncology
+  city: Los Angeles
+  state: CA
+  location: Los Angeles, CA
+- name: UCSF
+  city: San Francisco
+  state: CA
+  location: San Francisco, CA
+- name: UH Seidman Cancer Center at Firelands Regional Medical Center
+  city: Sandusky
+  state: OH
+  location: Sandusky, OH
+- name: UM Capital Region Health Radiation Oncology
+  city: Largo
+  state: MD
+  location: Largo, MD
+- name: UM Greenebaum Comprehensive Cancer Center
+  city: Baltimore
+  state: MD
+  location: Baltimore, MD
+- name: UM St. Joseph Medical Center Radiation Oncology
+  city: Towson
+  state: MD
+  location: Towson, MD
+- name: UNC Health Southeastern - Gibson Cancer Center
+  city: Lumberton
+  state: NC
+  location: Lumberton, NC
+- name: University Hospitals Cleveland †
+  city: Cleveland
+  state: OH
+  location: Cleveland, OH
+- name: University of Chicago Medical Center
+  city: Chicago
+  state: IL
+  location: Chicago, IL
+- name: University of Kansas Cancer Center †
+  city: Kansas City
+  state: KS
+  location: Kansas City, KS
+- name: University of Miami Miller School of Medicine †
+  city: Miami
+  state: FL
+  location: Miami, FL
+- name: University of Michigan Health - Brighton Center for Specialty Care
+  city: Brighton
+  state: MI
+  location: Brighton, MI
+- name: University of Michigan Health - Rogel Cancer Center
+  city: Ann Arbor
+  state: MI
+  location: Ann Arbor, MI
+- name: University of Michigan Hospital
+  city: Ann Arbor
+  state: MI
+  location: Ann Arbor, MI
+- name: University of Minnesota Medical Center / M Health Fairview †
+  city: Minneapolis
+  state: MN
+  location: Minneapolis, MN
+- name: University of Nebraska Medical Center
+  city: Omaha
+  state: NE
+  location: Omaha, NE
+- name: University of Rochester Medical Center
+  city: Rochester
+  state: NY
+  location: Rochester, NY
+- name: University of Vermont Medical Center
+  city: Burlington
+  state: VT
+  location: Burlington, VT
+- name: UPMC Hillman Cancer Center
+  city: Pittsburgh
+  state: PA
+  location: Pittsburgh, PA
+- name: UPMC Hillman Cancer Center at UPMC Northwest
+  city: Seneca
+  state: PA
+  location: Seneca, PA
+- name: Upper Valley Radiation Oncology †
+  city: Troy
+  state: OH
+  location: Troy, OH
+- name: USA Health Mitchell Cancer Institute
+  city: Mobile / Fairhope
+  state: AL
+  location: Mobile / Fairhope, AL
+- name: UW Medical Center †
+  city: Seattle
+  state: WA
+  location: Seattle, WA
+- name: The Valley Hospital
+  city: Paramus
+  state: NJ
+  location: Paramus, NJ
+- name: Vandalia Health Cancer Center at Davis Medical Center
+  city: Elkins / Buckhannon region
+  state: WV
+  location: Elkins / Buckhannon region, WV
+- name: Vanderbilt University Medical Center
+  city: Nashville
+  state: TN
+  location: Nashville, TN
+- name: VCU †
+  city: Richmond
+  state: VA
+  location: Richmond, VA
+- name: Virginia Oncology Associates
+  city: Virginia Beach / Hampton / Norfolk
+  state: VA
+  location: Virginia Beach / Hampton / Norfolk, VA
+- name: Virginia Radiation Oncology Associates †
+  city: Virginia
+  state: VA
+  location: Virginia
+- name: Wake Forest Baptist - Comprehensive Cancer Center, Winston-Salem
+  city: Winston-Salem
+  state: NC
+  location: Winston-Salem, NC
+- name: Wake Forest Baptist - Davie Medical Center
+  city: Bermuda Run
+  state: NC
+  location: Bermuda Run, NC
+- name: Wake Forest Baptist - High Point Medical Center
+  city: High Point
+  state: NC
+  location: High Point, NC
+- name: Wake Forest Baptist - Lexington Medical Center
+  city: Lexington
+  state: NC
+  location: Lexington, NC
+- name: Wayne Cancer Center †
+  city: Greenville
+  state: OH
+  location: Greenville, OH
+- name: WellSpring Oncology
+  city: Pinellas Park
+  state: FL
+  location: Pinellas Park, FL
+- name: West Cancer Center †
+  city: Memphis
+  state: TN
+  location: Memphis, TN
+- name: Westchester Radiation Medicine †
+  city: Westchester County
+  state: NY
+  location: Westchester County, NY
+- name: White Plains Hospital †
+  city: White Plains
+  state: NY
+  location: White Plains, NY
+- name: Willamette Valley Cancer Institute
+  city: Eugene
+  state: OR
+  location: Eugene, OR
+- name: William Newton Radiation Oncology / Winfield Healthcare Center
+  city: Winfield
+  state: KS
+  location: Winfield, KS
+- name: WVU Medicine Princeton Community Hospital / Bluefield Radiation Oncology
+  city: Princeton / Bluefield
+  state: WV
+  location: Princeton / Bluefield, WV
+- name: ChristianaCare - Helen F. Graham Cancer Center / Concord Health Center
+  city: Newark
+  state: DE
+  location: Newark, DE / Chadds Ford, PA
+  secondary: true
+- name: Spectrum Healthcare Partners
+  city: Maine (6 locations)
+  state: ME
+  location: Maine (6 locations) / Portsmouth, NH
+  secondary: true

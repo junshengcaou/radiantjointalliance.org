@@ -1,0 +1,35 @@
+<nav>
+ <a class="nav-logo" href="{{ '/' | relative_url }}">
+ {% include logo.html %}
+ <span>Radiant Joint Alliance</span>
+ </a>
+ <div class="nav-links">
+ <a href="{{ '/' | relative_url }}" id="nav-home"{% if page.nav == 'home' %} class="active"{% endif %}>Home</a>
+ <a href="{{ '/ldrt-treatment.html' | relative_url }}" id="nav-treatment"{% if page.nav == 'treatment' %} class="active"{% endif %}>LDRT Treatment</a>
+ <a href="{{ '/find-a-treatment-location.html' | relative_url }}" id="nav-hospitals"{% if page.nav == 'hospitals' %} class="active"{% endif %}>Find a Location</a>
+
+ <div class="nav-dropdown" id="dropdown-learn">
+ <a href="#" class="nav-dropdown-toggle{% if page.nav == 'about' or page.nav == 'arthritis' or page.nav == 'options' or page.nav == 'expect' or page.nav == 'research' %} active{% endif %}" id="toggle-learn" onclick="toggleDropdown('learn'); return false;">Learn <span class="caret">▾</span></a>
+ <div class="nav-dropdown-menu">
+ <a href="{{ '/about.html' | relative_url }}">About</a>
+ <a href="{{ '/arthritis-basics.html' | relative_url }}">Arthritis Basics</a>
+ <a href="{{ '/treatment-options.html' | relative_url }}">Treatment Options</a>
+ <a href="{{ '/what-to-expect.html' | relative_url }}">What to Expect</a>
+ <a href="{{ '/research-evidence.html' | relative_url }}">Research &amp; Evidence</a>
+ </div>
+ </div>
+
+ <a href="{{ '/faq.html' | relative_url }}" id="nav-faq"{% if page.nav == 'faq' %} class="active"{% endif %}>FAQ</a>
+ <a href="{{ '/survey.html' | relative_url }}" id="nav-survey"{% if page.nav == 'survey' %} class="active"{% endif %}>Survey</a>
+
+ <div class="nav-dropdown" id="dropdown-involved">
+ <a href="#" class="nav-dropdown-toggle{% if page.nav == 'volunteer' or page.nav == 'donate' %} active{% endif %}" id="toggle-involved" onclick="toggleDropdown('involved'); return false;">Get Involved <span class="caret">▾</span></a>
+ <div class="nav-dropdown-menu">
+ <a href="{{ '/volunteer.html' | relative_url }}">Volunteer</a>
+ <a href="{{ '/donate.html' | relative_url }}">Donate</a>
+ </div>
+ </div>
+
+ <a href="{{ '/contact.html' | relative_url }}" id="nav-contact" class="nav-cta">Contact Us</a>
+ </div>
+</nav>

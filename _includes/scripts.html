@@ -1,0 +1,136 @@
+<script>
+ function copyOrPrompt(btn, url) {
+ try {
+ if (window.isSecureContext && navigator.clipboard && navigator.clipboard.writeText) {
+ navigator.clipboard.writeText(url).then(() => {
+ const original = btn.textContent;
+ btn.textContent = 'Link copied!';
+ setTimeout(() => { btn.textContent = original; }, 2000);
+ }).catch(() => { window.prompt('Copy this link:', url); });
+ } else { window.prompt('Copy this link:', url); }
+ } catch (err) { window.prompt('Copy this link:', url); }
+ }
+ function isMobileDevice() { return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent); }
+ function handleFeedback(groupId, vote, pageName) {
+ const group = document.getElementById(groupId);
+ if (!group || group.dataset.voted) return;
+ group.dataset.voted = 'true';
+ group.querySelectorAll('.feedback-btn').forEach(b => b.disabled = true);
+ const thanks = group.querySelector('.feedback-thanks');
+ if (thanks) thanks.style.display = 'inline';
+ if (typeof gtag === 'function') { gtag('event', 'page_feedback', { vote: vote, page: pageName }); }
+ if (vote === 'down') {
+ const data = new FormData();
+ data.append('_subject', 'Thumbs down: ' + pageName + ' (not a contact message)');
+ data.append('message', 'A visitor marked the "' + pageName + '" page as not helpful.');
+ fetch('https://formspree.io/f/mdavqlge', { method: 'POST', body: data, headers: { 'Accept': 'application/json' } }).catch(() => {});
+ }
+ }
+ function handleShare(btn, url, title) {
+ if (typeof gtag === 'function') {
+ gtag('event', 'share', { method: (isMobileDevice() && navigator.share) ? 'native_share' : 'copy_link', content_type: 'page', item_id: title });
+ }
+ if (isMobileDevice() && navigator.share) {
+ navigator.share({ title: title, url: url }).catch(() => { copyOrPrompt(btn, url); });
+ return;
+ }
+ copyOrPrompt(btn, url);
+ }
+ const STATE_ABBR = {
+ alabama:'AL', alaska:'AK', arizona:'AZ', arkansas:'AR', california:'CA', colorado:'CO',
+ connecticut:'CT', delaware:'DE', florida:'FL', georgia:'GA', hawaii:'HI', idaho:'ID',
+ illinois:'IL', indiana:'IN', iowa:'IA', kansas:'KS', kentucky:'KY', louisiana:'LA',
+ maine:'ME', maryland:'MD', massachusetts:'MA', michigan:'MI', minnesota:'MN',
+ mississippi:'MS', missouri:'MO', montana:'MT', nebraska:'NE', nevada:'NV',
+ 'new hampshire':'NH', 'new jersey':'NJ', 'new mexico':'NM', 'new york':'NY',
+ 'north carolina':'NC', 'north dakota':'ND', ohio:'OH', oklahoma:'OK', oregon:'OR',
+ pennsylvania:'PA', 'rhode island':'RI', 'south carolina':'SC', 'south dakota':'SD',
+ tennessee:'TN', texas:'TX', utah:'UT', vermont:'VT', virginia:'VA', washington:'WA',
+ 'west virginia':'WV', wisconsin:'WI', wyoming:'WY', 'district of columbia':'DC'
+ };
+ function filterHospitals() {
+ const input = document.getElementById('hospital-search');
+ const tbody = document.getElementById('hospital-tbody');
+ const countEl = document.getElementById('hospital-count');
+ if (!input || !tbody) return;
+ const raw = input.value.trim().toLowerCase();
+ const rows = tbody.querySelectorAll('tr');
+ let visible = 0;
+ let matcher;
+ if (raw === '') {
+ matcher = () => true;
+ } else {
+ let stateCode = STATE_ABBR[raw] || null;
+ if (!stateCode && raw.length >= 4) {
+ const matchedName = Object.keys(STATE_ABBR).find(name => name.startsWith(raw));
+ if (matchedName) stateCode = STATE_ABBR[matchedName];
+ }
+ if (stateCode) {
+ const re = new RegExp('\\b' + stateCode + '\\b', 'i');
+ matcher = (text) => re.test(text);
+ } else if (raw.length <= 2) {
+ const escaped = raw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+ const re = new RegExp('\\b' + escaped + '\\b', 'i');
+ matcher = (text) => re.test(text);
+ } else {
+ matcher = (text) => text.toLowerCase().includes(raw);
+ }
+ }
+ rows.forEach(row => {
+ const match = matcher(row.textContent);
+ row.style.display = match ? '' : 'none';
+ if (match) visible++;
+ });
+ if (countEl) {
+ if (raw === '') {
+ countEl.textContent = 'Showing all ' + rows.length + ' locations.';
+ } else if (visible === 0) {
+ countEl.textContent = 'No matches for "' + input.value.trim() + '".';
+ } else {
+ countEl.textContent = 'Showing ' + visible + ' of ' + rows.length + ' locations.';
+ }
+ }
+ if (typeof gtag === 'function' && raw.length > 1) {
+ gtag('event', 'hospital_search', { search_term: raw });
+ }
+ }
+ function handleSignup(e) {
+ e.preventDefault();
+ const form = e.target;
+ const data = new FormData(form);
+ fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+ .then(r => {
+ if (r.ok) {
+ form.style.display = 'none';
+ const successId = form.dataset.successId || 'signup-success';
+ const successEl = document.getElementById(successId);
+ if (successEl) successEl.style.display = 'block';
+ if (typeof gtag === 'function') { gtag('event', 'sign_up', { method: 'newsletter' }); }
+ } else {
+ alert('Something went wrong. Please try again or email us directly.');
+ }
+ })
+ .catch(() => alert('Something went wrong. Please try again or email us directly.'));
+ return false;
+ }
+ function closeAllDropdowns() { document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open')); }
+ function toggleDropdown(name) {
+ const el = document.getElementById('dropdown-' + name);
+ const isOpen = el.classList.contains('open');
+ closeAllDropdowns();
+ if (!isOpen) el.classList.add('open');
+ }
+ function scrollToSection(sectionId) {
+ const target = document.getElementById(sectionId);
+ if (!target) return false;
+ target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+ return false;
+ }
+ function scrollToRef(refId) {
+ const target = document.getElementById(refId);
+ if (!target) return false;
+ target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+ return false;
+ }
+ document.addEventListener('click', (e) => { if (!e.target.closest('.nav-dropdown')) closeAllDropdowns(); });
+</script>
