@@ -34,18 +34,6 @@ nav: "hospitals"
  </a>
 <p style="font-size:13px;color:var(--gray-3);margin-top:10px;">Click any pin on the map for location details.</p>
 </div>
-<div class="signup-box" style="margin-bottom:28px;">
-<h3>Don't see your state yet?</h3>
-<p>We're still filling in Iowa, plus adding new locations everywhere else as we confirm them. Leave your email and we'll send a note when there's a new location near you.</p>
-<form action="https://formspree.io/f/mdavqlge" class="signup-form" data-success-id="signup-success-hospitals" id="newsletter-form-hospitals" method="POST" onsubmit="return handleSignup(event)">
-<input name="email" placeholder="you@example.com" required="" type="email"/>
-<input name="source" type="hidden" value="newsletter-signup-hospitals"/>
-<input name="_subject" type="hidden" value="New newsletter signup from Hospitals page (not a contact message)"/>
-<button class="btn btn-primary" type="submit">Notify Me</button>
-</form>
-<p class="signup-success" id="signup-success-hospitals" style="display:none;">Thanks, you're on the list. We'll let you know when there's something new near you.</p>
-<p class="signup-note">We won't sell or share your email. Unsubscribe anytime.</p>
-</div>
 <p style="font-size:14px;color:var(--gray-2);margin-bottom:16px;">
  When you call, ask for the <strong>Radiation Oncology</strong> department. Confirm that the location currently offers LDRT for osteoarthritis before making any travel or appointment plans.</p>
 <div style="margin-bottom:18px;">
@@ -61,9 +49,12 @@ nav: "hospitals"
 </thead>
 <tbody id="hospital-tbody">
 {% assign all_entries = site.data.directory | where_exp: "e", "e.secondary != true" | sort: "name" %}
-{% for entry in all_entries %}<tr><td>{{ entry.name }}</td><td>{{ entry.location }}</td></tr>
+{% for entry in all_entries %}<tr{% if forloop.index > 30 %} class="hidden-row" style="display:none;"{% endif %}><td>{{ entry.name }}</td><td>{{ entry.location }}</td></tr>
 {% endfor %}</tbody>
 </table>
+<div style="text-align:center;margin-top:20px;" id="show-all-wrapper">
+<button onclick="showAllHospitals()" style="background:none;border:1px solid var(--dark-teal);color:var(--dark-teal);padding:10px 22px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;">Show all {{ all_entries.size }} locations</button>
+</div>
 <div class="q-box" style="margin-top:36px;">
 <h3>How to Ask Your Hospital</h3>
 <div class="q-item"><div class="q-num">1</div><div class="q-text">Call your hospital's main number and ask to be connected to the Radiation Oncology department.</div></div>
@@ -84,5 +75,17 @@ nav: "hospitals"
 <p>Hospital services, physician availability, referral requirements, and insurance coverage may change over time. Please call the hospital directly to confirm that LDRT for osteoarthritis is currently offered before making treatment or travel plans.</p>
 </div>
 <p style="font-size:12px;color:var(--gray-2);margin-top:16px;line-height:1.6;">© Radiant Joint Alliance. This directory is compiled and maintained by Radiant Joint Alliance through original research and direct provider outreach. It may not be copied, scraped, or republished in whole or in part without written permission. Contact us via the Contact page to request permission or report an error.</p>
+<div class="signup-box" style="margin-top:36px;">
+<h3>Don't see your state yet?</h3>
+<p>We're still filling in Iowa, plus adding new locations everywhere else as we confirm them. Leave your email and we'll send a note when there's a new location near you.</p>
+<form action="https://formspree.io/f/mdavqlge" class="signup-form" data-success-id="signup-success-hospitals" id="newsletter-form-hospitals" method="POST" onsubmit="return handleSignup(event)">
+<input name="email" placeholder="you@example.com" required="" type="email"/>
+<input name="source" type="hidden" value="newsletter-signup-hospitals"/>
+<input name="_subject" type="hidden" value="New newsletter signup from Hospitals page (not a contact message)"/>
+<button class="btn btn-primary" type="submit">Notify Me</button>
+</form>
+<p class="signup-success" id="signup-success-hospitals" style="display:none;">Thanks, you're on the list. We'll let you know when there's something new near you.</p>
+<p class="signup-note">We won't sell or share your email. Unsubscribe anytime.</p>
+</div>
 </div>
 </div>
