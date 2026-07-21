@@ -48,6 +48,15 @@
  tennessee:'TN', texas:'TX', utah:'UT', vermont:'VT', virginia:'VA', washington:'WA',
  'west virginia':'WV', wisconsin:'WI', wyoming:'WY', 'district of columbia':'DC'
  };
+ let hospitalsExpanded = false;
+ function showAllHospitals() {
+ hospitalsExpanded = true;
+ document.querySelectorAll('.hidden-row').forEach(row => {
+ row.style.display = '';
+ });
+ const wrapper = document.getElementById('show-all-wrapper');
+ if (wrapper) wrapper.style.display = 'none';
+ }
  function filterHospitals() {
  const input = document.getElementById('hospital-search');
  const tbody = document.getElementById('hospital-tbody');
@@ -78,12 +87,22 @@
  }
  rows.forEach(row => {
  const match = matcher(row.textContent);
- row.style.display = match ? '' : 'none';
- if (match) visible++;
+ let show;
+ if (raw === '') {
+ show = hospitalsExpanded || !row.classList.contains('hidden-row');
+ } else {
+ show = match;
+ }
+ row.style.display = show ? '' : 'none';
+ if (show) visible++;
  });
+ const wrapper = document.getElementById('show-all-wrapper');
+ if (wrapper) wrapper.style.display = (raw === '' && !hospitalsExpanded) ? '' : 'none';
  if (countEl) {
  if (raw === '') {
- countEl.textContent = 'Showing all ' + rows.length + ' locations.';
+ countEl.textContent = hospitalsExpanded
+ ? 'Showing all ' + rows.length + ' locations.'
+ : 'Showing ' + visible + ' of ' + rows.length + ' locations. This table is sorted alphabetically by name, not by state — search is usually faster.';
  } else if (visible === 0) {
  countEl.textContent = 'No matches for "' + input.value.trim() + '".';
  } else {
