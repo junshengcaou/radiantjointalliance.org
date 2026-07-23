@@ -49,7 +49,7 @@ nav: "hospitals"
 </thead>
 <tbody id="hospital-tbody">
 {% assign all_entries = site.data.directory | where_exp: "e", "e.secondary != true" | sort: "name" %}
-{% for entry in all_entries %}<tr{% if forloop.index > 30 %} class="hidden-row" style="display:none;"{% endif %}><td>{% if entry.program_url %}<a href="{{ entry.program_url }}" target="_blank" rel="noopener">{{ entry.name }}</a>{% else %}{{ entry.name }}{% endif %}</td><td>{{ entry.location }}</td></tr>
+{% for entry in all_entries %}<tr{% if forloop.index > 30 %} class="hidden-row" style="display:none;"{% endif %}><td>{% if entry.program_url %}<a href="{{ entry.program_url }}" target="_blank" rel="noopener nofollow">{{ entry.name }}</a>{% else %}{{ entry.name }}{% endif %}</td><td>{{ entry.location }}</td></tr>
 {% endfor %}</tbody>
 </table>
 <div style="text-align:center;margin-top:20px;" id="show-all-wrapper">
