@@ -32,7 +32,7 @@ View Interactive Map
 <table class="hospital-table">
 <thead><tr><th>Facility</th><th>Location</th></tr></thead>
 <tbody id="hospital-tbody">
-{% for entry in page.entries %}<tr><td>{% if entry.program_url %}<a href="{{ entry.program_url }}" target="_blank" rel="noopener">{{ entry.name }}</a>{% else %}{{ entry.name }}{% endif %}</td><td>{{ entry.location }}</td></tr>
+{% for entry in page.entries %}<tr><td>{% if entry.program_url %}<a href="{{ entry.program_url }}" target="_blank" rel="noopener nofollow">{{ entry.name }}</a>{% else %}{{ entry.name }}{% endif %}</td><td>{{ entry.location }}</td></tr>
 {% endfor %}</tbody>
 </table>
 <p style="font-size:13px;color:var(--gray-3);margin-top:16px;">Please call ahead to confirm current service availability. This directory is for educational purposes; services may change. See the <a href="{{ '/find-a-treatment-location.html' | relative_url }}" style="color:var(--teal);">full interactive directory and map</a> for all locations nationwide.</p>
